@@ -21,7 +21,8 @@ twitter_username: none
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
-
+paginate: 5
+paginate_path: /page/:num
 
 # html minify
 compress_html:
@@ -41,6 +42,10 @@ links:
     url: /tags
   - title: About Me
     url: /about
+
+
+# plugins
+plugins: [jekyll-paginate]
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules', '_drafts']

@@ -4,7 +4,7 @@ background: /assets/img/desk1.jpg
 ---
 
 <main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
   <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
       <meta itemprop="datePublished" content="{{post.date}}">
@@ -32,4 +32,20 @@ background: /assets/img/desk1.jpg
     </div>
   </article>
   {% endfor %}
+
+  <div id="pg" class="pagination">
+    <span style="float: right">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}#pg" class="paginate-link">
+          Previous
+        </a>
+      {% endif %}
+      <span class="page_number ">
+        Halaman: {{ paginator.page }} dari {{ paginator.total_pages }}
+      </span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}#pg" class="paginate-link">Next</a>
+      {% endif %}
+    </span>
+  </div>
 </main>
