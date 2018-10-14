@@ -2,7 +2,7 @@
 title: Sutan's Lab
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath of your site
-url: "" # the base hostname & protocol for your site
+url: "https://sutanlab.js.org" # the base hostname & protocol for your site
 
 # User settings
 username: Sutan Nst.

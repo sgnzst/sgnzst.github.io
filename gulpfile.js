@@ -1,4 +1,5 @@
 var gulp        = require('gulp'),
+	ghPages			= require('gulp-gh-pages'),
 	plumber     = require('gulp-plumber'),
 	browserSync = require('browser-sync'),
 	stylus      = require('gulp-stylus'),
@@ -89,6 +90,10 @@ gulp.task('watch', function () {
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
 	gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./src/**/*').pipe(ghPages());
 });
 
 /**
