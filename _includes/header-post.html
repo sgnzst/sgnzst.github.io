@@ -3,8 +3,8 @@
     {% if page.date %}
       <time itemprop="datePublished" datetime="{{ page.date }}" class="date">{{ page.date | date_to_string }}</time>
     {% endif %}
-    <h1 class="post-title shadow-text animasi-in-left" itemprop="name">{{ page.title }}</h1>
-    <p itemprop="description" class="subtitle shadow-text animasi-in-right"><b>{{ page.description }}</b></p>
+    <h1 class="post-title shadow-text animasi-in-top" itemprop="name">{{ page.title }}</h1>
+    <p itemprop="description" class="subtitle shadow-text animasi-in-left"><b>{{ page.description }}</b></p>
   </div>
   <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
   {% include menu-search.html %}
