@@ -1,4 +1,3 @@
-//animasi scroll
 function animate() {
   function animasiWindowScroll(elemen, animasi) {
     function if_view() {

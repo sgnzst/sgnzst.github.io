@@ -10,15 +10,8 @@ title: demo share whatapp
   </head>
   <body>
     <textarea id="text" rows="8" cols="80"></textarea>
-    <a id="share-whatsapp" href="#" data-action="share/whatsapp/share" onclick="share(event)">Share via Whatsapp</a>
-    <script type="text/javascript">
-      function share(event) {
-        event.preventDefault();
-        var shareWhatsApp = document.getElementById('share-whatsapp');
-        var text = document.getElementById('text').value.split('\n');
-        text = text.join('%0A');
-        window.location.href = 'whatsapp://send?text='+text;
-      }
-    </script>
+    <button type="button" id="share-whatsapp" data-action="share/whatsapp/share" onclick="share(event)">Share via Whatsapp</button>
+    <script type="text/javascript" src="/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
   </body>
 </html>
