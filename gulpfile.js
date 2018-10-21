@@ -1,4 +1,4 @@
-var gulp        = require('gulp'),
+var gulp      = require('gulp'),
 	ghPages			= require('gulp-gh-pages'),
 	plumber     = require('gulp-plumber'),
 	browserSync = require('browser-sync'),

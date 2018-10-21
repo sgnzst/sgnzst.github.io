@@ -1,0 +1,24 @@
+---
+title: demo share whatapp
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <textarea id="text" rows="8" cols="80"></textarea>
+    <a id="share-whatsapp" href="#" data-action="share/whatsapp/share" onclick="share(event)">Share via Whatsapp</a>
+    <script type="text/javascript">
+      function share(event) {
+        event.preventDefault();
+        var shareWhatsApp = document.getElementById('share-whatsapp');
+        var text = document.getElementById('text').value.split('\n');
+        text = text.join('%0A');
+        window.location.href = 'whatsapp://send?text='+text;
+      }
+    </script>
+  </body>
+</html>

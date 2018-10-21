@@ -43,6 +43,11 @@ links:
   - title: About Me
     url: /about
 
+# my collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 # plugins
 plugins: [jekyll-paginate]
