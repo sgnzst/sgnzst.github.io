@@ -26,6 +26,6 @@ function share() {
   if (isMobile.anyMobile()) {
     window.location = link;
   }else {
-    alert('You should share this link in mobile app');
+    alert('Perangkatmu bukan mobilie');
   }
 }
