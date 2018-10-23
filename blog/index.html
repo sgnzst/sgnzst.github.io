@@ -1,0 +1,53 @@
+---
+layout: default
+title: "Blog"
+permalink: /blog/index.html
+description: "Take a look at my blog posts."
+---
+
+<main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+  {% for post in paginator.posts %}
+  <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
+      <meta itemprop="datePublished" content="{{post.date}}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        <span class="day">
+          {{ post.date | date: "%d" }}
+        </span>
+        <span class="month-year">
+          {{ post.date | date: "%B %Y" }}
+        </span>
+      </time>
+    </a>
+    <div class="content">
+      <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
+      <p class="description">
+        {{ post.content | strip_html | truncatewords:40 }}
+        <a href="{{ post.url | prepend: site.baseurl }}" class="link">Baca Selengkapnya..</a>
+      </p>
+
+      <div class="tags">
+        {% for tag in post.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+
+  <div id="pg" class="pagination">
+    <span style="float: right">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}#pg" class="paginate-link">
+          Previous
+        </a>
+      {% endif %}
+      <span class="page_number ">
+        Halaman: {{ paginator.page }} dari {{ paginator.total_pages }}
+      </span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}#pg" class="paginate-link">Next</a>
+      {% endif %}
+    </span>
+  </div>
+</main>

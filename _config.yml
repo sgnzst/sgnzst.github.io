@@ -20,9 +20,8 @@ twitter_username: none
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title/
 paginate: 5
-paginate_path: /page/:num
+paginate_path: /blog/page/:num
 
 # html minify
 compress_html:
@@ -38,14 +37,12 @@ links:
     url: /
   - title: Blog
     url: /blog
-  - title: Projects
+  - title: Projects (Coming Soon)
     url: /projects
   - title: Series
     url: /series
   - title: Tags
     url: /tags
-  - title: About Me
-    url: /about
 
 # my collections
 collections:

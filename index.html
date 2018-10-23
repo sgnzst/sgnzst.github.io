@@ -1,51 +1,52 @@
 ---
-layout: default
-background: /assets/img/desk1.jpg
+layout: minimal
+background: /assets/img/desk2.jpg
 ---
 
-<main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-  {% for post in paginator.posts %}
-  <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
-      <meta itemprop="datePublished" content="{{post.date}}">
-      <time datetime="{{ post.date | date_to_xmlschema }}">
-        <span class="day">
-          {{ post.date | date: "%d" }}
-        </span>
-        <span class="month-year">
-          {{ post.date | date: "%B %Y" }}
-        </span>
-      </time>
-    </a>
-    <div class="content">
-      <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
-      <p class="description">
-        {{ post.content | strip_html | truncatewords:40 }}
-        <a href="{{ post.url | prepend: site.baseurl }}" class="link">Baca Selengkapnya..</a>
-      </p>
+<img itemprop="image" class="img-rounded" src="/assets/img/sutan.jpg" alt="Sutan Nst">
 
-      <div class="tags">
-        {% for tag in post.tags %}
-        <a href="{{ site.baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
-        {% endfor %}
-      </div>
-    </div>
-  </article>
-  {% endfor %}
+<h2>Tentang Ku</h2>
 
-  <div id="pg" class="pagination">
-    <span style="float: right">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}#pg" class="paginate-link">
-          Previous
-        </a>
-      {% endif %}
-      <span class="page_number ">
-        Halaman: {{ paginator.page }} dari {{ paginator.total_pages }}
-      </span>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}#pg" class="paginate-link">Next</a>
-      {% endif %}
-    </span>
-  </div>
-</main>
+<p>
+	Namaku Sutan Gading Fadhillah Nasution. Usiaku sudah menjelang 20 tahun ke atas.
+	Sekarang, aku tinggal di Palembang, Indonesia. Dan aku masih tinggal bersama orang tuaku dan
+	sedang menjalani proses perkuliahan di Politeknik Negeri Sriwijaya.
+</p>
+
+<p>
+	Aku sangat minat di bidang Programming, terutama dalam pembuatan aplikasi website.
+	Sebenarnya, aku belum terlalu berpengalaman dibidang programming,
+	tapi aku akan terus belajar dan bermimpi untuk menjadi Developer yang Professional.
+</p>
+
+<h2>Kemampuan Ku</h2>
+<p> Kira - kira beginilah aku menilai diriku. </p>
+<ul class="skill-list">
+	<div class="my-skill-bar" data-width="75" data-background="#e67e22">
+		Object Oriented Programming
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="70" data-background="#3498db">
+		CSS (Bootstrap)
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="60" data-background="#f1ac18">
+		<b>Javascript</b>
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="65" data-background="#2c3e50">
+		jQuery
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="80" data-background="#5a68a5">
+		PHP
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="30" data-background="#646464">
+		Python
+	</div>
+	<br />
+	<div class="my-skill-bar" data-width="55" data-background="#00758f">
+		MySQL
+	</div>
+</ul>
