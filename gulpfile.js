@@ -90,6 +90,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
+	gulp.start(['stylus', 'js', 'jekyll-build']);
   return gulp.src('_site/**/*').pipe(ghPages());
 });
 
