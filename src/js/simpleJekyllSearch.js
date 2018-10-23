@@ -78,4 +78,4 @@
       searchResults.children().remove();
     }
   }
-}(Zepto));
+}($));

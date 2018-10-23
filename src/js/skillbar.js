@@ -70,6 +70,6 @@
     });
   };
 
-}( jQuery ));
+}($));
 
 $('.my-skill-bar').simpleSkillbar();

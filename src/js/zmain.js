@@ -39,5 +39,18 @@
   // Scroll
   smoothScroll.init({
     updateURL: false
-  })
-})( Zepto, window );
+  });
+
+  $(window).scroll(function(event) {
+    if ($(window).scrollTop() > 85) {
+      $('#navbar').css({
+        'background': '#2c3e50'
+      });
+    } else {
+      $('#navbar').css({
+        'background': 'transparent'
+      });
+    }
+  });
+
+})( $, window );

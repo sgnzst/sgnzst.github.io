@@ -1,4 +1,4 @@
-function animate() {
+(function ($) {
   function animasiWindowScroll(elemen, animasi) {
     function if_view() {
       var window_height = $(window).height();
@@ -6,14 +6,12 @@ function animate() {
       var window_bottom_scroll = window_height + window_top_scroll;
       $.each(elemen, function () {
         var _this = this;
-
         var element_height = $(this).outerHeight();
         var element_diatas_plus = $(this).offset().top + 120;
         var element_dilihat = element_height + element_diatas_plus >= window_top_scroll && element_diatas_plus <= window_bottom_scroll;
         if (element_dilihat) {
           setTimeout(function () {
             $(_this).addClass(animasi);
-            $("#hcb_form > div > a, label[for=hcb_file]").hide();
           }, 200);
         }
       });
@@ -31,5 +29,4 @@ function animate() {
   animasiWindowScroll($('.animasi-scroll-bottomleft'), 'animasi-in-bottomleft');
   animasiWindowScroll($('.animasi-scroll-bottomright'), 'animasi-in-bottomright');
   animasiWindowScroll($('.animasi-scroll-zoom'), 'animasi-in-zoom');
-};
-animate();
+}($));

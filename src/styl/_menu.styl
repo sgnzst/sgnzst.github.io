@@ -1,12 +1,20 @@
 *, *:before, *:after
-    -moz-box-sizing border-box
-    -webkit-box-sizing border-box
-    box-sizing border-box
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
 
 body
   left 0
   right 0
   margin auto
+
+#navbar
+  background transparent
+  position fixed
+  width 100%
+  height: rem(65px)
+  z-index: 19
+  transition all 350ms ease-in-out
 
 a, aside, .overlay, body
     transition all .25s ease
