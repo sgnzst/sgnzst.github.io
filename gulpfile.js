@@ -1,22 +1,19 @@
-var gulp      = require('gulp'),
-	ghPages			= require('gulp-gh-pages'),
-	plumber     = require('gulp-plumber'),
-	browserSync = require('browser-sync'),
-	stylus      = require('gulp-stylus'),
-	uglify      = require('gulp-uglify'),
-	concat      = require('gulp-concat'),
-	jeet        = require('jeet'),
-	rupture     = require('rupture'),
-	koutoSwiss  = require('kouto-swiss'),
-	prefixer    = require('autoprefixer-stylus'),
-	imagemin    = require('gulp-imagemin'),
-	cp          = require('child_process');
-
-var messages = {
-	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
-
-var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+var
+	gulp      		= require('gulp'),
+	ghPages				= require('gulp-gh-pages'),
+	plumber     	= require('gulp-plumber'),
+	browserSync 	= require('browser-sync'),
+	stylus      	= require('gulp-stylus'),
+	uglify      	= require('gulp-uglify'),
+	concat      	= require('gulp-concat'),
+	jeet        	= require('jeet'),
+	rupture     	= require('rupture'),
+	koutoSwiss  	= require('kouto-swiss'),
+	prefixer    	= require('autoprefixer-stylus'),
+	imagemin    	= require('gulp-imagemin'),
+	cp          	= require('child_process'),
+	messages 			= { jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build' },
+	jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
 
 /**
  * Build the Jekyll Site
