@@ -2,7 +2,7 @@
 title: Sutan's Lab
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath of your site
-url: "https://sutanlab.js.org" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 
 # User settings
 username: Sutan Nst.
@@ -20,8 +20,7 @@ twitter_username: none
 # Build settings
 markdown: kramdown
 highlighter: rouge
-paginate: 5
-paginate_path: /blog/page/:num
+permalink: /blog/:title/
 
 # html minify
 compress_html:
@@ -44,14 +43,26 @@ links:
   - title: Tags
     url: /tags
 
+# plugins
+plugins: [ jekyll-paginate-v2, jekyll-feed ]
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules', '_drafts']
+
+
 # my collections
 collections:
   projects:
     output: true
     permalink: /projects/:path/
 
-# plugins
-plugins: [jekyll-paginate]
-
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules', '_drafts']
+# pagination config
+pagination:
+  enabled: true
+  debug: false
+  per_page: 5
+  sort_reverse: true
+  sort_field: 'date'
+  paginate_path: /page/:num/
+  permalink: '/page/:num/'
+  title: ':title - page :num'
