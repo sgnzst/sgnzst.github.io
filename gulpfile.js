@@ -90,7 +90,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./src/**/*').pipe(ghPages());
+  return gulp.src('_site/**/*').pipe(ghPages());
 });
 
 /**
