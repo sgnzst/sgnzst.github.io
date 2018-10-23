@@ -1,11 +1,11 @@
 var
+	concat      	= require('gulp-concat'),
 	gulp      		= require('gulp'),
 	ghPages				= require('gulp-gh-pages'),
 	plumber     	= require('gulp-plumber'),
 	browserSync 	= require('browser-sync'),
 	stylus      	= require('gulp-stylus'),
 	uglify      	= require('gulp-uglify'),
-	concat      	= require('gulp-concat'),
 	jeet        	= require('jeet'),
 	rupture     	= require('rupture'),
 	koutoSwiss  	= require('kouto-swiss'),
@@ -45,13 +45,14 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 /**
  * Stylus task
  */
-gulp.task('stylus', function(){
-		gulp.src('src/styl/main.styl')
+gulp.task('stylus-build', function(){
+	gulp.src('src/styl/main.styl')
 		.pipe(plumber())
 		.pipe(stylus({
 			use:[koutoSwiss(), prefixer(), jeet(),rupture()],
 			compress: true
-		}))
+		})
+	)
 		.pipe(gulp.dest('_site/assets/css/'))
 		.pipe(browserSync.reload({stream:true}))
 		.pipe(gulp.dest('assets/css'))
@@ -60,7 +61,7 @@ gulp.task('stylus', function(){
 /**
  * Javascript Task
  */
-gulp.task('js', function(){
+gulp.task('js-build', function(){
 	return gulp.src('src/js/**/*.js')
 		.pipe(plumber())
 		.pipe(concat('main.js'))
@@ -83,14 +84,17 @@ gulp.task('imagemin', function() {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-	gulp.watch('src/styl/**/*.styl', ['stylus']);
-	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/styl/**/*.styl', ['stylus-build']);
+	gulp.watch('src/js/**/*.js', ['js-build']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
 	gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
+/* Compile all src/ files and build _site/ */
+gulp.task('build', ['js-build', 'stylus-build', 'jekyll-build']);
+
+/* Deploy to gh-pages branch */
 gulp.task('deploy', function() {
-	gulp.start(['stylus', 'js', 'jekyll-build']);
   return gulp.src('_site/**/*').pipe(ghPages());
 });
 
@@ -98,4 +102,4 @@ gulp.task('deploy', function() {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['js', 'stylus', 'browser-sync', 'watch']);
+gulp.task('default', ['js-build', 'stylus-build', 'browser-sync', 'watch']);
