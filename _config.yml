@@ -47,7 +47,15 @@ links:
 plugins: [ jekyll-paginate-v2, jekyll-feed ]
 
 # exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules', '_drafts']
+exclude: [
+  'src',
+  'node_modules',
+  '_drafts',
+  'gulpfile.js',
+  'initpost.sh',
+  'package.json',
+  'package-lock.json',
+]
 
 
 # my collections
