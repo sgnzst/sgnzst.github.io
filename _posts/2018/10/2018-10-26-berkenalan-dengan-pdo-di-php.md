@@ -6,7 +6,8 @@ image: '/assets/img/blogimages/'
 description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
 tags:
   - php
-categories: Belajar PHP - PDO
+categories:
+  - 'Belajar PHP - PDO'
 twitter_text:
 ---
 
