@@ -2,8 +2,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="keywords" content="sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya, {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- Google Authorship Markup -->
@@ -17,7 +18,7 @@
   {% if page.image %}
   <meta property="twitter:image:src" content="{{ site.url }}{{page.image }}">
   {% else %}
-  <meta property="twitter:image:src" content="{{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="twitter:image:src" content="{{ "/assets/img/sutan.jpeg" | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
 
   <!-- Social: Facebook / Open Graph -->
@@ -26,7 +27,7 @@
   {% if page.image %}
   <meta property="og:image" content="{{ site.url }}{{page.image }}">
   {% else %}
-  <meta property="og:image" content="{{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:image" content="{{ "/assets/img/sutan.jpeg" | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:site_name" content="{{ site.title }}">
@@ -34,7 +35,7 @@
   <!-- Social: Google+ / Schema.org  -->
   <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
   <meta itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta itemprop="image" content="{{ "/assets/img/desk1.jpg" | prepend: site.baseurl | prepend: site.url }}"/>
+  <meta itemprop="image" content="{{ "/assets/img/sutan.jpeg" | prepend: site.baseurl | prepend: site.url }}"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{site.baseurl}}/assets/img/icons/favicon.ico" type="image/x-icon" />
@@ -49,8 +50,8 @@
   <link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/assets/img/icons/apple-touch-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/img/icons/apple-touch-icon-180x180.png" />
   <!-- Windows 8 Tile Icons -->
-  <meta name="application-name" content="{{site.username}} Blog">
-  <meta name="msapplication-TileColor" content="#0562DC">
+  <meta name="application-name" content="{{site.username}} Website">
+  <meta name="msapplication-TileColor" content="#2C3E50">
 
   {% comment %}
     <meta name="msapplication-square70x70logo" content="smalltile.png" />

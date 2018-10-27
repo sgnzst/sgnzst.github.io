@@ -33,12 +33,10 @@ compress_html:
 # Links to include in menu navigation
 # For external links add external: true
 links:
-  - title: Home
+  - title: Home (Sutan Nst.)
     url: /
   - title: Blog
     url: /blog
-  - title: Projects (Coming Soon)
-    url: /projects
   - title: Series
     url: /series
   - title: Tags
