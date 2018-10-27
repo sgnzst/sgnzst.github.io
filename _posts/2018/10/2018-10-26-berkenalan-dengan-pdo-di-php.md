@@ -100,5 +100,5 @@ Kita harus selalu menutup / menghapus koneksi Database setiap sudah menjalankan 
 Demikian dari artikel ini saya tutup, mungkin lain kali saya akan memposting tentang **CRUD Database pada PDO**. Dan saya harap pembaca agar segera mulai bermigrasi dari Exntensi mysqli ke PDO untuk membuat project kamu lebih produktif.
 
 ### Referensi
-- https://code.tutsplus.com/id/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059
-- https://www.duniailkom.com/tutorial-php-mysql-pengertian-pdo-dan-cara-mengaktifkan-pdo-php-data-objects/
+- [code.tutplus.com](https://code.tutsplus.com/id/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059)
+- [duniailkom.com](https://www.duniailkom.com/tutorial-php-mysql-pengertian-pdo-dan-cara-mengaktifkan-pdo-php-data-objects/)
