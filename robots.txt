@@ -1,4 +1,4 @@
 # robotstxt.org/
 
 User-agent: *
-Sitemap: https://sutanlab.js.org/sitemap_location.xml
+Sitemap: https://sutanlab.js.org/sitemap.xml
