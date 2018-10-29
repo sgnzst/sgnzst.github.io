@@ -39,7 +39,7 @@ pagination:
   <div id="pg" class="pagination">
     <span style="float: right">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}#scroll" class="paginate-link">
+        <a onclick="paginateBlog(this, event)" href="{{ paginator.previous_page_path }}" class="paginate-link paginate-blog">
           &laquo; Previous
         </a>
       {% endif %}
@@ -47,10 +47,11 @@ pagination:
         Halaman: {{ paginator.page }} dari {{ paginator.total_pages }}
       </span>
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}#scroll" class="paginate-link">
+        <a onclick="paginateBlog(this, event)" href="{{ paginator.next_page_path }}" class="paginate-link paginate-blog">
           Next &raquo;
         </a>
       {% endif %}
     </span>
   </div>
+
 </main>

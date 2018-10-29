@@ -72,4 +72,4 @@ pagination:
   sort_field: 'date'
   paginate_path: /page/:num/
   permalink: '/page/:num/'
-  title: ':title - Page :num'
+  title: ':title'

@@ -41,6 +41,9 @@
     updateURL: false
   });
 
+  // skill bar init
+  $('.my-skill-bar').simpleSkillbar();
+
   $(window).scroll(function(event) {
     if ($(window).scrollTop() > 85) {
       $('#navbar').css({

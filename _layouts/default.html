@@ -7,7 +7,7 @@ layout: compress
   {% include head.html %}
   <body>
     {% include svg-icons.html %}
-    {% if page.url == "/blog/index.html" %}
+    {% if page.url contains '/blog' %}
       {% include header-post.html %}
     {% else %}
       {% include header-default.html %}
