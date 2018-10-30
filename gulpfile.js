@@ -78,7 +78,7 @@ gulp.task('js-build', function(){
  * Imagemin Task
  */
 gulp.task('imagemin', function() {
-	return gulp.src('src/img/**/*.{jpg,png,gif}')
+	return gulp.src('src/img/**/*.{jpg,jpeg,png,gif}')
 		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('assets/img/'));
@@ -91,12 +91,12 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function () {
 	gulp.watch('src/styl/**/*.styl', ['stylus-build']);
 	gulp.watch('src/js/**/*.js', ['js-build']);
-	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
+	gulp.watch('src/img/**/*.{jpg,jpeg,png,gif}', ['imagemin']);
 	gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
 /* Compile all src/ files and build _site/ */
-gulp.task('build', ['js-build', 'stylus-build', 'jekyll-build']);
+gulp.task('build', ['js-build', 'stylus-build', 'imagemin', 'jekyll-build']);
 
 /* Deploy to gh-pages branch */
 gulp.task('deploy', function() {
@@ -107,4 +107,4 @@ gulp.task('deploy', function() {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['js-build', 'stylus-build', 'browser-sync', 'watch']);
+gulp.task('default', ['js-build', 'stylus-build', 'imagemin', 'browser-sync', 'watch']);
