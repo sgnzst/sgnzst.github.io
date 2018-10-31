@@ -1,25 +1,26 @@
-var
-	gulp      		= require('gulp'),
-	concat      	= require('gulp-concat'),
-	ghPages				= require('gulp-gh-pages'),
-	plumber     	= require('gulp-plumber'),
-	stylus      	= require('gulp-stylus'),
-	uglify      	= require('gulp-uglify'),
-	order					= require('gulp-order'),
-	imagemin    	= require('gulp-imagemin'),
-	browserSync 	= require('browser-sync'),
-	jeet        	= require('jeet'),
-	rupture     	= require('rupture'),
-	koutoSwiss  	= require('kouto-swiss'),
-	prefixer    	= require('autoprefixer-stylus'),
-	cp          	= require('child_process'),
-	messages 			= { jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build' },
-	jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+const
+	gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	ghPages = require('gulp-gh-pages'),
+	plumber = require('gulp-plumber'),
+	stylus = require('gulp-stylus'),
+	uglify = require('gulp-uglify'),
+	order = require('gulp-order'),
+	imagemin = require('gulp-imagemin'),
+	browserSync = require('browser-sync'),
+	jeet = require('jeet'),
+	rupture = require('rupture'),
+	koutoSwiss = require('kouto-swiss'),
+	prefixer = require('autoprefixer-stylus'),
+	cp = require('child_process'),
+	messages = { jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build' };
+
+let jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
 
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', (done) => {
 	browserSync.notify(messages.jekyllBuild);
 	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
 		.on('close', done);
@@ -28,14 +29,14 @@ gulp.task('jekyll-build', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
 	browserSync.reload();
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['jekyll-build'], function() {
+gulp.task('browser-sync', ['jekyll-build'], () => {
 	browserSync({
 		server: {
 			baseDir: '_site'
@@ -46,7 +47,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 /**
  * Stylus task
  */
-gulp.task('stylus-build', function(){
+gulp.task('stylus-build', () => {
 	gulp.src('src/styl/main.styl')
 		.pipe(plumber())
 		.pipe(stylus({
@@ -61,7 +62,7 @@ gulp.task('stylus-build', function(){
 /**
  * Javascript Task
  */
-gulp.task('js-build', function(){
+gulp.task('js-build', () => {
 	return gulp.src('src/js/**/*.js')
 		.pipe(plumber())
 		.pipe(order([
@@ -77,7 +78,7 @@ gulp.task('js-build', function(){
 /**
  * Imagemin Task
  */
-gulp.task('imagemin', function() {
+gulp.task('imagemin', () => {
 	return gulp.src('src/img/**/*.{jpg,jpeg,png,gif}')
 		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
@@ -88,7 +89,7 @@ gulp.task('imagemin', function() {
  * Watch stylus files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-gulp.task('watch', function () {
+gulp.task('watch', () => {
 	gulp.watch('src/styl/**/*.styl', ['stylus-build']);
 	gulp.watch('src/js/**/*.js', ['js-build']);
 	gulp.watch('src/img/**/*.{jpg,jpeg,png,gif}', ['imagemin']);
@@ -99,7 +100,7 @@ gulp.task('watch', function () {
 gulp.task('build', ['js-build', 'stylus-build', 'imagemin', 'jekyll-build']);
 
 /* Deploy to gh-pages branch */
-gulp.task('deploy', function() {
+gulp.task('deploy', () => {
   return gulp.src('_site/**/*').pipe(ghPages());
 });
 
