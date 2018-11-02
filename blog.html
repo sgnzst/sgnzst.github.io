@@ -7,7 +7,7 @@ pagination:
   enabled: true
 ---
 
-<main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<main id="content" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
   <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">

@@ -7,9 +7,9 @@ function paginateBlog(that, event) {
     dataType: 'HTML'
   }).done(function(response) {
     var
-      htmlData = $(response).find('#scroll').html(),
+      htmlData = $(response).find('#content').html(),
       title = $(response).filter('title').text();
-    $('#scroll').html(htmlData);
+    $('#content').html(htmlData);
     document.title = title;
     window.history.pushState({html: htmlData, title: title}, title, pageUrl);
     window.onpopstate = function(event){
