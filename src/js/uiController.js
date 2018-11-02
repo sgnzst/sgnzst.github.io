@@ -18,7 +18,7 @@
   var bs = {
     close: $(".icon-remove-sign"),
     searchform: $(".search-form"),
-    canvas: $("body"),
+    canvas: $("#search-container"),
     dothis: $('.dosearch')
   };
 
