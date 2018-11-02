@@ -21,7 +21,7 @@ twitter_username: sutan_gnst
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:title/
+permalink: /:title/
 
 # html minify
 compress_html:
