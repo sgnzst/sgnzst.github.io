@@ -10,8 +10,8 @@ function paginateBlog(that, event) {
         icon: '/assets/img/tools/loading.gif',
         text: "Sedang Proses...",
         buttons: false,
-        closeOnClickOutside: false,
-        closeOnEsc: false
+        closeOnEsc: false,
+        closeOnClickOutside: false
       });
     }
   }).done(function(response) {
