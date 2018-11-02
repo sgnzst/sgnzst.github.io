@@ -38,7 +38,8 @@
 
   // Scroll
   smoothScroll.init({
-    updateURL: false
+    updateURL: false,
+    offset: 65
   });
 
   // skill bar init
