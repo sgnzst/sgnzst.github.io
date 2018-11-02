@@ -1,5 +1,5 @@
 # Site settings
-title: Sutan's Lab
+title: Sutan Nst. - Coder
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath of your site
 url: "https://sutanlab.js.org" # the base hostname & protocol for your site
@@ -33,7 +33,7 @@ compress_html:
 # Links to include in menu navigation
 # For external links add external: true
 links:
-  - title: Home (Sutan Nst.)
+  - title: Sutan Nst.
     url: /
   - title: Blog
     url: /blog
