@@ -12,9 +12,9 @@ twitter_text:
 ---
 
 ## Apa itu PDO ?
-> "***PDO - PHP Data Objects*** *adalah lapisan akses database yang menyediakan metode akses yang seragam ke beberapa database.*
+> "***PDO - PHP Data Object*** *adalah lapisan akses database yang menyediakan metode akses yang seragam ke beberapa database.*
 
-PDO (PHP Data Objects) adalah interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru.
+PDO (PHP Data Object) adalah interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru.
 
 Kondisi ini berbeda jika menggunakan mysql extension atau mysqli extension. Kedua extension ini hanya bisa bekerja dengan database MySQL. Karena alasan inilah banyak sebaiknya kita mulai beralih menggunakan PDO dibandingkan mysqli.
 
@@ -25,7 +25,7 @@ Secara teknis, apabila menggunakan mysql atau mysqli extension, PHP langsung ber
 
 PDO bekerja dengan metode yang disebut “data-access abstraction layer”. Artinya, apapun jenis database server yang digunakan, kode PHP yang ditulis akan tetap sama. PDO menyediakan “abstraction layer” untuk berkomunikasi dengan database server.
 
-Untuk menggunakan PDO, kita harus mengaksesnya menggunakan object. PDO tidak menyediakan cara penulisan procedural style seperti mysqli atau mysql extension. Oleh karena itu, kita harus paham tentang istilah pemrograman object oriented sebelum belajar menggunakan PDO, seperti class, method, dan property.
+Untuk menggunakan PDO, kita harus mengaksesnya menggunakan object. PDO tidak menyediakan cara penulisan procedural style seperti mysqli atau mysql extension. Oleh karena itu, kita harus paham tentang istilah pemrograman *Object Oriented* sebelum belajar menggunakan PDO seperti class, method, property dan istilah OOP lainnya.
 
 ## Dukungan Database
 Hingga saat penulisan artikel ini (PHP versi 7.2) PDO mendukung setidaknya 12 jenis Interface/Database Server yaitu:
