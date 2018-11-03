@@ -25,7 +25,7 @@ Secara teknis, apabila menggunakan mysql atau mysqli extension, PHP langsung ber
 
 PDO bekerja dengan metode yang disebut “data-access abstraction layer”. Artinya, apapun jenis database server yang digunakan, kode PHP yang ditulis akan tetap sama. PDO menyediakan “abstraction layer” untuk berkomunikasi dengan database server.
 
-Untuk menggunakan PDO, kita harus mengaksesnya menggunakan object. PDO tidak menyediakan cara penulisan procedural style seperti mysqli atau mysql extension. Oleh karena itu, kita harus paham tentang istilah pemrograman *Object Oriented* sebelum belajar menggunakan PDO seperti class, method, property dan istilah OOP lainnya.
+Untuk menggunakan PDO, kita harus mengaksesnya menggunakan object. PDO tidak menyediakan cara penulisan procedural style seperti mysqli atau mysql extension. Oleh karena itu, sebelum belajar menggunakan PDO kita harus paham tentang istilah pemrograman *Object Oriented* seperti class, method, property dan istilah OOP lainnya.
 
 ## Dukungan Database
 Hingga saat penulisan artikel ini (PHP versi 7.2) PDO mendukung setidaknya 12 jenis Interface/Database Server yaitu:
