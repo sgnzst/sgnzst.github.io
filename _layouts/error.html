@@ -1,0 +1,18 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  {% include head.html %}
+  <body>
+    {% include svg-icons.html %}
+    <header class="header-post" style="background-image: url('{{ page.background }}')" role="banner">
+      {% include menu-search.html %}
+      <div class="content">
+        {{ content }}
+      </div>
+    </header>
+    <script src="{{ "/assets/js/main.min.js" | prepend: site.baseurl }}"></script>
+  </body>
+</html>

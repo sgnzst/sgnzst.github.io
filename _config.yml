@@ -1,10 +1,10 @@
 # Site settings
 title: Sutan Nst. - Coder
 description: A blog and journal about Sutan Nst, Junior Developer
-baseurl: "" # the subpath of your site
-url: "https://sutanlab.js.org" # the base hostname & protocol for your site
+baseurl: "" # the subpath
+url: "https://sutanlab.js.org" # the base hostname & protocol
 
-# User settings
+# My Settings
 username: Sutan Nst.
 user_description: Learner, Coder & Coffee Maniac
 user_title: Learner, Coder & Coffee Maniac
