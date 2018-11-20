@@ -68,7 +68,7 @@ input[type="search"] {
     right: 0;
     z-index: 1;
     display: block;
-    fill: #fff;
+    fill: $sec;
     width: 30px;
     height: 30px;
     text-align: center;
@@ -90,12 +90,12 @@ input[type="search"] {
     font-style: normal;
   }
   h4, li, p {
-    color: #fff;
+    color: $sec;
   }
   a {
-    color: #fff;
+    color: $sec;
     &:hover {
-      color: #fff;
+      color: $sec;
     }
   }
 }
@@ -148,7 +148,7 @@ input[type="search"] {
     display: block;
     padding: .938rem 0;
     width: 100%;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $sec;
     &:hover {
       color: #b3b3b3;
       border-bottom: 1px solid #b3b3b3;

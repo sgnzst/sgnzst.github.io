@@ -51,7 +51,7 @@ a.slideButton, .dosearch {
   background: none;
   width: 2.5rem;
   height: 2.5rem;
-  fill: #fff;
+  fill: $sec;
 }
 
 .icon-search {
@@ -74,7 +74,7 @@ aside {
   padding: 2.5rem 0 0;
   top: 0;
   left: -15rem;
-  background: #242f3a;
+  background: $sidemenu;
   z-index: 20;
   box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
   h2 {
@@ -84,7 +84,7 @@ aside {
     font-weight: 800;
     font-style: normal;
     font-size: 1.25rem;
-    color: #fff;
+    color: $sec;
   }
   nav {
     ul {
@@ -105,7 +105,7 @@ aside {
         border-top: 1px solid #797979;
         &:hover {
           color: #191918;
-          background: #fff;
+          background: $sec;
         }
       }
     }

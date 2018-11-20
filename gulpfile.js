@@ -3,6 +3,7 @@ const
 	gconcat = require('gulp-concat'),
 	gplumber = require('gulp-plumber'),
 	gsass = require('gulp-sass'),
+	gprefix = require('gulp-autoprefixer'),
 	guglify = require('gulp-uglify'),
 	gorder = require('gulp-order'),
 	gimagemin = require('gulp-imagemin'),
@@ -44,6 +45,7 @@ const sass = () => {
   return gulp.src(app.sass.src)
   .pipe(gplumber())
   .pipe(gsass({outputStyle: 'compressed'}))
+	.pipe(gprefix())
   .pipe(gulp.dest(app.sass.dest))
 };
 

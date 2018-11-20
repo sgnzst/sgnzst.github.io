@@ -32,18 +32,18 @@
     clear: both;
   }
   p, li {
-    color: #333;
+    color: $texts;
   }
   p code, li code {
-    color: #3085f4;
+    color: $colorcode;
   }
   a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: #2c3e50;
+    color: $main;
     text-decoration: none;
-    border-bottom: 2px solid #2c3e50;
+    border-bottom: 2px solid $main;
   }
   iframe {
     margin-top: 1.875rem;
@@ -85,7 +85,7 @@
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    border-left: .313rem solid #2c3e50;
+    border-left: .313rem solid $main;
     padding: 0 1.875rem;
     margin: 3.125rem auto;
     &:before {
@@ -112,7 +112,7 @@
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    border: 1px solid #f2f2f2;
+    border: 1px solid $lightGray;
     margin: 50px auto;
     &:before {
       content: '';
@@ -137,7 +137,7 @@
   padding-left: 0;
   padding-right: 0;
   text-align: center;
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid $lightGray;
   padding-top: 1.25rem;
   &:before {
     content: '';
@@ -156,7 +156,7 @@
   a {
     text-decoration: none;
     &:hover svg {
-      fill: #2c3e50;
+      fill: $main;
     }
   }
 }
@@ -205,8 +205,8 @@ table {
     text-decoration: none;
     transition: all .5s;
     &:hover {
-      color: #161f28;
-      border-bottom: 1px solid #161f28;
+      color: $hover;
+      border-bottom: 1px solid $hover;
     }
   }
   .entry-date {

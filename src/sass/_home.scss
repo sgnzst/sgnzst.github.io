@@ -1,7 +1,7 @@
 .post-item {
   text-align: left;
   padding: 2.5rem 0;
-  border-bottom: 3px solid #f2f2f2;
+  border-bottom: 3px solid $lightGray;
   *zoom: 1;
   width: auto;
   max-width: 62.5rem;
@@ -46,7 +46,7 @@
       font-family: 'Open Sans', sans-serif;
       font-weight: 800;
       font-style: normal;
-      color: #2c3e50;
+      color: $main;
       font-size: 5rem;
       line-height: 1.6;
     }
@@ -79,20 +79,20 @@
       text-decoration: none;
     }
     .date {
-      color: #2c3e50;
+      color: $main;
     }
     .post-title {
       color: #000;
       font-size: 2rem;
     }
     .description {
-      color: #333;
+      color: $texts;
       font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       font-style: normal;
       font-size: 1.25rem;
       a {
-        color: #2c3e50;
+        color: $main;
         text-decoration: underline;
       }
     }
