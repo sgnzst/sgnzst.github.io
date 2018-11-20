@@ -73,7 +73,7 @@ const deploy = () => gulp.src('_site/**/*').pipe(ghPages());
 
 const watch = () => {
 	build();
-	gulp.watch(app.sass.src, sass);
+	gulp.watch(app.sass.path, sass);
 	gulp.watch(app.script.src, script);
 	gulp.watch(app.imagemin.src, imagemin);
 	gulp.watch(app.jekyll.watch, jekyll);
