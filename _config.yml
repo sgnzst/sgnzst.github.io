@@ -35,12 +35,16 @@ compress_html:
 links:
   - title: Sutan Nst.
     url: /
+    external: true
   - title: Blog
     url: /blog
+    external: true
   - title: Series
     url: /series
+    external: true
   - title: Tags
     url: /tags
+    external: true
 
 # plugins
 plugins: [ jekyll-paginate-v2, jekyll-feed ]
