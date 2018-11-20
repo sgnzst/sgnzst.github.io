@@ -10,4 +10,4 @@
 
 
 #### How to run server in local
-run `gulp` or `jekyll server --watch baseurl ""`
+run `jekyll server --watch baseurl ""`
