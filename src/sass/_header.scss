@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+}
+
+.header-site, .header-post {
+  background: #2c3e50;
+  height: 100%;
+}
+
+.header-site .content, .header-post .content {
+  width: 95%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-site {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  h1, h2 {
+    color: #fff;
+    text-align: center;
+  }
+  .site-title {
+    font-size: 3.75rem;
+    line-height: 1;
+    margin-top: -80px;
+    display: block;
+  }
+  .site-description {
+    font-size: 1.25rem;
+    display: block;
+    margin: 1.875rem 0;
+  }
+}
+
+.header-post {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  .subheader {
+    display: table;
+    padding: 20px;
+    a {
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 0 10px;
+    }
+  }
+  .date {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    margin: 0 0 30px;
+  }
+  .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.25rem;
+  }
+  h1, .subtitle, .date {
+    color: #fff;
+    text-align: center;
+  }
+  p {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.125rem;
+  }
+}
