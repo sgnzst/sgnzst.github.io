@@ -2,7 +2,7 @@
 
 
 #### How to deploy site in Github Pages
-1. Compile stylus and js along build site files > `npm run gulp build`
+1. Compile sass and js along build site files > `npm run gulp build`
 
 2. Commit files and push to branch master.
 
