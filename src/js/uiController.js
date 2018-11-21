@@ -57,4 +57,10 @@
     }
   });
 
+  $(window).on('load', function() {
+    setTimeout(function() {
+      $('.preloader-container').fadeOut('slow');
+    }, 250);
+  });
+
 })( $, window );

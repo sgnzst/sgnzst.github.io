@@ -1,8 +1,10 @@
 # Site settings
+# Production : $ export JEKYLL_ENV=production
 title: Sutan Nst. - Coder
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath
 url: "https://sutanlab.js.org" # the base hostname & protocol
+
 
 # My Settings
 username: Sutan Nst.
@@ -35,16 +37,12 @@ compress_html:
 links:
   - title: Sutan Nst.
     url: /
-    external: true
   - title: Blog
     url: /blog
-    external: true
   - title: Series
     url: /series
-    external: true
   - title: Tags
     url: /tags
-    external: true
 
 # plugins
 plugins: [ jekyll-paginate-v2, jekyll-feed ]
