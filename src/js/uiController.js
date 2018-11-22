@@ -60,6 +60,7 @@
   $(window).on('load', function() {
     setTimeout(function() {
       $('.preloader-container').fadeOut('slow');
+      $('body').removeClass('in-loading');
     }, 250);
   });
 

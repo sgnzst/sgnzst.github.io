@@ -1,6 +1,12 @@
 $loader--width: 250px;
 $loader-dot--size: 20px;
 
+body {
+  &.in-loading {
+    overflow: hidden;
+  }
+}
+
 .preloader-container {
   position: fixed;
   height: 100%;
