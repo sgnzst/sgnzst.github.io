@@ -1,5 +1,4 @@
 # Site settings
-# Production : $ export JEKYLL_ENV=production
 title: Sutan Nst. - Coder
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath

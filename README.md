@@ -2,12 +2,14 @@
 
 
 #### How to deploy site in Github Pages
-1. Compile sass and js along build site files > `npm run gulp build`
+1. Run `export JEKYLL_ENV=production`
 
-2. Commit files and push to branch master.
+2. Compile sass and js along build site files > `npm run gulp build`
 
-3. Deploy to gh-pages > `npm run gulp deploy`
+3. Deploy to branch gh-pages > `npm run gulp deploy`
+
+4. Commit files and push to branch master.
 
 
 #### How to run server in local
-run `jekyll server --watch baseurl ""`
+run `jekyll server --watch baseurl "" --host=[IP ADDR]`

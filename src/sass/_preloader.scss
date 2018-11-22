@@ -1,6 +1,3 @@
-$loader--width: 250px;
-$loader-dot--size: 20px;
-
 body {
   &.in-loading {
     overflow: hidden;
@@ -11,113 +8,55 @@ body {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 9001;
+  z-index: 18;
   background-color: lighten($main, 5%);
 }
 
 .loader {
-  height: $loader-dot--size;
-  width: $loader--width;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-
-  &--dot {
-    animation: {
-      name: loader;
-      timing-function: ease-in-out;
-      duration: 1.5s;
-      iteration-count: infinite;
-    }
-    height: $loader-dot--size;
-    width: $loader-dot--size;
+  top: 50%;
+  left: 40%;
+  margin-left: 10%;
+  transform: translate3d(-50%, -50%, 0);
+  .dot {
+    width: 24px;
+    height: 24px;
+    background: #3ac;
     border-radius: 100%;
-    background-color: black;
-    position: absolute;
-    border: 2px solid white;
-
-    &:first-child {
-      background-color: #8cc759;
-      animation-delay: 0.5s;
-    }
-
-    &:nth-child(2) {
-      background-color: #8c6daf;
-      animation-delay: 0.4s;
-    }
-
-    &:nth-child(3) {
-      background-color: #ef5d74;
-      animation-delay: 0.3s;
-    }
-
-    &:nth-child(4) {
-      background-color: #f9a74b;
-      animation-delay: 0.2s;
-    }
-
-    &:nth-child(5) {
-      background-color: #60beeb;
+    display: inline-block;
+    animation: slide 1s infinite;
+    &:nth-child(1) {
       animation-delay: 0.1s;
+      background: $loader-color;
     }
-
-    &:nth-child(6) {
-      background-color: #fbef5a;
-      animation-delay: 0s;
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+      background: $loader-color;
     }
-  }
-
-  &--text {
-    position: absolute;
-    top: 200%;
-    left: 0;
-    right: 0;
-    width: 4rem;
-    margin: auto;
-    &:after {
-      content: "Loading";
-      font-weight: bold;
-      animation: {
-        name: loading-text;
-        duration: 1.5s;
-        iteration-count: infinite;
-      }
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+      background: $loader-color;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.4s;
+      background: $loader-color;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.5s;
+      background: $loader-color;
     }
   }
 }
 
-@keyframes loader {
+@keyframes slide {
   0% {
-    transform: translateX(0)
+    transform: scale(1);
   }
-  45% {
-    transform: translateX( $loader--width - $loader-dot--size )
-  }
-  65% {
-    transform: translateX( $loader--width - $loader-dot--size )
-  }
-  95% {
-    transform: translateX(0)
-  }
-}
-
-@keyframes loading-text {
-  0% {
-    content: "Loading"
-  }
-
-  25% {
-    content: "Loading."
-  }
-
   50% {
-    content: "Loading.."
+    opacity: 0.3;
+    transform: scale(2);
   }
-
-  75% {
-    content: "Loading..."
+  100% {
+    transform: scale(1);
   }
 }
