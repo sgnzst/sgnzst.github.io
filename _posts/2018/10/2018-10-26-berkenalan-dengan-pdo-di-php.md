@@ -12,7 +12,7 @@ twitter_text:
 ---
 
 ## Apa itu PDO ?
-> "***PDO - PHP Data Object*** *adalah lapisan akses database yang menyediakan metode akses yang seragam ke beberapa database.*
+> "***PDO - PHP Data Object*** *adalah lapisan akses database yang menyediakan metode akses yang seragam ke beberapa database.*"
 
 PDO (PHP Data Object) adalah interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru.
 
@@ -20,7 +20,7 @@ Kondisi ini berbeda jika menggunakan mysql extension atau mysqli extension. Kedu
 
 Secara teknis, apabila menggunakan mysql atau mysqli extension, PHP langsung berhubungan dengan MySQL Server, tetapi jika menggunakan PDO, ia tidak berhubungan langsung dengan database, tetapi hanya sebagai “interface”. Konsep PDO ini dapat digambarkan sebagai berikut:
 
-![PDO-to-DB](https://s3.amazonaws.com/nettuts/693_pdo/pdo-to-db.png)
+<p style="overflow-x: hidden;"><img data-aos="fade-right" src="https://s3.amazonaws.com/nettuts/693_pdo/pdo-to-db.png" alt="PDO-to-DB" /></p>
 <p style="text-align: center">PDO mengakses Database dengan DB Driver</p>
 
 PDO bekerja dengan metode yang disebut “data-access abstraction layer”. Artinya, apapun jenis database server yang digunakan, kode PHP yang ditulis akan tetap sama. PDO menyediakan “abstraction layer” untuk berkomunikasi dengan database server.

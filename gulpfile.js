@@ -22,7 +22,7 @@ const app = {
     src: 'src/js/**/*.js',
     dest: 'assets/js/',
     order: [
-			"src/js/vendor/jquery.min.js",
+			"src/js/vendor/jquery.js",
 			"src/js/vendor/**/*.js",
 			"src/js/**/*.js"
     ]
