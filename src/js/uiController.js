@@ -45,6 +45,10 @@
   // skill bar init
   $('.my-skill-bar').simpleSkillbar();
 
+  //blur element
+  var vague = $('.bg-blur').Vague({intensity: 1.5});
+	vague.blur();
+  
   $(window).scroll(function(event) {
     if ($(window).scrollTop() > 85) {
       $('#navbar').css({
