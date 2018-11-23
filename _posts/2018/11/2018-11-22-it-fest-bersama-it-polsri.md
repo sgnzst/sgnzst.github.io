@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IT FESTIVAL bersama IT Polsri"
-date: 2018-11-21 22:42:38
+date: 2018-11-22 22:42:38
 image: '/assets/img/blog/itfest/3.jpeg'
 background: '/assets/img/blog/itfest/3.jpeg'
 description: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT Polsri'
