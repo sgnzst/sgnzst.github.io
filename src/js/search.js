@@ -7,7 +7,7 @@
       searchResults   : '.search-results',
       searchResultsTitle   : '<h4>Hasil Pencarian:</h4>',
       limit           : '7',
-      noResults       : '<p>Oops!<br/><small>Tidak ada hasil ! :(</small></p>'
+      noResults       : '<p>Oops!<br/><small>Tidak ada hasil ! <i class="em em-frowning"></i></small></p>'
     }, options);
 
     var properties = settings.jsonFormat.split(',');
