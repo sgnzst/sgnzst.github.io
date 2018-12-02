@@ -4,15 +4,12 @@ html, body {
 
 header {
   overflow: hidden;
-  .bg-blur {
-    margin: 0;
+  .header-overlay {
     position: absolute;
-    background: no-repeat center center fixed;
-	  background-size: cover;
+    margin: 0;
     width: 100%;
     height: 100%;
-    // content: "";
-    // filter: blur(1.5px);
+    background-color: rgba(0, 0, 0, .4);
   }
 }
 
@@ -22,6 +19,8 @@ header {
 }
 
 .header-site, .header-post {
+  background: no-repeat center center fixed;
+  background-size: cover;
   .content{
     width: 95%;
     position: absolute;
