@@ -1,20 +1,20 @@
 var mobile = {
-  Android: function() {
+  Android: () => {
     return navigator.userAgent.match(/Android/i);
   },
-  BlackBerry: function() {
+  BlackBerry: () => {
     return navigator.userAgent.match(/BlackBerry/i);
   },
-  iOS: function() {
+  iOS: () => {
     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
   },
-  Opera: function() {
+  Opera: () => {
     return navigator.userAgent.match(/Opera Mini/i);
   },
-  Windows: function() {
+  Windows: () => {
     return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
   },
-  anyMobile: function() {
+  anyMobile: () => {
     return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
   }
 };

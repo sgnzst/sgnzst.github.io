@@ -22,7 +22,7 @@
           registerEvent();
         },
         error: function(x,y,z) {
-          console.log("***ERROR in simpleJekyllSearch.js***");
+          console.log("***ERROR in search***");
           console.log(x);
           console.log(y);
           console.log(z);

@@ -7,6 +7,7 @@ const
 	guglify = require('gulp-uglify'),
 	gorder = require('gulp-order'),
 	gimagemin = require('gulp-imagemin'),
+	gbabel = require('gulp-babel'),
 	ghPages = require('gulp-gh-pages'),
 	cp = require('child_process');
 
@@ -50,11 +51,15 @@ const sass = () => {
 };
 
 const script = () => {
-	return gulp.src(app.script.src)
+	return gulp.src(app.script.src, { sourcemaps: true })
 	.pipe(gplumber())
 	.pipe(gorder(app.script.order, { base: './' }))
+	.pipe(gbabel({
+		presets: ['@babel/preset-env'],
+		ignore: ['src/js/vendor/**/*.js']
+	}))
+	.pipe(guglify()) // {mangle: true}
   .pipe(gconcat('main.js'))
-  .pipe(guglify()) // {mangle: true}
   .pipe(gulp.dest(app.script.dest));
 }
 

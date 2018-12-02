@@ -14,7 +14,7 @@ function paginateBlog(that, event) {
         closeOnClickOutside: false
       });
     }
-  }).done(function(response) {
+  }).done(response => {
     var
       htmlData = $(response).find('#content').html(),
       title = $(response).filter('title').text();
@@ -22,13 +22,13 @@ function paginateBlog(that, event) {
     $('#content').html(htmlData);
     document.title = title;
     window.history.pushState({html: htmlData, title: title}, title, pageUrl);
-    window.onpopstate = function(event){
+    window.onpopstate = event => {
       if(event.state){
         $('#content').html(event.state.html);
         document.title = event.state.title;
       }
     };
-  }).fail(function(response, stats, xhr) {
+  }).fail((response, stats, xhr) => {
     swal.close();
     swal({
       icon: "error",
