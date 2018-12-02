@@ -4,7 +4,6 @@ description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath
 url: "https://sutanlab.js.org" # the base hostname & protocol
 
-# My Settings
 username: Sutan Nst.
 user_description: Learner, Coder & Coffee Maniac
 user_title: Learner, Coder & Coffee Maniac
