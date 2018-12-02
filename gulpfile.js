@@ -77,8 +77,7 @@ const imagemin = () => {
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll);
 
 const deploy = () => gulp.src('_site/**/*', {read: false}).pipe(gdeploy({
-	repository: 'https://sutanlab@github.com/sutanlab/sutanlab.github.io.git',
-  branches: ['master']
+	repository: 'https://sutanlab@github.com/sutanlab/sutanlab.github.io.git'
 }));
 
 const watch = () => {
