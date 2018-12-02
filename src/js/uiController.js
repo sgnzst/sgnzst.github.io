@@ -48,17 +48,10 @@
   //blur element
   var vague = $('.bg-blur').Vague({intensity: 1.5});
 	vague.blur();
-  
+
   $(window).scroll(function(event) {
-    if ($(window).scrollTop() > 85) {
-      $('#navbar').css({
-        'background': '#2c3e50'
-      });
-    } else {
-      $('#navbar').css({
-        'background': 'transparent'
-      });
-    }
+    if ($(window).scrollTop() > 85) $('#navbar').addClass('nav-color');
+    else $('#navbar').removeClass('nav-color');
   });
 
   $(window).on('load', function() {

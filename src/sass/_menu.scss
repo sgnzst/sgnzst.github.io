@@ -18,6 +18,9 @@ body {
   height: 4.063rem;
   z-index: 19;
   transition: all 350ms ease-in-out;
+  &.nav-color {
+    background: $main;
+  }
 }
 
 a, aside, .overlay, body {
