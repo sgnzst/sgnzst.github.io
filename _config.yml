@@ -4,20 +4,19 @@ description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath
 url: "https://sutanlab.js.org" # the base hostname & protocol
 
-
 # My Settings
 username: Sutan Nst.
 user_description: Learner, Coder & Coffee Maniac
 user_title: Learner, Coder & Coffee Maniac
 avatar: /assets/img/sutan.jpeg
 email: sutan.gnst@gmail.com
-github_username:  sgnzst
-medium_username: sutan.gnst
+github_username:  sutanlab
+disqus_username: sutanlab
 facebook_username:  sgnzst
 instagram_username: sutan_gnst
-disqus_username: sutanlab
-gplus_username: u/0/112138172681575865281
 twitter_username: sutan_gnst
+medium_username: sutan.gnst
+gplus_username: u/0/112138172681575865281
 
 # Build settings
 markdown: kramdown
