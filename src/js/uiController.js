@@ -58,6 +58,10 @@
     setTimeout(function() {
       $('.preloader-container').fadeOut('slow');
       $('body').removeClass('in-loading');
+      AOS.init({
+        easing: 'ease-out-back',
+        duration: 1000
+      });
     }, 250);
   });
 

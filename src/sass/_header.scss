@@ -21,23 +21,21 @@ header {
   height: 100%;
 }
 
-.header-site .content, .header-post .content {
-  width: 95%;
-  position: absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+.header-site, .header-post {
+  .content{
+    width: 95%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .header-site {
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   h1, h2 {
     color: $sec;
     text-align: center;
@@ -56,10 +54,6 @@ header {
 }
 
 .header-post {
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   .subheader {
     display: table;
     padding: 20px;
