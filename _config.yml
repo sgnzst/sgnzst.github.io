@@ -46,8 +46,9 @@ plugins: [ jekyll-paginate-v2, jekyll-feed ]
 
 # exclude my node related stuff
 exclude: [
-  'src',
   'node_modules',
+  '.publish',
+  'src',
   '_drafts',
   'gulpfile.js',
   'initpost.sh',

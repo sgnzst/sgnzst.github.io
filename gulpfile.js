@@ -8,7 +8,7 @@ const
 	gorder = require('gulp-order'),
 	gimagemin = require('gulp-imagemin'),
 	gbabel = require('gulp-babel'),
-	gdeploy = require('gulp-deploy-git'),
+	gdeploy = require('gulp-gh-pages'),
 	cp = require('child_process');
 
 let jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
@@ -37,7 +37,7 @@ const app = {
 	}
 }
 
-const jekyll = (done) => {
+const jekyll = done => {
 	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
 	.on('close', done);
 }
@@ -76,9 +76,7 @@ const imagemin = () => {
 
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll);
 
-const deploy = () => gulp.src('_site/**/*', {read: false}).pipe(gdeploy({
-	repository: 'https://sutanlab@github.com/sutanlab/sutanlab.github.io.git'
-}));
+const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}));
 
 const watch = () => {
 	build();
