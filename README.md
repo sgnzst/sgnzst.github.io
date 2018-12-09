@@ -4,7 +4,7 @@
 - `./initpost -h` output instructions
 - `./initpost -c {POST_TITLE}` create post
 - `./initpost -d {POST_TITLE}` create draft post
-= `./initpost -p {POST_TITLE}` publish/promote a draft to a post
+- `./initpost -p {POST_TITLE}` publish/promote a draft to a post
 
 #### How to deploy site in Github Pages
 1. `export JEKYLL_ENV=production` = set jekyll to production mode
