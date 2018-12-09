@@ -1,6 +1,6 @@
 ## My Site Notes
 
-#### initpost command
+#### Initpost command
 - `./initpost -h` output instructions
 - `./initpost -c {POST_TITLE}` create post
 - `./initpost -d {POST_TITLE}` create draft post
