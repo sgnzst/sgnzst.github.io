@@ -1,0 +1,16 @@
+---
+---
+
+[
+  {% for project in site.data.projects %}
+    {
+      "name"        : "{{ project.name | escape }}",
+      "category"    : "{{ project.category | escape }} ",
+      "stacks"      : "{{ project.stacks | array_to_sentence_string }}",
+      "description" : "{{ project.description | escape }}",
+      "website"     : "{{ project.website }}",
+      "git"         : "{{ project.git }}",
+      "screenshot"  : "{{ project.screenshot }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
