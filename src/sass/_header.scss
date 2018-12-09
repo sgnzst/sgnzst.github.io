@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 header {
   overflow: hidden;
   .header-overlay {
@@ -14,13 +10,10 @@ header {
 }
 
 .header-site, .header-post {
-  background: $main;
-  height: 100%;
-}
-
-.header-site, .header-post {
   background: no-repeat center center fixed;
   background-size: cover;
+  background-color: $main;
+  height: 100%;
   .content{
     width: 95%;
     position: absolute;
