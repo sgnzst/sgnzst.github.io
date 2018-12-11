@@ -17,4 +17,4 @@
 
 
 #### How to run server in local
-run `jekyll server --watch baseurl "" --host=[IP ADDR]`
+run `npm start`or `jekyll server --watch baseurl "" --host=[IP ADDR]`
