@@ -38,8 +38,7 @@ const app = {
 }
 
 const jekyll = done => {
-	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
-	.on('close', done);
+	return cp.spawn(jekyllCommand, ['server'], {stdio: 'inherit'}).on('close', done);
 }
 
 const sass = () => {
