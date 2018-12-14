@@ -10,7 +10,7 @@ pagination:
 <main id="content" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
   <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
+    <a class="datetime document-load" href="{{ post.url | prepend: site.baseurl }}">
       <meta itemprop="datePublished" content="{{post.date}}">
       <time datetime="{{ post.date | date_to_xmlschema }}">
         <span class="day">
@@ -22,7 +22,7 @@ pagination:
       </time>
     </a>
     <div class="content">
-      <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
+      <a class="document-load" href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
       <p class="description">
         {{ post.content | strip_html | truncatewords:40 }}
         <a href="{{ post.url | prepend: site.baseurl }}" class="link">Baca Selengkapnya</a>
@@ -30,7 +30,7 @@ pagination:
 
       <div class="tags">
         {% for tag in post.tags %}
-        <a href="{{ site.baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
+        <a class="document-load" href="{{ site.baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
         {% endfor %}
       </div>
     </div>

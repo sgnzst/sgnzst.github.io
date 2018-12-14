@@ -50,6 +50,11 @@
     else $('#navbar').removeClass('nav-color');
   });
 
+  $("a.document-load").on("click", function() {
+    $('body').removeClass('in-loading');
+    $('.preloader-container').fadeIn('slow');
+  });
+
   $(window).on('load', function() {
     setTimeout(function() {
       $('.preloader-container').fadeOut('slow');

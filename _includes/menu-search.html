@@ -26,12 +26,15 @@
   <ul>
     {% for link in site.links %}
       {% if link.external %}
-        <li><a href="{{ link.url }}"><b>{{ link.title }}</b></a></li>
+        <li><a class="document-load" href="{{ link.url }}"><b>{{ link.title }}</b></a></li>
       {% else %}
         <li><a href="{{ site.url }}{{ link.url }}"><b>{{ link.title }}</b></a></li>
       {% endif %}
     {% endfor %}
-    <li><a class="feed" href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><b>Feed</b></a></li>
+    
+    {% comment %}
+      <li><a class="feed" href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><b>Feed</b></a></li>
+    {% endcomment %}
   </ul>
 </nav>
 </aside>
