@@ -28,7 +28,7 @@
       {% if link.external %}
         <li><a class="document-load" href="{{ link.url }}"><b>{{ link.title }}</b></a></li>
       {% else %}
-        <li><a href="{{ site.url }}{{ link.url }}"><b>{{ link.title }}</b></a></li>
+        <li><a class="document-load" href="{{ site.url }}{{ link.url }}"><b>{{ link.title }}</b></a></li>
       {% endif %}
     {% endfor %}
 

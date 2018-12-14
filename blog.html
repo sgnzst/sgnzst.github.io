@@ -25,7 +25,7 @@ pagination:
       <a class="document-load" href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
       <p class="description">
         {{ post.content | strip_html | truncatewords:40 }}
-        <a href="{{ post.url | prepend: site.baseurl }}" class="link">Baca Selengkapnya</a>
+        <a href="{{ post.url | prepend: site.baseurl }}" class="link document-load">Baca Selengkapnya</a>
       </p>
 
       <div class="tags">
