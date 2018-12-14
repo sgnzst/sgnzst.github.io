@@ -9,9 +9,9 @@ const
 	gimagemin = require('gulp-imagemin'),
 	gbabel = require('gulp-babel'),
 	gdeploy = require('gulp-gh-pages'),
-	cp = require('child_process');
+	cp = require('child_process')
 
-let jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+let jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll'
 
 const app = {
 	sass: {
@@ -38,7 +38,7 @@ const app = {
 }
 
 const jekyll = done => {
-	return cp.spawn(jekyllCommand, ['server'], {stdio: 'inherit'}).on('close', done);
+	return cp.spawn(jekyllCommand, ['server'], {stdio: 'inherit'}).on('close', done)
 }
 
 const sass = () => {
@@ -47,7 +47,7 @@ const sass = () => {
   .pipe(gsass({outputStyle: 'compressed'}))
 	.pipe(gprefix())
   .pipe(gulp.dest(app.sass.dest))
-};
+}
 
 const script = () => {
 	return gulp.src(app.script.src, { sourcemaps: true })
@@ -59,7 +59,7 @@ const script = () => {
 	}))
 	.pipe(guglify()) // {mangle: true}
   .pipe(gconcat('main.js'))
-  .pipe(gulp.dest(app.script.dest));
+  .pipe(gulp.dest(app.script.dest))
 }
 
 const imagemin = () => {
@@ -70,23 +70,23 @@ const imagemin = () => {
 		progressive: true,
 		interlaced: true
 	}))
-	.pipe(gulp.dest(app.imagemin.dest));
+	.pipe(gulp.dest(app.imagemin.dest))
 }
 
-const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll);
+const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll)
 
-const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}));
+const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
 
 const watch = () => {
-	build();
-	gulp.watch(app.sass.path, sass);
-	gulp.watch(app.script.src, script);
-	gulp.watch(app.imagemin.src, imagemin);
-	gulp.watch(app.jekyll.watch, jekyll);
+	build()
+	gulp.watch(app.sass.path, sass)
+	gulp.watch(app.script.src, script)
+	gulp.watch(app.imagemin.src, imagemin)
+	gulp.watch(app.jekyll.watch, jekyll)
 }
 
-gulp.task('build', build);
+gulp.task('build', build)
 
-gulp.task('deploy', deploy);
+gulp.task('deploy', deploy)
 
-gulp.task('default', watch);
+gulp.task('default', watch)
