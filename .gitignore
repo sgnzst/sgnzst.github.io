@@ -1,5 +1,5 @@
 .publish/
 _site/
 node_modules/
-src/img/
+assets/
 package-lock.json

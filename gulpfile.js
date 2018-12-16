@@ -11,12 +11,14 @@ const
 	gdeploy = require('gulp-gh-pages'),
 	cp = require('child_process')
 
-let jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll'
+let
+	jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll',
+	jekyllOption = ['build']
 
 const app = {
 	sass: {
-		src: 'src/sass/main.scss',
-    path: 'src/sass/**/*.scss',
+		main: 'src/sass/main.scss',
+    src: 'src/sass/**/*.scss',
     dest: 'assets/css/'
 	},
   script: {
@@ -33,16 +35,21 @@ const app = {
 		dest: 'assets/img/'
 	},
 	jekyll: {
-		watch: ['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*', '_config.yml']
+		src: ['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*', '_config.yml']
 	}
 }
 
 const jekyll = done => {
-	return cp.spawn(jekyllCommand, ['server'], {stdio: 'inherit'}).on('close', done)
+	return cp.spawn(jekyllCommand, jekyllOption, {stdio: 'inherit'}).on('close', done)
+}
+
+const jekyllRebuild = () => {
+	jekyllOption = ['build']
+	return jekyll
 }
 
 const sass = () => {
-  return gulp.src(app.sass.src)
+  return gulp.src(app.sass.main)
   .pipe(gplumber())
   .pipe(gsass({outputStyle: 'compressed'}))
 	.pipe(gprefix())
@@ -75,18 +82,20 @@ const imagemin = () => {
 
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll)
 
-const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
+const deploy = () => {
+	build()
+	return gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
+}
 
 const watch = () => {
+	jekyllOption = ['server', '--host=0.0.0.0']
 	build()
-	gulp.watch(app.sass.path, sass)
+	gulp.watch(app.sass.src, sass)
 	gulp.watch(app.script.src, script)
 	gulp.watch(app.imagemin.src, imagemin)
-	gulp.watch(app.jekyll.watch, jekyll)
+	gulp.watch(app.jekyll.src, jekyllRebuild)
 }
 
 gulp.task('build', build)
-
 gulp.task('deploy', deploy)
-
 gulp.task('default', watch)
