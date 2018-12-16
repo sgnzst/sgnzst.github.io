@@ -48,14 +48,18 @@ plugins: [ jekyll-paginate-v2, jekyll-feed ]
 
 # exclude my node related stuff
 exclude: [
-  'node_modules',
+  '.bundle',
   '.publish',
-  'src',
   '_drafts',
+  'node_modules',
+  'vendor',
+  'src',
   'gulpfile.js',
   'initpost.sh',
   'package.json',
   'package-lock.json',
+  'Gemfile',
+  'Gemfile.lock',
   'README.md'
 ]
 

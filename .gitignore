@@ -1,5 +1,8 @@
+.bundle/
 .publish/
 _site/
 node_modules/
 assets/
+vendor/
 package-lock.json
+Gemfile.lock

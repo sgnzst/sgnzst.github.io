@@ -1,5 +1,9 @@
 ## My Site Notes
 
+#### Install Depedencies
+- `npm install` for install node depedencies
+- `bundle install` for install bundle depedencies
+
 #### Jekyll Mode
 - `export JEKYLL_ENV=development` for mode development
 - `export JEKYLL_ENV=production` for mode production
@@ -19,4 +23,4 @@
 
 
 #### How to run server in local for development
-run `npm start` or `jekyll server --host=[IP ADDR]`
+run `npm start` or `bundle exec jekyll server --host=[IP ADDR]`
