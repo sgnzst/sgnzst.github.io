@@ -83,7 +83,6 @@ const imagemin = () => {
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll)
 
 const deploy = () => {
-	build()
 	return gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
 }
 
