@@ -12,8 +12,8 @@ const
 	cp = require('child_process')
 
 let
-	jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll',
-	jekyllOption = ['build']
+	bundleCommand = 'bundle',
+	jekyllOption = ['exec', 'jekyll', 'build']
 
 const app = {
 	sass: {
@@ -40,11 +40,11 @@ const app = {
 }
 
 const jekyll = done => {
-	return cp.spawn(jekyllCommand, jekyllOption, {stdio: 'inherit'}).on('close', done)
+	return cp.spawn(bundleCommand, jekyllOption, {stdio: 'inherit'}).on('close', done)
 }
 
 const jekyllRebuild = () => {
-	jekyllOption = ['build']
+	jekyllOption = ['exec', 'jekyll', 'build']
 	return jekyll
 }
 
@@ -88,7 +88,7 @@ const deploy = () => {
 }
 
 const watch = () => {
-	jekyllOption = ['server', '--host=0.0.0.0']
+	jekyllOption = ['exec', 'jekyll', 'server', '--host=0.0.0.0']
 	build()
 	gulp.watch(app.sass.src, sass)
 	gulp.watch(app.script.src, script)
