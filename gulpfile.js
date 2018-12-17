@@ -82,12 +82,10 @@ const imagemin = () => {
 
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll)
 
-const deploy = () => {
-	return gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
-}
+const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
 
 const watch = () => {
-	jekyllOption = ['exec', 'jekyll', 'server', '--host=0.0.0.0']
+	jekyllOption = ['exec', 'jekyll', 'server']
 	build()
 	gulp.watch(app.sass.src, sass)
 	gulp.watch(app.script.src, script)
