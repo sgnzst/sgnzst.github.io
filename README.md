@@ -1,5 +1,10 @@
 ## My Site Notes
 
+#### Required in System
+1. [NodeJS](https://nodejs.org/en/download/) 
+2. [Ruby](https://www.ruby-lang.org/en/downloads/) 
+3. [Bundler](https://bundler.io/) 
+
 #### Install Depedencies
 - `npm install` for install node depedencies
 - `bundle install` for install bundle depedencies
