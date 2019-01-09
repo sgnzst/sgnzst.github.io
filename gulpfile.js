@@ -8,7 +8,7 @@ const
 	gorder = require('gulp-order'),
 	gimagemin = require('gulp-imagemin'),
 	gbabel = require('gulp-babel'),
-	gdeploy = require('gulp-gh-pages'),
+	gdeploy = require('gulp-gh-pages-will'),
 	cp = require('child_process')
 
 let
@@ -82,7 +82,7 @@ const imagemin = () => {
 
 const build = gulp.series(gulp.parallel(sass, script, imagemin), jekyll)
 
-const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master'}))
+const deploy = () => gulp.src('_site/**/*').pipe(gdeploy({branch: 'master', force: true}))
 
 const watch = () => {
 	jekyllOption = ['exec', 'jekyll', 'server']
