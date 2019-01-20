@@ -63,7 +63,7 @@
     }, 250)
   })
 
-  if(performance.navigation.type == 2){
+  window.onpopstate = function() {
     swal.close()
   }
 
