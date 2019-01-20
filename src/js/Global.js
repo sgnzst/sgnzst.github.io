@@ -5,6 +5,7 @@ function documentLoad(e, that){
   $("#open").show()
   $("#search").show()
   $("#close").hide()
+  $('body').addClass('in-loading')
   $('.preloader-container').fadeIn('fast')
   setTimeout(() => { window.location.href = link }, 750)
 }
@@ -12,5 +13,6 @@ function documentLoad(e, that){
 window.onpageshow = event => {
   if (event.persisted && $('.preloader-container').css('display') !== 'none') {
     $('.preloader-container').fadeOut('slow')
+    $('body').removeClass('in-loading')
   }
 }
