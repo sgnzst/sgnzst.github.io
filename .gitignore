@@ -3,6 +3,9 @@
 .publish/
 _site/
 node_modules/
-assets/
+/assets/*
+!/assets/icons
+!/assets/manifest.json
+*.directory
 package-lock.json
 Gemfile.lock

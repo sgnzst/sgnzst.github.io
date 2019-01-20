@@ -1,4 +1,5 @@
 # Site settings
+name: Sutanlab
 title: Sutan Nst. - Coder
 description: A blog and journal about Sutan Nst, Junior Developer
 baseurl: "" # the subpath
