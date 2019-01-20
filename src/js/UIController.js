@@ -53,7 +53,6 @@
   $(".document-load").on("click", documentLoad)
 
   $(window).on('load', function() {
-    swal.close()
     setTimeout(function() {
       $('.preloader-container').fadeOut('slow')
       $('body').removeClass('in-loading')

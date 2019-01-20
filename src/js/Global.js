@@ -12,3 +12,7 @@ function documentLoad(e, that){
     window.location.href = link
   }, 750)
 }
+
+window.onhashchange = function() {
+  location.reload(true)
+}
