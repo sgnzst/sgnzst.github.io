@@ -15,5 +15,5 @@ function documentLoad(e, that){
 }
 
 window.onpageshow = event => {
-  if (event.persisted) window.location.reload()
+  if (event.persisted && swal.getState().isOpen) swal.close()
 }
