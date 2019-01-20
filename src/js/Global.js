@@ -13,3 +13,7 @@ function documentLoad(e, that){
   })
   setTimeout(() => { window.location.href = link }, 750)
 }
+
+window.onpageshow = event => {
+  if (event.persisted) window.location.reload()
+}
