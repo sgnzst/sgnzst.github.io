@@ -1,6 +1,6 @@
 function paginateBlog(that, event) {
-  event.preventDefault();
-  var pageUrl = $(that).attr('href');
+  event.preventDefault()
+  let pageUrl = $(that).attr('href')
   $.ajax({
     method: 'GET',
     url: pageUrl,
@@ -12,28 +12,30 @@ function paginateBlog(that, event) {
         buttons: false,
         closeOnEsc: false,
         closeOnClickOutside: false
-      });
+      })
     }
-  }).done(response => {
-    var
+  })
+  .done(response => {
+    let
       htmlData = $(response).find('#content').html(),
-      title = $(response).filter('title').text();
-    swal.close();
-    $('#content').html(htmlData);
-    document.title = title;
-    window.history.pushState({html: htmlData, title: title}, title, pageUrl);
+      title = $(response).filter('title').text()
+    swal.close()
+    $('#content').html(htmlData)
+    document.title = title
+    window.history.pushState({html: htmlData, title: title}, title, pageUrl)
     window.onpopstate = event => {
       if(event.state){
-        $('#content').html(event.state.html);
-        document.title = event.state.title;
+        $('#content').html(event.state.html)
+        document.title = event.state.title
       }
-    };
-  }).fail((response, stats, xhr) => {
-    swal.close();
+    }
+  })
+  .fail((response, stats, xhr) => {
+    swal.close()
     swal({
       icon: "error",
       title: "Error",
       text: response.status+" "+xhr
-    });
-  });
+    })
+  })
 }
