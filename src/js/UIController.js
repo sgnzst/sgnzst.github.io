@@ -54,6 +54,7 @@
 
   $(window).on('load', function() {
     setTimeout(function() {
+      if (swal.getState().isOpen) swal.close()
       $('.preloader-container').fadeOut('slow')
       $('body').removeClass('in-loading')
       AOS.init({

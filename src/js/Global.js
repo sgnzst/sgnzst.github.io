@@ -9,10 +9,7 @@ function documentLoad(e, that){
     closeOnClickOutside: false
   })
   setTimeout(function(){
+    swal.close()
     window.location.href = link
   }, 750)
-}
-
-window.onhashchange = function() {
-  location.reload(true)
 }
