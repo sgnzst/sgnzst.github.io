@@ -5,15 +5,12 @@ function documentLoad(e, that){
   $("#open").show()
   $("#search").show()
   $("#close").hide()
-  swal({
-    icon: '/assets/img/tools/loading.gif',
-    text: "Sedang Proses...",
-    buttons: false,
-    closeOnEsc: false,
-  })
+  $('.preloader-container').fadeIn('fast')
   setTimeout(() => { window.location.href = link }, 750)
 }
 
 window.onpageshow = event => {
-  if (event.persisted && swal.getState().isOpen) swal.close()
+  if (event.persisted && $('.preloader-container').css('display') !== 'none') {
+    $('.preloader-container').fadeOut('slow')
+  }
 }
