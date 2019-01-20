@@ -63,4 +63,8 @@
     }, 250)
   })
 
+  if(performance.navigation.type == 2){
+    location.reload(true)
+  }
+
 })( $, window )
