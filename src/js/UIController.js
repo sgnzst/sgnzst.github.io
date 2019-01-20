@@ -53,6 +53,7 @@
   $(".document-load").on("click", documentLoad)
 
   $(window).on('load', function() {
+    swal.close()
     setTimeout(function() {
       $('.preloader-container').fadeOut('slow')
       $('body').removeClass('in-loading')
@@ -62,9 +63,5 @@
       })
     }, 250)
   })
-
-  window.onpopstate = function() {
-    swal.close()
-  }
 
 })( $, window )
