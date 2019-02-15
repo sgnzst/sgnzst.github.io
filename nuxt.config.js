@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name.charAt(0).toUpperCase() + pkg.name.slice(1),
+    title: pkg.name.charAt(0).toUpperCase() + pkg.name.substr(1),
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
