@@ -5,7 +5,14 @@ module.exports = {
 
   router: {
     mode: 'hash',
-    extendRoutes(routes, resolve) {}
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          path: '*',
+          redirect: '/'
+        }
+      )
+    }
   },
 
   /*

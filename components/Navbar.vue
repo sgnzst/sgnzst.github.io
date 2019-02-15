@@ -6,7 +6,14 @@
     <v-toolbar-title>Sutan Nst.</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
-      <v-btn v-for="(item, i) in items" :key="i" flat>{{ item.title }}</v-btn>
+      <v-btn v-for="(item, i) in items"
+        flat
+        :key="i"
+        :to="item.to"
+        :href="item.href"
+      >
+        {{ item.title }}
+      </v-btn>
     </v-toolbar-items>
     <v-toolbar-side-icon class="hidden-sm-and-up"></v-toolbar-side-icon>
   </v-toolbar>
@@ -16,9 +23,9 @@
 export default {
   data: () => ({
     items: [
-      { title: 'About' },
-      { title: 'Portofolio' },
-      { title: 'Blogs' },
+      { title: 'About', to: '/' },
+      { title: 'Portofolio', to: '/portofolio' },
+      { title: 'Blogs', href: '/blog' },
     ]
   })
 }
