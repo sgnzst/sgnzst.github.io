@@ -1,26 +1,27 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const pkg = require('./package')
 
 module.exports = {
   mode: 'spa',
+
+  router: {
+    mode: 'hash',
+    extendRoutes(routes, resolve) {}
+  },
 
   /*
   ** Headers of the page
   */
   head: {
-    title: pkg.name.charAt(0).toUpperCase() + pkg.name.substr(1),
+    title: 'Sutan Nst. - Coder',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Sutan Nst. Personal Homepage' },
+      { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
 
@@ -28,6 +29,14 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+
+  /* costumize manifest
+  **
+  */
+  manifest: {
+    name: 'Sutanlab',
+    short_name: 'Sutanlab'
+  },
 
   /*
   ** Global CSS
@@ -68,21 +77,21 @@ module.exports = {
       stylus: {
         import: ['~assets/style/variables.styl']
       }
-    },
+    }
 
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    // extend(config, ctx) {
+    //   // Run ESLint on save
+    //   if (ctx.isDev && ctx.isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/
+    //     })
+    //   }
+    // }
   }
 }

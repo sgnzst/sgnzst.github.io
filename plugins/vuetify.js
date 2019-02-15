@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import colors from 'vuetify/es5/util/colors'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#121212', // a color that is not in the material colors palette
-    accent: colors.grey.darken3,
-    secondary: colors.amber.darken3,
-    info: colors.teal.lighten1,
-    warning: colors.amber.base,
-    error: colors.deepOrange.accent4,
-    success: colors.green.accent3
+    primary: '#5E72E4', // a color that is not in the material colors palette
+    accent: '#954DE8', // #863DD1
+    secondary: '#9EA6E2',
+    info: '#11CDEF',
+    warning: '#FB6340',
+    error: '#F5365C',
+    success: '#2DCE89'
   }
 })
