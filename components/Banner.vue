@@ -1,14 +1,17 @@
 <template>
-  <v-carousel :height="Height" hide-controls>
+  <v-carousel hide-controls
+    :interval="Interval"
+    :height="Height"
+    :vertical="Vertical"
+  >
     <div id="banner-figure">
       <div class="row">
-        <h1 class="text-smooth text-shadow display-2 font-weight-thin mb-3"><b>Sutan Nst.</b></h1>
-        <h4 class="text-smooth text-shadow text-xs-center subheading">A Man who turns a cup of coffee into beautiful codes.</h4>
+        <h1 class="text-smooth text-shadow display-2 mb-3"><b>Sutan Nst.</b></h1>
+        <h2 class="text-smooth text-shadow text-xs-center font-weight-thin">A Man who turns a cup of coffee into beautiful codes.</h2>
       </div>
     </div>
     <v-carousel-item v-for="(carousel, i) in carousels" :key="i">
-      <v-parallax :height="Height" :src="carousel.src">
-      </v-parallax>
+      <v-parallax :height="Height" :src="carousel.src" />
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -16,7 +19,9 @@
 <script>
 export default {
   props: {
-    Height: Number
+    Interval: Number,
+    Height: Number,
+    Vertical: Boolean
   },
   data: () => ({
     carousels: [
@@ -28,13 +33,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.text-shadow {
-  text-shadow: 2px 2px 15px #000;
-}
-.text-smooth {
-  font-family: 'Courgette', cursive !important;
-}
+<style lang="scss" scoped>
 #banner-figure {
   position: absolute;
   display: flex;
