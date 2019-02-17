@@ -18,8 +18,6 @@ export default {
     items: [
       { title: 'About', icon: 'person', to: '/' },
       { title: 'Portofolio', icon: 'dashboard', to: '/portofolio' },
-      { title: 'Background', icon: 'timeline', to: '/background' },
-      { title: 'Skills', icon: 'star', to: '/skills' },
       { title: 'Achievements', icon: 'class', to: '/achievements' },
       { title: 'Contact', icon: 'phone', to: '/contact' },
     ]

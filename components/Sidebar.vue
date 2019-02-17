@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer :width="Width" right fixed temporary v-model="sidebar">
+  <v-navigation-drawer :class="Attr" :dark="Dark" :width="Width" right fixed temporary v-model="sidebar">
     <v-list class="pa-1">
       <v-list-tile>
         <v-list-tile-content>
@@ -35,7 +35,9 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
   props: {
-    Width: Number
+    Width: Number,
+    Attr: String,
+    Dark: Boolean
   },
   computed: {
     ...mapState({

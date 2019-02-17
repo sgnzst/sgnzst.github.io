@@ -1,5 +1,5 @@
 export default {
-  state: {
+  state: () => ({
     menu: [
       { title: 'Home', icon: 'home', target: '#banner-figure' },
       { title: 'Biodata', icon: 'person', target: '#nuxt-content' },
@@ -15,7 +15,7 @@ export default {
     sidebar: {
       visible: null
     }
-  },
+  }),
   mutations: {
     setSidebar(state, payload) {
       state.sidebar.visible = payload

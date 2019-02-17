@@ -8,7 +8,7 @@
         :href="item.href"
         @click="item.target ? $vuetify.goTo(item.target, scrollOptions) : null"
       >
-        <b class="text-shadow">
+        <b :class="itemClass">
           <v-icon>{{ item.icon }}</v-icon>
           &nbsp;{{ item.title }}
         </b>
@@ -30,7 +30,8 @@ export default {
     flat: true,
     height: 90,
     titleSize: 'display-1',
-    color: 'transparent'
+    color: 'transparent',
+    itemClass: 'text-shadow'
   }),
   computed: {
     ...mapState({
@@ -49,11 +50,13 @@ export default {
         this.flat = true
         this.height = 90
         this.titleSize = 'display-1'
+        this.itemClass = 'text-shadow'
       } else {
         this.color = this.Color
         this.flat = false
         this.height = this.Height
         this.titleSize = 'headline'
+        this.itemClass = null
       }
     }
   },
