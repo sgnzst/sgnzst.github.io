@@ -3,10 +3,10 @@
 import express from 'express'
 import consola from 'consola'
 import { Nuxt, Builder } from 'nuxt'
+import config from './nuxt.config'
 
 const app = express()
 
-const config = require('./nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 async function start(callback) {
