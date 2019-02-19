@@ -4,10 +4,12 @@
   "description": "My Personal Homepage",
   "author": "Sutan Nst.",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node -r esm server.js",
     "dev": "cross-env NODE_ENV=development nodemon -r esm server.js --watch server",
-    "build": "nuxt generate",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
     "publish": "push-dir --dir=dist --branch=master --cleanup",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"

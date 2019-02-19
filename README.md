@@ -1,22 +1,34 @@
-# Sutanlab Homepage
+# Sutanlab Homepage (On Going)
 
-> My Personal Homepage : https://sutanlab.js.org
+> My Personal Homepage & Blog site with NuxtJS : https://sutanlab.js.org
 
-## Build Setup
+### Required in System
+1. [NodeJS](https://nodejs.org/en/download/) 
 
+### Use make new post template
 ``` bash
-# install dependencies
-$ yarn install
+$ ./makepost -h # output instructions
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
+$ ./makepost -c {POST_TITLE} # create post
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
+$ ./makepost -d {POST_TITLE} # create draft post
 
-# generate static project
-$ yarn run generate
+$ ./makepost -p {POST_TITLE} # publish/promote a draft to a post
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+### Build setup
+``` bash
+$ npm install # install dependencies
+
+$ npm run dev # serve with hot reload at local server
+
+$ npm run build # build for production
+
+$ npm start # launch server for production
+
+$ npm run generate # generate static project
+
+$ npm run publish # publish static site to Github Pages
+```
+
+This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).

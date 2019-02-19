@@ -127,7 +127,7 @@ module.exports = {
         include: path.resolve(__dirname, 'contents'),
         options: {
           vue: {
-            root: 'content-markdown'
+            root: 'posts'
           }
         }
       })
