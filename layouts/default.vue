@@ -27,7 +27,7 @@ export default {
     Banner,
     Tab,
     Footer
-  }  
+  }
 }
 </script>
 
