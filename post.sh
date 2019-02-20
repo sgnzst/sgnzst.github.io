@@ -50,26 +50,20 @@ DRAFTPATH="${BINPATH}/contents/drafts"
 
 if [[ "${1}" == "-c" || "${1}" == "--create" ]]; then
     DIST_FOLDER="$POSTPATH"
-    FILE_NAME="${POST_NAME}.md"
-    # FILE_NAME="${CURRENT_DATE}-${POST_NAME}.md"
+    FILE_NAME="${POST_NAME}/index.md"
 fi
 
 if [[ "${1}" == "-d" || "${1}" == "--draft" ]]; then
     DIST_FOLDER="$DRAFTPATH"
-    FILE_NAME="${POST_NAME}.md"
+    FILE_NAME="${POST_NAME}/index.md"
 fi
 
 if [[ "${1}" == "-p" || "${1}" == "--publish" ]]; then
     DIST_FOLDER="$POSTPATH"
-    FILE_NAME="${POST_NAME}.md"
-    # FILE_NAME="${CURRENT_DATE}-${POST_NAME}.md"
+    FILE_NAME="${POST_NAME}/index.md"
 fi
 
-# Set your blog URL
-BLOG_URL="https://sutanlab.js.org/blog"
-
-# Set your assets URL
-ASSETS_URL="static/img/"
+ASSETS_PATH="/assets"
 # ----------------------------------------------------------------
 
 
@@ -111,7 +105,7 @@ cat <<EOT
 ------------------------------------------------------------------------------
 INIT POST - A shortcut to create an initial structure for my posts.
 ------------------------------------------------------------------------------
-Usage: ./makepost.sh [options] <post name>
+Usage: ./post.sh [options] <post name>
 Options:
   -h, --help        output instructions
   -c, --create      create post
@@ -119,7 +113,7 @@ Options:
   -p, --publish     publish/promote a draft to a post
 
 Example:
-  ./makepost.sh -c How to replace strings with sed
+  ./post.sh -c How to replace strings with sed
 Important Notes:
   - This script was created to generate new text files to my blog.
 Copyright (c) Vitor Britto './initpost.sh'
@@ -136,8 +130,7 @@ echo "---"
 echo "title: \"${POST_TITLE}\" <!-- For Html Title -->"
 echo "slug: \"${POST_TITLE}\""
 echo "date: ${CURRENT_DATE}"
-# echo "date: ${CURRENT_DATE} ${TIME}"
-echo "image: '/assets/img/blog/'"
+echo "image: '${ASSETS_PATH}/img/blog/${POST_NAME}/'"
 echo "description:"
 echo "tags:"
 echo "categories:"
@@ -151,7 +144,9 @@ echo "---"
 initpost_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating template..."
-        mkdir -p "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}"; initpost_content > "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"
+        mkdir -p "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}/${POST_NAME}"
+        mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
+        initpost_content > "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"
         e_success "Initial post successfully created!"
     else
         e_warning "File already exist."
@@ -164,7 +159,8 @@ initpost_file() {
 initdraft_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating draft template..."
-        mkdir -p "${DIST_FOLDER}"; initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
+        mkdir -p "${DIST_FOLDER}/${POST_NAME}"
+        initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
         e_success "Initial draft successfully created!"
     else
         e_warning "File already exist."
@@ -177,9 +173,11 @@ initdraft_file() {
 promote_draft() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Promoting draft..."
-        if [ -f "${DRAFTPATH}/${POST_NAME}.md" ]; then
-          if mkdir -p "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}" && mv "${DRAFTPATH}/${POST_NAME}.md" "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}-${POST_NAME}.md"; then
-              sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}-${POST_NAME}.md
+        if [ -f "${DRAFTPATH}/${FILE_NAME}" ]; then
+          if mkdir -p "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"; then
+              sed -i -e "s/date: .*/date: ${CURRENT_DATE}/" ${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}
+              mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
+              rm -rf "${DRAFTPATH}/${POST_NAME}"
               e_success "Draft promoted successfully!"
           else
               e_warning "File already exists or draft promotion failed."

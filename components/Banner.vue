@@ -1,13 +1,18 @@
 <template>
-  <v-carousel hide-controls
+  <v-carousel
+    hide-controls
     :interval="Interval"
     :height="Height"
     :vertical="Vertical"
   >
     <div id="banner-figure">
       <div class="row">
-        <h1 class="text-smooth text-shadow display-2 mb-3"><b>Sutan Nst.</b></h1>
-        <h2 class="text-smooth text-shadow text-xs-center font-weight-thin">A Man who turns a cup of coffee into beautiful codes.</h2>
+        <h1 class="text-smooth text-shadow display-2 mb-3">
+          <b>Sutan Nst.</b>
+        </h1>
+        <h2 class="text-smooth text-shadow text-xs-center font-weight-thin">
+          A Man who turns a cup of coffee into beautiful codes.
+        </h2>
       </div>
     </div>
     <v-carousel-item v-for="(carousel, i) in carousels" :key="i">
@@ -25,9 +30,9 @@ export default {
   },
   data: () => ({
     carousels: [
-      { src: 'https://sutanlab.js.org/blog/assets/img/bg/desk2.jpg' },
-      { src: 'https://sutanlab.js.org/blog/assets/img/bg/desk1.jpg' },
-      { src: 'https://sutanlab.js.org/blog/assets/img/bg/desk3.jpg' }
+      { src: 'https://sutanlab.js.org/assets/img/collections/desk2.jpg' },
+      { src: 'https://sutanlab.js.org/assets/img/collections/desk1.jpg' },
+      { src: 'https://sutanlab.js.org/assets/img/collections/desk3.jpg' }
     ]
   })
 }

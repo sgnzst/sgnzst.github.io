@@ -1,10 +1,10 @@
-const path = require('path')
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+import path from 'path'
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 
 const productionUrl = 'https://sutanlab.js/org'
 const appTitle = 'Sutan Nst. - Coder'
 
-module.exports = {
+export default {
   mode: 'spa',
 
   server: {
@@ -111,7 +111,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      // Run ESLint on save
+      // Run ESLint on save (disabled)
       // if (ctx.isDev && ctx.isClient) {
       //   config.module.rules.push({
       //     enforce: 'pre',
