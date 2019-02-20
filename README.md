@@ -5,15 +5,15 @@
 ### Required in System
 1. [NodeJS](https://nodejs.org/en/download/) 
 
-### Use make new post template
+### Use make post template
 ``` bash
-$ ./makepost -h # output instructions
+$ ./post -h # output instructions
 
-$ ./makepost -c {POST_TITLE} # create post
+$ ./post -c {POST_TITLE} # create post
 
-$ ./makepost -d {POST_TITLE} # create draft post
+$ ./post -d {POST_TITLE} # create draft post
 
-$ ./makepost -p {POST_TITLE} # publish/promote a draft to a post
+$ ./post -p {POST_TITLE} # publish/promote a draft to a post
 ```
 
 ### Build setup
