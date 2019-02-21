@@ -13,7 +13,6 @@ export default {
   },
 
   router: {
-    mode: 'hash',
     extendRoutes(routes, resolve) {
       routes.push(
         {

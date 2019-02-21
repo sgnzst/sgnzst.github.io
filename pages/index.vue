@@ -4,7 +4,7 @@
       <v-flex xs12 class="text-xs-center">
         <h1 class="text-smooth display-2 font-weight-bold">About</h1>
         <v-avatar class="my-4" size="avatarSize">
-          <img src="https://sutanlab.js.org/blog/assets/img/sutan.jpeg" alt="Sutan Nst.">
+          <img src="/assets/img/collections/sutan.jpeg" alt="Sutan Nst.">
         </v-avatar>
       </v-flex>
       <v-layout justify-center align-center>
