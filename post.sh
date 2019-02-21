@@ -125,19 +125,17 @@ EOT
 
 # Initial Content
 initpost_content() {
-
-echo "---"
-echo "title: \"${POST_TITLE}\" <!-- For Html Title -->"
-echo "slug: \"${POST_TITLE}\""
-echo "date: ${CURRENT_DATE}"
-echo "image: '${ASSETS_PATH}/img/blog/${POST_NAME}/'"
-echo "description:"
-echo "tags:"
-echo "categories:"
-echo "twitter_text:"
-echo "minute2read:"
-echo "---"
-
+    echo "---"
+    echo "title: '${POST_TITLE} (HTML TITLE)'"
+    echo "slug: '${POST_TITLE}'"
+    echo "date: ${CURRENT_DATE} ${TIME}"
+    echo "image: '${ASSETS_PATH}/img/blog/${POST_NAME}/'"
+    echo "description:"
+    echo "tags:"
+    echo "categories:"
+    echo "twitter_text:"
+    echo "minute2read:"
+    echo "---"
 }
 
 # Create post
@@ -175,7 +173,7 @@ promote_draft() {
         e_header "Promoting draft..."
         if [ -f "${DRAFTPATH}/${FILE_NAME}" ]; then
           if mkdir -p "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"; then
-              sed -i -e "s/date: .*/date: ${CURRENT_DATE}/" ${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}
+              sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}
               mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
               rm -rf "${DRAFTPATH}/${POST_NAME}"
               e_success "Draft promoted successfully!"

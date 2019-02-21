@@ -16,6 +16,7 @@
       <v-divider />
       <v-list-tile v-for="(item, i) in items"
         :key="i"
+        :to="item.to"
         :href="item.href"
         @click="item.target ? move(item.target) : null"
       >

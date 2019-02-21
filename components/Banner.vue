@@ -30,9 +30,9 @@ export default {
   },
   data: () => ({
     carousels: [
-      { src: 'https://sutanlab.js.org/assets/img/collections/desk2.jpg' },
-      { src: 'https://sutanlab.js.org/assets/img/collections/desk1.jpg' },
-      { src: 'https://sutanlab.js.org/assets/img/collections/desk3.jpg' }
+      { src: '/assets/img/collections/desk2.jpg' },
+      { src: '/assets/img/collections/desk1.jpg' },
+      { src: '/assets/img/collections/desk3.jpg' }
     ]
   })
 }

@@ -1,9 +1,8 @@
 export default {
   state: () => ({
     menu: [
-      { title: 'Home', icon: 'home', target: '#banner-figure' },
-      { title: 'Biodata', icon: 'person', target: '#nuxt-content' },
-      { title: 'Blogs', icon: 'chrome_reader_mode', href: '/blog' }
+      { title: 'Home', icon: 'home', to: '/' },
+      { title: 'Blogs', icon: 'chrome_reader_mode', to: '/blog' }
     ],
     scroll: {
       options: {
@@ -17,13 +16,13 @@ export default {
     }
   }),
   mutations: {
-    setSidebar(state, payload) {
-      state.sidebar.visible = payload
+    setSidebar(state, value) {
+      state.sidebar.visible = value
     },
-    setScrollOptions(state, payload) {
-      state.scroll.options.duration = payload.duration || state.scroll.options.duration
-      state.scroll.options.offset = payload.offset || state.scroll.options.offset
-      state.scroll.options.easing = payload.easing || state.scroll.options.easing
+    setScrollOptions(state, opt) {
+      state.scroll.options.duration = opt.duration || state.scroll.options.duration
+      state.scroll.options.offset = opt.offset || state.scroll.options.offset
+      state.scroll.options.easing = opt.easing || state.scroll.options.easing
     }
   }
 }

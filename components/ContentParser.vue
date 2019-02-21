@@ -1,4 +1,7 @@
 <script>
+import Highlight from 'highlight.js'
+import 'highlight.js/styles/dracula.css'
+
 export default {
   props: {
     renderFn: {
@@ -10,13 +13,17 @@ export default {
       default: ''
     }
   },
-  created: function () {
+  created() {
     this.templateRender = new Function(this.renderFn)()
     this.$options.staticRenderFns = new Function(this.staticRenderFn)()
   },
-  render: function (createElement) {
+  mounted () {
+    Highlight.initHighlightingOnLoad()
+  },
+  render(createElement) {
     return this.templateRender ? this.templateRender() : createElement('div', 'Rendering')
   }
+
 }
 </script>
 

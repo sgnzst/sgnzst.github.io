@@ -1,15 +1,13 @@
 <template>
   <v-app>
-    <main>
-      <Navbar :Height="55" Color="primary" />
-      <Sidebar Attr="blue lighten-1" Dark :Width="250" />
-      <Banner :Height="600" :Interval="5000" />
-      <Tab Color="accent" SliderColor="info" />
-      <v-fade-transition mode="out-in">
-        <Nuxt id="nuxt-content" />
-      </v-fade-transition>
-      <Footer Color="default" />
-    </main>
+    <Navbar :Height="55" Color="primary" />
+    <Sidebar Attr="blue lighten-1" Dark :Width="250" />
+    <Banner :Height="600" :Interval="5000" />
+    <Tab Color="accent" SliderColor="info" />
+    <v-fade-transition mode="out-in">
+      <Nuxt id="nuxt-content" />
+    </v-fade-transition>
+    <Footer Color="default" />
   </v-app>
 </template>
 

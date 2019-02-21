@@ -1,14 +1,24 @@
 <template>
-  <v-toolbar id="nav" app fixed :flat="flat" dark :height="height" :color="color">
-    <v-toolbar-title id="nav-title" :class="'text-smooth '+titleSize"><b>Sutanlab</b></v-toolbar-title>
+  <v-toolbar 
+    id="nav"
+    dark
+    app
+    fixed
+    :flat="!PermHeight ? flat : false" 
+    :height="PermHeight || height" 
+    :color="PermColor || color"
+  >
+    <v-toolbar-title id="nav-title" :class="`text-smooth ${PermHeight ? 'headline' : titleSize}`"><b>Sutanlab</b></v-toolbar-title>
     <v-spacer />
     <v-toolbar-items class="hidden-xs-only">
       <v-btn flat v-for="(item, i) in items"
         :key="i"
+        :ripple="false"
+        :to="item.to"
         :href="item.href"
         @click="item.target ? $vuetify.goTo(item.target, scrollOptions) : null"
       >
-        <b :class="itemClass">
+        <b :class="PermColor ? null : itemClass">
           <v-icon>{{ item.icon }}</v-icon>
           &nbsp;{{ item.title }}
         </b>
@@ -24,7 +34,9 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   props: {
     Height: Number,
-    Color: String 
+    Color: String,
+    PermHeight: Number,
+    PermColor: String
   },
   data: () => ({
     flat: true,
@@ -61,10 +73,12 @@ export default {
     }
   },
   beforeMount () {
-    window.addEventListener('scroll', this.onScroll)
+    if (!(this.PermHeight && this.PermColor)){
+      window.addEventListener('scroll', this.onScroll)
+    }
   },
   beforeDestroy () {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('scroll', this.scroll)
   }
 }
 </script>
