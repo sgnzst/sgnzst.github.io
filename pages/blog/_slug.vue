@@ -34,15 +34,10 @@ export default {
   },
   async asyncData ({ params, store }) {
     const content = await import(`~/contents/posts/${params.slug}/index.md`)
-    const attr = content.attributes
     return {
       meta: {
         params: params,
-        title: attr.title,
-        slug: attr.slug,
-        date: attr.date,
-        minute2read: attr.minute2read,
-        description: attr.description
+        ...content.attributes
       },
       renderFn: content.vue.render,
       staticRenderFn: content.vue.staticRenderFns
