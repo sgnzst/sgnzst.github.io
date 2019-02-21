@@ -9,7 +9,7 @@ tags:
   - php
 categories: Programming
 twitter_text:
-minute2read:
+minute2read: 4
 ---
 
 Pada tahun 1995, PHP muncul sebagai salah satu bahasa scripting server-side yang paling terkenal yang dirancang dan dikembangkan untuk pengembangan situs web.

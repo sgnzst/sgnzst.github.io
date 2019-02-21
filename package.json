@@ -1,7 +1,7 @@
 {
   "name": "sutanlab",
   "version": "1.0.0",
-  "description": "My Personal Homepage",
+  "description": "Sutan Nst. Personal Homepage",
   "author": "Sutan Nst.",
   "private": true,
   "main": "server.js",

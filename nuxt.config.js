@@ -1,5 +1,6 @@
 import path from 'path'
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import pkg from './package.json'
 
 const productionUrl = 'https://sutanlab.js/org'
 const appTitle = 'Sutan Nst. - Coder'
@@ -31,14 +32,31 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Sutan Nst. Personal Homepage' },
+      { hid: 'title', name: 'title', content: appTitle },
+      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'keywords', name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
+      { hid: 'theme-color', name: 'theme-color', content: '#304165' },
+      { hid: 'og:image', property: 'og:image', content: '/icon.png' },
+      { hid: 'og:title', property: 'og:title', content: `${appTitle}` },
+      { hid: 'og:description', property: 'og:description', content: pkg.description },
+      { hid: 'og:site_name', property: 'og:site_name', content: appTitle },
+      { hid: 'og:url', property: 'og:url', content: productionUrl },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icon.png' },
+      { hid: 'twitter:title', name: 'twitter:title', content: `${appTitle}` },
+      { hid: 'twitter:description', name: 'twitter:description', content: pkg.description },
+      { hid: 'twitter:url', name: 'twitter:url', content: productionUrl },
       { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette|Material+Icons' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/brands.css' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css' }
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css' },
+      { rel: 'stylesheet', href: 'https://afeld.github.io/emoji-css/emoji.css' }
+    ],
+    noscript: [
+      { innerHTML: 'This website requires JavaScript.', body: true }
     ]
   },
 

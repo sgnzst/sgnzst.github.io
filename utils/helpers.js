@@ -6,7 +6,7 @@ export default {
       'en-EN',
       { day: 'numeric', month: 'long', year: 'numeric' }
     ].filter(Boolean)
-    return date.toLocaleDateString(...args)
+    return `${date.toLocaleDateString(...args)}`
   },
   formatReadingTime(minutes) {
     const cups = Math.round(minutes / 5)

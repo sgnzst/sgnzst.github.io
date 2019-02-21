@@ -7,10 +7,9 @@ description: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POL
 tags:
   - itpolsri
   - developer
-categories: 
-  - My Life Story
+categories: 'My Life Story'
 twitter_text: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POLSRI - Sutan Nst'
-minute2read: 
+minute2read: 7
 ---
 
 Saat itu, kami sedang mengikuti pelajaran Multimedia di kelas dan kebetulan masih ada dosen yang sedang mengajar disana. Tiba - tiba datanglah rombongan mahasiswa dari jurusan MI (Manajemen Informatika) untuk membagi tau bahwa dalam dekat ini akan ada festival tahunan yang selalu diselenggarakan oleh jurusan mereka. Ya, festival itu bernama `IT FEST`. Singkat cerita mereka menjelaskan event - eventnya. lalu kemudian kami tertarik dengan salah satu event mereka, yaitu Lomba `Web Programming`.

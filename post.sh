@@ -142,9 +142,9 @@ initpost_content() {
 initpost_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating template..."
-        mkdir -p "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}/${POST_NAME}"
+        mkdir -p "${DIST_FOLDER}/${POST_NAME}"
         mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
-        initpost_content > "${DIST_FOLDER}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"
+        initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
         e_success "Initial post successfully created!"
     else
         e_warning "File already exist."
@@ -172,8 +172,8 @@ promote_draft() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Promoting draft..."
         if [ -f "${DRAFTPATH}/${FILE_NAME}" ]; then
-          if mkdir -p "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}"; then
-              sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${CURRENT_YEAR}/${CURRENT_MONTH}/${FILE_NAME}
+          if mkdir -p "${POSTPATH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${FILE_NAME}"; then
+              sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${FILE_NAME}
               mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
               rm -rf "${DRAFTPATH}/${POST_NAME}"
               e_success "Draft promoted successfully!"

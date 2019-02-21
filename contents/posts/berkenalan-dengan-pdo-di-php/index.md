@@ -6,10 +6,9 @@ image: '/assets/img/blog/berkenalan-dengan-pdo-di-php/'
 description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
 tags: 
   - php
-categories: 
-  - Belajar PHP - PDO
+categories: 'Programming'
 twitter_text:
-minute2read:
+minute2read: 5
 ---
 
 ## Apa itu PDO ?
