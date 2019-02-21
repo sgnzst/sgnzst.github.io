@@ -1,12 +1,12 @@
 ---
 title: 'Berkenalan Dengan PDO di PHP'
 slug: 'berkenalan-dengan-pdo-di-php'
-date: 2018-10-26 15:29:02
-image: '/assets/img/blog/berkenalan-dengan-pdo-di-php/'
+date: 2018-10-26 15:29:02 
 description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
 tags: 
   - php
 categories: 'Programming'
+image:
 twitter_text:
 minute2read: 5
 ---

@@ -2,12 +2,12 @@
 title: 'Apakah PHP akan mati ?'
 slug: 'apakah-php-akan-mati'
 date: 2018-10-14 02:19:15
-image: '/assets/img/blog/apakah-php-akan-mati/'
 description: 'Banyak yang bilang bahasa scripting PHP akan mati dalam waktu dekat karena banyak programmer dan Developer yang sudah mulai meninggalkannya.'
 tags: 
   - web
   - php
 categories: Programming
+image:
 twitter_text:
 minute2read: 4
 ---

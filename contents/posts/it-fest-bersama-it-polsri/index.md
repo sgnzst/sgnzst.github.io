@@ -2,12 +2,12 @@
 title: 'IT FESTIVAL bersama IT POLSRI'
 slug: 'it-fest-bersama-it-polsri'
 date: 2018-11-22 01:54:46
-image: '/assets/img/blog/it-fest-bersama-it-polsri/3.jpeg'
 description: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POLSRI'
 tags:
   - itpolsri
   - developer
 categories: 'My Life Story'
+image: '/assets/img/blog/it-fest-bersama-it-polsri/3.jpeg'
 twitter_text: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POLSRI - Sutan Nst'
 minute2read: 7
 ---

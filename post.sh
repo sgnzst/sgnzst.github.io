@@ -129,10 +129,10 @@ initpost_content() {
     echo "title: '${POST_TITLE} (HTML TITLE)'"
     echo "slug: '${POST_TITLE}'"
     echo "date: ${CURRENT_DATE} ${TIME}"
-    echo "image: '${ASSETS_PATH}/img/blog/${POST_NAME}/'"
     echo "description:"
     echo "tags:"
     echo "categories:"
+    echo "image:"
     echo "twitter_text:"
     echo "minute2read:"
     echo "---"
@@ -143,7 +143,7 @@ initpost_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating template..."
         mkdir -p "${DIST_FOLDER}/${POST_NAME}"
-        mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
+        # mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
         initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
         e_success "Initial post successfully created!"
     else
@@ -174,7 +174,7 @@ promote_draft() {
         if [ -f "${DRAFTPATH}/${FILE_NAME}" ]; then
           if mkdir -p "${POSTPATH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${FILE_NAME}"; then
               sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${FILE_NAME}
-              mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
+              # mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
               rm -rf "${DRAFTPATH}/${POST_NAME}"
               e_success "Draft promoted successfully!"
           else
