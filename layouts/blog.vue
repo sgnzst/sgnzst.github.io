@@ -3,9 +3,9 @@
     <Navbar :PermHeight="55" PermColor="primary" />
     <Sidebar Attr="blue lighten-1" Dark :Width="250" />
     <v-content>
-      <v-fade-transition mode="out-in">
+      <v-slide-y-reverse-transition mode="out-in">
         <Nuxt id="nuxt-content" />
-      </v-fade-transition>
+      </v-slide-y-reverse-transition>
       <Footer Color="default" />
     </v-content>
   </v-app>

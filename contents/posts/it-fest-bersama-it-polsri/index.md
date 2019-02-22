@@ -56,16 +56,16 @@ Hah, mendengar suara itu Aku dan Irvan saling menoleh. Perasaan bingung bermuncu
 
 Setelah pemberian hadiah dan trophy, kami berfoto foto dan bersalam salaman dengan panitia acaranya.
 
-<p style="overflow: hidden;"><img src="/assets/img/blog/it-fest-bersama-itpolsri/4.jpeg" alt="Saat Aku di panggung" /></p>
-<p style="text-align: center">Aku saat dipanggung, Btw aku yang berkacamata, hehe <i class="em em-nerd_face"></i>.</p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/4.jpeg" alt="Saat Aku di panggung" /></p>
+<p class="text-xs-center">Aku saat dipanggung, Btw aku yang berkacamata, hehe <i class="em em-nerd_face"></i>.</p>
 
 Akhirnya kami pun turun dari panggung. Perasaan bangga serta shock menjadi satu saat menuruni panggung. Lalu setelah itu, aku dan timku berfoto - foto untuk mendokumentasi kemenangan ini. Benar - benar moment kebanggaan `IT Polsri` yang tidak terlupakan, <del>Lebay lu</del>.
 
-<p style="overflow: hidden;"><img src="/assets/img/blog/it-fest-bersama-itpolsri/1.jpeg" alt="Irvan and Me" /></p>
-<p style="text-align: center">Aku dan Kelaborasiku, Irvan</p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/1.jpeg" alt="Irvan and Me" /></p>
+<p class="text-xs-center">Aku dan Kelaborasiku, Irvan</p>
 
-<p style="overflow: hidden;"><img src="/assets/img/blog/it-fest-bersama-itpolsri/2.jpeg" alt="IT Polsri" /></p>
-<p style="text-align: center">Eh, belom siap nih. Bingung siapa yang megang trophy wkwk <i class="em em-laughing"></i></p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/2.jpeg" alt="IT Polsri" /></p>
+<p class="text-xs-center">Eh, belom siap nih. Bingung siapa yang megang trophy wkwk <i class="em em-laughing"></i></p>
 
-<p style="overflow: hidden;"><img src="/assets/img/blog/it-fest-bersama-itpolsri/3.jpeg" alt="IT Polsri" /></p>
-<p style="text-align: center"><b>We &lt;/&gt; with <i class="em em-heart"></i>. We are `IT Polsri` ! <i class="em em-sunglasses"></i></b></p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/3.jpeg" alt="IT Polsri" /></p>
+<p class="text-xs-center"><b>We &lt;/&gt; with <i class="em em-heart"></i>. We are `IT Polsri` ! <i class="em em-sunglasses"></i></b></p>

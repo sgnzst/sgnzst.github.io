@@ -5,10 +5,9 @@
         <v-img
           class="white--text grey lighten-1"
           height="200px"
-          aspect-ratio="0.5"
-          :lazy-src="blog.image"
-          :src="blog.image"
-          @error="defaultImgSrc(i)"
+          aspect-ratio="0.35"
+          :lazy-src="blog.image || defaultImgSrc(i)"
+          :src="blog.image || defaultImgSrc(i)"
         >
           <v-container fill-height fluid>
             <v-layout fill-height>

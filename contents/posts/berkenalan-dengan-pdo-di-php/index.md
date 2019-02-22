@@ -20,7 +20,7 @@ Kondisi ini berbeda jika menggunakan mysql extension atau mysqli extension. Kedu
 
 Secara teknis, apabila menggunakan mysql atau mysqli extension, PHP langsung berhubungan dengan MySQL Server, tetapi jika menggunakan PDO, ia tidak berhubungan langsung dengan database, tetapi hanya sebagai “interface”. Konsep PDO ini dapat digambarkan sebagai berikut:
 
-<p style="overflow-x: hidden;"><img src="https://s3.amazonaws.com/nettuts/693_pdo/pdo-to-db.png" alt="PDO-to-DB" /></p>
+<p class="text-xs-center"><img src="https://s3.amazonaws.com/nettuts/693_pdo/pdo-to-db.png" alt="PDO-to-DB" /></p>
 <p style="text-align: center">PDO mengakses Database dengan DB Driver</p>
 
 PDO bekerja dengan metode yang disebut “data-access abstraction layer”. Artinya, apapun jenis database server yang digunakan, kode PHP yang ditulis akan tetap sama. PDO menyediakan “abstraction layer” untuk berkomunikasi dengan database server.
@@ -49,37 +49,33 @@ Dapat dilihat bahwa PDO mendukung banyak aplikasi database populer seperti: Orac
 
 Akan tetapi, semua driver ini belum tentu tersedia di sistem kamu. Inilah cara untuk mengetahui driver yang sudah terinstall di sistem kamu :
 
-{%- highlight php -%}
-<?php
-  print_r(PDO::getAvailableDrivers());
-?>
-{%- endhighlight -%}
+```php
+print_r(PDO::getAvailableDrivers());
+```
 
 Jika Database Driver yang kamu inginkan belum terinstall di sistem kamu, maka kamu harus menginstallnya terlebih dahulu.
 
 ## Membuat Koneksi dengan PDO
 Database yang berbeda memiliki metode koneksi yang sedikit berbeda. Di bawah ini adalah contoh dari beberapa metode untuk terhubung ke database.
 
-{%- highlight php -%}
-<?php
-  try {
-    # MS SQL Server
-    $dbh = new PDO("sqlsrv:server={$host};database={$dbname}", $user, $pass);
+```php
+try {
+  # MS SQL Server
+  $dbh = new PDO("sqlsrv:server={$host};database={$dbname}", $user, $pass);
 
-    # MySQL
-    $dbh = new PDO("mysql:host={$host};dbname={$dbname}", $user, $pass);
+  # MySQL
+  $dbh = new PDO("mysql:host={$host};dbname={$dbname}", $user, $pass);
 
-    # SQLite
-    $dbh = new PDO("sqlite:path/database/database.db");
+  # SQLite
+  $dbh = new PDO("sqlite:path/database/database.db");
 
-    # Menampilan pesan error jika terjadi exception saat mengakses Database.
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }
-  catch(PDOException $e) {
-    die($e->getMessage());
-  }
-?>
-{%- endhighlight -%}
+  # Menampilan pesan error jika terjadi exception saat mengakses Database.
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e) {
+  die($e->getMessage());
+}
+```
 
 Kamu harus selalu membungkus operasi PDO di dalam blok **try - catch**, dan gunakan mekanisme exception untuk menampilkan error saat terjadi kesalahan pada mengakses database. [Pelajari lebih lanjut tentang PDO Exception](http://php.net/manual/en/class.pdoexception.php)
 
@@ -89,11 +85,9 @@ Argumen dari constructor PDO terdiri dari 3 bagian, bagian pertama berisi nama d
 
 Setelah membuat koneksi PDO, untuk menghapus koneksi kita tinggal memberikan nilai *“null”* kepada variabel *“Database Handler”* sebagai berikut:
 
-{%- highlight php -%}
-<?php
-  $dbh = null;
-?>
-{%- endhighlight -%}
+```php
+$dbh = null;
+```
 
 Kita harus selalu menutup / menghapus koneksi Database setiap sudah menjalankan query.
 
