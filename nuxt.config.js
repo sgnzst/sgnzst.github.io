@@ -1,9 +1,28 @@
 import path from 'path'
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package.json'
+import Contents from './contents'
 
 const productionUrl = 'https://sutanlab.js/org'
 const appTitle = 'Sutan Nst. - Coder'
+
+const routes = Contents.map((item) => {
+  item = `/blog/${item.name}`
+  return item
+})
+
+const routesSitemap = () => {
+  const res = []
+  routes.forEach((el) => {
+    const item = {}
+    item.url = el + '/'
+    item.changefreq = 'daily'
+    item.priority = 1
+    item.lastmodISO = String(new Date().toISOString())
+    res.push(item)
+  })
+  return res
+}
 
 export default {
   mode: 'spa',
@@ -21,6 +40,22 @@ export default {
           redirect: '/'
         }
       )
+    },
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition
+      } else {
+        let position = {}
+        if (to.matched.length < 2) {
+          position = { x: 0, y: 0 }
+        } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+          position = { x: 0, y: 0 }
+        }
+        if (to.hash) {
+          position = { selector: to.hash }
+        }
+        return position
+      }
     }
   },
 
@@ -60,12 +95,17 @@ export default {
     ]
   },
 
+  generate: {
+    routes
+  },
+
   sitemap: {
     path: '/sitemap.xml',
     hostname: productionUrl,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: true
+    generate: true,
+    routes: routesSitemap()
   },
 
   /*

@@ -16,7 +16,7 @@ export default {
     this.templateRender = new Function(this.renderFn)()
     this.$options.staticRenderFns = new Function(this.staticRenderFn)()
   },
-  beforeMount () {
+  mounted() {
     Highlight.initHighlightingOnLoad()
   },
   render(createElement) {
