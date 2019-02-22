@@ -17,7 +17,9 @@ export default {
     this.$options.staticRenderFns = new Function(this.staticRenderFn)()
   },
   mounted() {
-    Highlight.initHighlightingOnLoad()
+    for (const element of document.querySelectorAll('pre code')) {
+      Highlight.highlightBlock(element)
+    }
   },
   render(createElement) {
     return this.templateRender ? this.templateRender() : createElement('div', 'Rendering')

@@ -6,42 +6,22 @@
           :render-fn="renderFn"
           :static-render-fn="staticRenderFn" />
       </div>
-      <v-card class="comments default white--text pa-2">
-        <div class="my-1" id="disqus_thread"></div>
-      </v-card>
+      <Disqus :Title="pageTitle" :Url="productionUrl" />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import ContentParser from '~/components/ContentParser'
+import Disqus from '~/components/Disqus'
 import { formatReadingTime } from '~/utils/helpers'
 
 export default {
   layout: 'blog',
-  components: { ContentParser },
-  data: () => ({
-    disqusLoaded: false
-  }),
+  components: { ContentParser, Disqus },
   computed: {
     pageTitle() { return `${this.meta.title} | Sutan Nst.` },
     productionUrl() { return `https://sutanlab.js.org/blog/${this.meta.slug}` }
-  },
-  methods: {
-    loadDisqus() {
-      this.disqusLoaded = true
-      const disqus_title = this.pageTitle
-      const disqus_url = this.productionUrl
-      const dsq = document.createElement('script') 
-      dsq.type = 'text/javascript' 
-      dsq.async = true 
-      dsq.src = 'https://sutanlab.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
-    },
-    onScrollDisqus() {
-      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
-        if (this.disqusLoaded === false) this.loadDisqus()
-      }
-    }
   },
   head() {
     return {
@@ -69,9 +49,6 @@ export default {
       renderFn: content.vue.render,
       staticRenderFn: content.vue.staticRenderFns
     }
-  },
-  beforeMount() {
-    window.onscroll = this.onScrollDisqus
   }
 }
 </script>
