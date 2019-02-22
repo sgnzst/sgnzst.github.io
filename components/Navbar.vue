@@ -12,11 +12,11 @@
     <v-spacer />
     <v-toolbar-items class="hidden-xs-only">
       <v-btn flat v-for="(item, i) in items"
+        aria-hidden="true"
         :key="i"
         :ripple="false"
         :to="item.to"
         :href="item.href"
-        @click="item.target ? $vuetify.goTo(item.target, scrollOptions) : null"
       >
         <b :class="PermColor ? null : itemClass">
           <v-icon>{{ item.icon }}</v-icon>
@@ -48,8 +48,7 @@ export default {
   computed: {
     ...mapState({
       items: state => state.menu,
-      sidebar: state => state.sidebar.visible,
-      scrollOptions: state => state.scroll.options
+      sidebar: state => state.sidebar.visible
     })
   },
   methods: {

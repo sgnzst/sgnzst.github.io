@@ -4,9 +4,11 @@
       <v-card-text>
         <v-btn v-for="(item, i) in socials" :key="i"
           :href="item.link"
+          icon
+          rel="noopener"
+          aria-label="Sutan Nst. social link"
           target="_blank"
           class="mx-3"
-          icon
         >
           <v-icon :color="item.color" size="24px">{{ item.icon }}</v-icon>
         </v-btn>

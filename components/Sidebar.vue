@@ -7,7 +7,7 @@
             MENU
           </v-list-tile-title>
         </v-list-tile-content>
-        <v-btn icon @click="toggle(false)">
+        <v-btn aria-hidden="true" icon @click="toggle(false)">
           <v-icon>close</v-icon>
         </v-btn>
       </v-list-tile>
@@ -15,10 +15,10 @@
     <v-list two-line class="pt-0" dense>
       <v-divider />
       <v-list-tile v-for="(item, i) in items"
+        aria-hidden="true"
         :key="i"
         :to="item.to"
         :href="item.href"
-        @click="item.target ? move(item.target) : null"
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
@@ -43,8 +43,7 @@ export default {
   computed: {
     ...mapState({
       items: state => state.menu,
-      visible: state => state.sidebar.visible,
-      scrollOptions: state => state.scroll.options
+      visible: state => state.sidebar.visible
     }),
     sidebar: {
       get(){ return this.visible },
@@ -54,11 +53,7 @@ export default {
   methods: {
     ...mapMutations({
       toggle: 'setSidebar'
-    }),
-    move(target){
-      this.toggle(false)
-      this.$vuetify.goTo(target, this.scrollOptions)
-    }
+    })
   }
 }
 </script>

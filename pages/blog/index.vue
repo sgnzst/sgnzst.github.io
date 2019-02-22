@@ -28,8 +28,8 @@
             <div class="grey--text caption">{{ formatReadingTime(blog.minute2read) }}</div><br>
             <div>{{ blog.description }}</div><br>
             <div>
-              <v-chip 
-                color="primary" 
+              <v-chip
+                color="primary"
                 text-color="white"
                 v-for="(tag, i) in blog.tags"
                 :key="i"
@@ -42,7 +42,13 @@
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn flat color="accent" :to="`/blog/${blog.slug}`">
+          <v-btn 
+            :to="`/blog/${blog.slug}`"
+            :ripple="false" 
+            :aria-label="`Read more about ${blog.title}`"
+            flat
+            color="accent"
+          >
             <v-icon>visibility</v-icon>
             &nbsp;Read More
           </v-btn>
