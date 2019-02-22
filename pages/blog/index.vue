@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center align-center>
     <v-flex xs12 sm10 md6>
-      <v-card class="ma-4" v-for="(blog, i) in blogs" :key="i">
+      <v-card class="blog-card ma-4" v-for="(blog, i) in blogs" :key="i">
         <v-img
           class="white--text grey lighten-1"
           height="200px"
@@ -12,7 +12,9 @@
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
-                <span class="title text-shadow font-weight-bold">{{ blog.title }}</span>
+                <nuxt-link class="blog-link white--text" :to="`/blog/${blog.slug}`">
+                  <span class="title text-shadow font-weight-bold">{{ blog.title }}</span>
+                </nuxt-link>
               </v-flex>
             </v-layout>
           </v-container>
@@ -22,7 +24,7 @@
         </v-img>
         <v-card-title>
           <div>
-            <div class="grey--text">
+            <div class="deep-purple--text">
               {{ formatPostDate(blog.date) }}
             </div>
             <div class="grey--text caption">{{ formatReadingTime(blog.minute2read) }}</div><br>
@@ -94,3 +96,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.blog-link {
+  transition: all ease-in-out .25s;
+  text-decoration: none;
+  &:hover {
+    color: lightblue !important;
+  }
+}
+.blog-card {
+  transition: transform ease-in-out .4s;
+  &:hover {
+    transform: scale(1.015);
+  }
+}
+</style>

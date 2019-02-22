@@ -8,7 +8,9 @@
     :height="PermHeight || height" 
     :color="PermColor || color"
   >
-    <v-toolbar-title id="nav-title" :class="`text-smooth ${PermHeight ? 'headline' : titleSize}`"><b>Sutanlab</b></v-toolbar-title>
+    <v-toolbar-title id="nav-title" :class="`text-smooth ${PermHeight ? 'headline' : titleSize}`">
+      <b>Sutanlab</b>
+    </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items class="hidden-xs-only">
       <v-btn flat v-for="(item, i) in items"
@@ -24,7 +26,7 @@
         </b>
       </v-btn>
     </v-toolbar-items>
-    <v-toolbar-side-icon class="hidden-sm-and-up" @click="setSidebar(!sidebar)" />
+    <v-toolbar-side-icon aria-label="menu" aria-hidden="true" class="hidden-sm-and-up" @click="setSidebar(!sidebar)" />
   </v-toolbar>
 </template>
 

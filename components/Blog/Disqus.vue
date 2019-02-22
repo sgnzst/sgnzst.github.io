@@ -1,3 +1,9 @@
+<template>
+  <v-layout justify-center align-center class="comments default lighten-2 white--text pa-3">
+    <v-flex xs12 md8 class="my-1" id="disqus_thread"></v-flex>
+  </v-layout>
+</template>
+
 <script>
 export default {
   props: {
@@ -7,16 +13,9 @@ export default {
   data: () => ({
     disqusLoaded: false
   }),
-  render() {
-    return (
-      <div class="comments default white--text pa-2">
-        <div class="my-1" id="disqus_thread"></div>
-      </div>
-    )
-  },
   methods: {
     onScrollDisqus() {
-      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 900)) {
         if (this.disqusLoaded === false) this.loadDisqus()
       }
     },

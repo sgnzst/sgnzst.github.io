@@ -111,8 +111,8 @@ export default {
   ** Customize the progress-bar color
   */
   loading: {
-    height: '5px',
-    color: '#fff'
+    height: '4px',
+    color: '#11CDEF'
   },
 
   /* costumize manifest
@@ -128,7 +128,8 @@ export default {
   */
   css: [
     '~/assets/style/app.styl',
-    '~/assets/style/highlight.scss'
+    '~/assets/style/highlight.scss',
+    '~/assets/style/global.scss'
   ],
 
   /*
@@ -146,7 +147,10 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-135036153-1'
+    }]
   ],
   /*
   ** Axios module configuration

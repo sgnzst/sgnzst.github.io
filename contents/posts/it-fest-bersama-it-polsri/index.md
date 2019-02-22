@@ -21,16 +21,16 @@ Lomba itu juga dibatasi bahwa peserta dilarang menggunakan Framework atau **CMS*
 ### Technical Meeting
 Sekian hari berlalu, saat itu bertepatan hari minggu `Technical Meeting` diselenggarakan di `Gramedia Pusat Palembang`. Disitulah kami melihat wajah para programmer yang menjadi saingan kami. Mereka dari berbagai jurusan bahkan ada dari universitas lain, yaitu **UNSRI**. Pada pelaksanaan TM, ada satu mahasiswa yang sepertinya sudah mahir kali di bidang `Web Programming`. Dia bertanya 'Boleh gak pake **Socket.io** ? **Redis** ?' dan masih banyak lagi. Sepertinya Tim dia ini bakal memakai teknologi canggih di aplikasinya. Sayangnya kami tidak tahu berasal dari mana mahasiswa yang banyak bertanya itu.
 
-Sekian waktu berlalu, akhirnya keputusan akhir panitia pada TM itu ialah membuat aplikasi web bertemakan `E-Learning` dalam jangka kurang dari 2 minggu dan dilarang menggunakan **FRAMEWORK BACKEND** seperti **Laravel**, **Codeigniter** dan sejenisnya. Disitu kami agak merasa sedikit legah karena masih ada kesempatan untuk menggunakan **Framework Frontend** untuk styling UI nya. Alhamdulillah, dengan waktu yang sangat singkat yaitu kurang dari dua minggu, mana mungkin kami mendesain UI dari awal pake **CSS** native wkwkw <i class="em em-laughing"></i>.
+Sekian waktu berlalu, akhirnya keputusan akhir panitia pada TM itu ialah membuat aplikasi web bertemakan `E-Learning` dalam jangka kurang dari 2 minggu dan dilarang menggunakan **FRAMEWORK BACKEND** seperti **Laravel**, **Codeigniter** dan sejenisnya. Disitu kami agak merasa sedikit legah karena masih ada kesempatan untuk menggunakan **Framework Frontend** untuk styling UI nya. Alhamdulillah, dengan waktu yang sangat singkat yaitu kurang dari dua minggu, mana mungkin kami mendesain UI dari awal pake **CSS** native wkwkw.
 
 ### Ngoding~
 Keesokan harinya kami ke Perpus untuk menyusun **stack - stack** apa saja yang kami gunakan untuk aplikasi kami. Saat itu sebenarnya belum ada bayangan untuk membuat aplikasi `E-Learning` yang seperti apa. Tapi pada saat itulah ada saja ide yang muncul akhirnya aku dan Irvan memutuskan untuk membuat aplikasi `Perpustakaan Online`. kemudian Arief dan Aji membuat aplikasi `Sekolah Online`. Singkat cerita, kami sudah selesai menyusun **stack** dan akhirnya mulai mengoding.
 
-Banyak tantangan dan percobaan yang kami lewati ketika membuat aplikasi `E-Learning` ini. Mulai dari menggunakan konsep arsitektur **MVC**, menyusun tabel yang penuh dengan relasi dan lainnya. Oh iya, pada Apikasi ini kami menggunakan framework buatan kami sendiri yaitu **Felis Database**. ya Framework kecil - kecil an yang berbasis **OOP dan PDO**, lumayan lah untuk menangani **CRUD** dasar pada database hehe <i class="em em-blush"></i>.
+Banyak tantangan dan percobaan yang kami lewati ketika membuat aplikasi `E-Learning` ini. Mulai dari menggunakan konsep arsitektur **MVC**, menyusun tabel yang penuh dengan relasi dan lainnya. Oh iya, pada Apikasi ini kami menggunakan framework buatan kami sendiri yaitu **Felis Database**. ya Framework kecil - kecil an yang berbasis **OOP dan PDO**, lumayan lah untuk menangani **CRUD** dasar pada database hehe.
 
 Tak lupa kami juga membuat keamanan website untuk aplikasi ini, karena disitu juga ada penilainnya. Untuk keamanan kami menggunakan **CSRF Token**, konfirmasi email, password enkripsi dan validasi input.
 
-Hari - hari berlalu, kami mengerjakan project itu dengan penuh suka dan duka <i class="em em-flushed"></i>. Setiap hari kami sering tidur lambat, ditambah kami juga harus melaksanakan kewajiban mahasiswa, yaitu mengerjakan tugas. Dan pada saat H-1 sebelum `Presentasi`, panitia lomba sudah menyuruh untuk **deploy** aplikasi dan mengumpul file presentasi serta source aplikasi nya. <del>Saat hari itulah semua tenaga dan chakra kami keluarkan semuanya karna dikejarnya deadline</del> <i class="em em-laughing"></i>. Kami tidak tidur semalaman akibat deadline itu.
+Hari - hari berlalu, kami mengerjakan project itu dengan penuh suka dan duka. Setiap hari kami sering tidur lambat, ditambah kami juga harus melaksanakan kewajiban mahasiswa, yaitu mengerjakan tugas. Dan pada saat H-1 sebelum `Presentasi`, panitia lomba sudah menyuruh untuk **deploy** aplikasi dan mengumpul file presentasi serta source aplikasi nya. <del>Saat hari itulah semua tenaga dan chakra kami keluarkan semuanya karna dikejarnya deadline</del>. Kami tidak tidur semalaman akibat deadline itu.
 
 ### Presentasi
 Saat itu pun tiba, step terakhir untuk kejuaraan `Web Programming IT FEST` ialah `Presentasi`. Kami harus bertanggung jawab dengan aplikasi yang sudah kami buat. Kami harus bisa menjelaskan semuanya jika juri atau peserta lainnya bertanya.
@@ -42,9 +42,9 @@ Singkat cerita, giliran kami pun tiba. Aku dan Irvan akhirnya maju kedepan. Disa
 Dan pada akhirnya yang menurut saya menjadi saingan terberat dalam penilaian juri nanti ialah tim dari Unsri, adik tingkat semester 3 dan dari jurusan mi itu sendiri. Fitur aplikasi mereka bagus dan banyak sera cara presentasi mereka juga patut diacungi jempol. Namun sepertinya peserta yang bertanya tentang **Socket.io** itu tidak hadir di acara presentasi ini.
 
 ### Tak Terkira
-Dan datanglah hari itu, seminar `IT FEST` di adakan pada hari senin sekitar jam 8, tapi kami sebagai peserta lomba hanya diwajibkan datang siang sesudah istirahat. Lalu, datanglah kami ke `Graha POLSRI` jam setengah 2 siang. Singkat cerita, saat panitia sudah mulai mengumumkan pemenang peserta lomba. <del>Saat itu pula yang bikin jantung kami lumayan bergetar, apakah ini tandanya cinta ?</del> Opps, Skip. Hahaha <i class="em em-laughing"></i>.
+Dan datanglah hari itu, seminar `IT FEST` di adakan pada hari senin sekitar jam 8, tapi kami sebagai peserta lomba hanya diwajibkan datang siang sesudah istirahat. Lalu, datanglah kami ke `Graha POLSRI` jam setengah 2 siang. Singkat cerita, saat panitia sudah mulai mengumumkan pemenang peserta lomba. <del>Saat itu pula yang bikin jantung kami lumayan bergetar, apakah ini tandanya cinta ?</del> Opps, Skip. Hahaha.
 
-Sebenarnya kami sudah percaya diri akan dapat juara setidaknya 2 atau 3 <i class="em em-laughing"></i>. Karena kami yakin bahwa yang juara pertamanya adalah dari tim MI karena dari tampilan, fitur aplikasi dan presentasi mereka terlihat lebih perfect daripada kami.
+Sebenarnya kami sudah percaya diri akan dapat juara setidaknya 2 atau 3. Karena kami yakin bahwa yang juara pertamanya adalah dari tim MI karena dari tampilan, fitur aplikasi dan presentasi mereka terlihat lebih perfect daripada kami.
 
 Lalu, disebutlah pemenang juara ke-3 yaitu tim Dari Unsri. Tidak diragukan lagi mereka dapat juara karena perform mereka sudah bagus saat presentasi.
 
@@ -56,16 +56,15 @@ Hah, mendengar suara itu Aku dan Irvan saling menoleh. Perasaan bingung bermuncu
 
 Setelah pemberian hadiah dan trophy, kami berfoto foto dan bersalam salaman dengan panitia acaranya.
 
-<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/4.jpeg" alt="Saat Aku di panggung" /></p>
-<p class="text-xs-center">Aku saat dipanggung, Btw aku yang berkacamata, hehe <i class="em em-nerd_face"></i>.</p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-it-polsri/4.jpeg" alt="Saat Aku di panggung" /></p>
+<p class="text-xs-center">Aku saat dipanggung, Btw aku yang berkacamata, hehe.</p>
 
 Akhirnya kami pun turun dari panggung. Perasaan bangga serta shock menjadi satu saat menuruni panggung. Lalu setelah itu, aku dan timku berfoto - foto untuk mendokumentasi kemenangan ini. Benar - benar moment kebanggaan `IT Polsri` yang tidak terlupakan, <del>Lebay lu</del>.
 
-<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/1.jpeg" alt="Irvan and Me" /></p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-it-polsri/1.jpeg" alt="Irvan and Me" /></p>
 <p class="text-xs-center">Aku dan Kelaborasiku, Irvan</p>
 
-<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/2.jpeg" alt="IT Polsri" /></p>
-<p class="text-xs-center">Eh, belom siap nih. Bingung siapa yang megang trophy wkwk <i class="em em-laughing"></i></p>
-
-<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-itpolsri/3.jpeg" alt="IT Polsri" /></p>
-<p class="text-xs-center"><b>We &lt;/&gt; with <i class="em em-heart"></i>. We are `IT Polsri` ! <i class="em em-sunglasses"></i></b></p>
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-it-polsri/2.jpeg" alt="IT Polsri" /></p>
+<p class="text-xs-center">Eh, belom siap nih. Bingung siapa yang megang trophy wkwk
+<p class="text-xs-center"><img src="/assets/img/blog/it-fest-bersama-it-polsri/3.jpeg" alt="IT Polsri" /></p>
+<p class="text-xs-center"><b>We &lt;/&gt; with <i class="em em-heart"></i>. We are `IT Polsri` !</p>

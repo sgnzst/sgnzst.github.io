@@ -1,19 +1,25 @@
 <template>
-  <v-layout justify-center align-center>
-    <v-flex class="pa-2" xs12 md8>
-      <div>
-        <ContentParser
-          :render-fn="renderFn"
-          :static-render-fn="staticRenderFn" />
-      </div>
-      <Disqus :Title="pageTitle" :Url="productionUrl" />
-    </v-flex>
-  </v-layout>
+  <div>
+    <v-layout justify-center align-center>
+      <v-flex class="pa-2" xs12 md8>
+        <v-container fluid>
+          <ContentParser
+            :render-fn="renderFn"
+            :static-render-fn="staticRenderFn" />
+        </v-container>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <Disqus :Title="pageTitle" :Url="productionUrl" />
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
-import ContentParser from '~/components/ContentParser'
-import Disqus from '~/components/Disqus'
+import ContentParser from '~/components/Blog/ContentParser'
+import Disqus from '~/components/Blog/Disqus'
 import { formatReadingTime } from '~/utils/helpers'
 
 export default {
