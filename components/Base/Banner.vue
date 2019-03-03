@@ -16,7 +16,7 @@
       </div>
     </div>
     <v-carousel-item v-for="(carousel, i) in carousels" :key="i">
-      <v-parallax :height="Height" :src="carousel.src" />
+      <v-parallax :height="Height" :src="carousel.src" :lazy-src="carousel.src" />
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -55,3 +55,4 @@ export default {
   }
 }
 </style>
+

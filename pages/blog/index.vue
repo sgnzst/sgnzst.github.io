@@ -1,19 +1,19 @@
 <template>
   <v-layout justify-center align-center>
     <v-flex xs12 sm10 md6>
-      <v-card class="blog-card ma-4" v-for="(blog, i) in blogs" :key="i">
+      <v-card class="blog-card ma-4" v-for="(content, i) in contents" :key="i">
         <v-img
           class="white--text grey lighten-1"
           height="200px"
           aspect-ratio="0.35"
-          :lazy-src="blog.image || defaultImgSrc(i)"
-          :src="blog.image || defaultImgSrc(i)"
+          :lazy-src="content.image || defaultImgSrc(i)"
+          :src="content.image || defaultImgSrc(i)"
         >
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
-                <nuxt-link class="blog-link white--text" :to="`/blog/${blog.slug}`">
-                  <span class="title text-shadow font-weight-bold">{{ blog.title }}</span>
+                <nuxt-link class="blog-link white--text" :to="`/blog/${content.slug}`">
+                  <span class="title text-shadow font-weight-bold">{{ content.title }}</span>
                 </nuxt-link>
               </v-flex>
             </v-layout>
@@ -25,15 +25,15 @@
         <v-card-title>
           <div>
             <div class="deep-purple--text">
-              {{ formatPostDate(blog.date) }}
+              {{ formatPostDate(content.date) }}
             </div>
-            <div class="grey--text caption">{{ formatReadingTime(blog.minute2read) }}</div><br>
-            <div>{{ blog.description }}</div><br>
+            <div class="grey--text caption">{{ formatReadingTime(content.minute2read) }}</div><br>
+            <div>{{ content.description }}</div><br>
             <div>
               <v-chip
                 color="primary"
                 text-color="white"
-                v-for="(tag, i) in blog.tags"
+                v-for="(tag, i) in content.tags"
                 :key="i"
                 to=""
               >
@@ -44,10 +44,10 @@
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn 
-            :to="`/blog/${blog.slug}`"
-            :ripple="false" 
-            :aria-label="`Read more about ${blog.title}`"
+          <v-btn
+            :to="`/blog/${content.slug}`"
+            :ripple="false"
+            :aria-label="`Read more about ${content.title}`"
             flat
             color="accent"
           >
@@ -62,7 +62,7 @@
 
 <script>
 import Helper from '~/utils/helpers'
-import contents from '~/contents'
+import Contents from '~/contents'
 
 export default {
   layout: 'blog',
@@ -75,23 +75,21 @@ export default {
     meta: [
       { hid: 'title', name: 'title', content: 'Blog | Sutan Nst.' }
     ]
-  }), 
+  }),
   methods: {
     defaultImgSrc(index){
       const rand = Math.floor(Math.random() * 6)
-      this.blogs[index].image = `/assets/img/collections/desks/desk${rand}.jpg`
+      this.contents[index].image = `/assets/img/collections/desks/desk${rand}.jpg`
     }
   },
-  asyncData ({ store }) {
-    async function asyncImport (blog) {
-      const allPosts = await import(`~/contents/posts/${blog.name}/index.md`)
-      return allPosts.attributes
+  asyncData() {
+    async function getAttributes(content) {
+      const contents = await import(`~/contents/posts/${content.name}/index.md`)
+      return contents.attributes
     }
     return (
-      Promise.all(contents.map(blog => asyncImport(blog)))
-      .then(res => ({ 
-        blogs: res.reverse()
-      }))
+      Promise.all(Contents.map(content => getAttributes(content)))
+      .then(res => ({ contents: res.reverse() }))
     )
   }
 }
