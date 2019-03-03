@@ -73,7 +73,9 @@ export default {
   head: () => ({
     title: 'Blog | Sutan Nst.',
     meta: [
-      { hid: 'title', name: 'title', content: 'Blog | Sutan Nst.' }
+      { hid: 'title', name: 'title', content: 'Blog | Sutan Nst.' },
+      { hid: 'keywords', name: 'keywords', content: 'sutanlab blog, sutanlab, sutan nasution, blog, sutan gading fadhillah nasution' },
+      { hid: 'description', name: 'description', content: 'Sutan Nst. blog site' }
     ]
   }),
   methods: {

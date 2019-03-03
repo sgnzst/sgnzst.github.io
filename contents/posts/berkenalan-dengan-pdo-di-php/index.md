@@ -6,6 +6,7 @@ description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
 tags: 
   - php
 categories: 'Programming'
+keywords: 'php, pdo, pemrograman web'
 image:
 twitter_text:
 minute2read: 5

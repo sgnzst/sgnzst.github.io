@@ -7,6 +7,7 @@ tags:
   - web
   - php
 categories: Programming
+keywords: 'php, masa depan php'
 image:
 twitter_text:
 minute2read: 4

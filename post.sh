@@ -132,6 +132,7 @@ initpost_content() {
     echo "description:"
     echo "tags:"
     echo "categories:"
+    echo "keywords:"
     echo "image:"
     echo "twitter_text:"
     echo "minute2read:"

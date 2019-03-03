@@ -34,22 +34,25 @@ export default {
       title: this.pageTitle,
       meta: [
         { hid: 'title', name: 'title', content: this.pageTitle },
-        { hid: 'keywords', name: 'keywords', content: this.pageTitle },
+        { hid: 'keywords', name: 'keywords', content: `${this.pageTitle}, ${this.meta.title}, ${this.meta.keywords}` },
+        { hid: 'description', name: 'description', content: this.meta.description },
+        { hid: 'article:published_time', property: 'article:published_time', content: new Date(this.meta.date).toISOString() },
+
+        { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'og:title', property: 'og:title', content: this.pageTitle },
         { hid: 'og:description', property: 'og:description', content: this.meta.description },
-        { hid: 'og:site_name', property: 'og:site_name', content: this.pageTitle },
         { hid: 'og:url', property: 'og:url', content: this.productionUrl },
+
         { hid: 'twitter:title', name: 'twitter:title', content: this.pageTitle },
         { hid: 'twitter:description', name: 'twitter:description', content: this.meta.description },
         { hid: 'twitter:url', name: 'twitter:url', content: this.productionUrl }
       ]
     }
   },
-  async asyncData({ params, store }) {
+  async asyncData({ params }) {
     const content = await import(`~/contents/posts/${params.slug}/index.md`)
     return {
       meta: {
-        params: params,
         ...content.attributes
       },
       renderFn: content.vue.render,
