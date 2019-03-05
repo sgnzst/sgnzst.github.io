@@ -1,9 +1,9 @@
 <template>
   <v-carousel
     hide-controls
-    :interval="Interval"
-    :height="Height"
-    :vertical="Vertical"
+    :interval="propInterval"
+    :height="propHeight"
+    :vertical="propVertical"
   >
     <div id="banner-figure">
       <div class="row">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <v-carousel-item v-for="(carousel, i) in carousels" :key="i">
-      <v-parallax :height="Height" :src="carousel.src" :lazy-src="carousel.src" />
+      <v-parallax :height="propHeight" :src="carousel.src" :lazy-src="carousel.src" />
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -24,9 +24,15 @@
 <script>
 export default {
   props: {
-    Interval: Number,
-    Height: Number,
-    Vertical: Boolean
+    propInterval: {
+      type: Number,
+      default: 3000
+    },
+    propHeight: {
+      type: Number,
+      default: 600
+    },
+    propVertical: Boolean
   },
   data: () => ({
     carousels: [
@@ -55,4 +61,3 @@ export default {
   }
 }
 </style>
-

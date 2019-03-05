@@ -1,5 +1,13 @@
 <template>
-  <v-navigation-drawer :class="Attr" :dark="Dark" :width="Width" right fixed temporary v-model="sidebar">
+  <v-navigation-drawer
+    v-model="sidebar"
+    :class="propAttr"
+    :dark="propDark"
+    :width="propWidth"
+    right
+    fixed
+    temporary
+  >
     <v-list class="pa-1">
       <v-list-tile>
         <v-list-tile-content>
@@ -14,11 +22,12 @@
     </v-list>
     <v-list two-line class="pt-0" dense>
       <v-divider />
-      <v-list-tile v-for="(item, i) in items"
-        aria-hidden="true"
+      <v-list-tile
+        v-for="(item, i) in items"
         :key="i"
         :to="item.to"
         :href="item.href"
+        aria-hidden="true"
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
@@ -36,9 +45,15 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
   props: {
-    Width: Number,
-    Attr: String,
-    Dark: Boolean
+    propWidth: {
+      type: Number,
+      default: 300
+    },
+    propAttr: {
+      type: String,
+      default: ''
+    },
+    propDark: Boolean
   },
   computed: {
     ...mapState({
@@ -46,7 +61,7 @@ export default {
       visible: state => state.sidebar.visible
     }),
     sidebar: {
-      get(){ return this.visible },
+      get() { return this.visible },
       set(val) { this.toggle(val) }
     }
   },

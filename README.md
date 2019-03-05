@@ -31,4 +31,9 @@ $ ./post -d {POST_TITLE} # create draft post
 $ ./post -p {POST_TITLE} # publish/promote a draft to a post
 ```
 
+#### Note: How to resolve System limit for number of file watchers reached
+```bash
+$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
 This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).

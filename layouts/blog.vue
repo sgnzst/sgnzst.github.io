@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <Navbar :PermHeight="55" PermColor="primary" />
-    <Sidebar :Width="250" />
+    <Navbar :prop-perm-height="55" prop-perm-color="primary" />
+    <Sidebar :prop-width="250" />
     <v-content>
       <v-slide-y-reverse-transition mode="out-in">
         <Nuxt id="nuxt-content" />
       </v-slide-y-reverse-transition>
-      <Footer Color="default" />
+      <Footer prop-color="default" />
     </v-content>
   </v-app>
 </template>

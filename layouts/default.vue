@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <Navbar :Height="55" Color="primary" />
-    <Sidebar :Width="250" />
-    <Banner :Height="600" :Interval="5000" />
+    <Navbar :prop-height="55" prop-color="primary" />
+    <Sidebar :prop-width="250" />
+    <Banner :prop-height="600" :prop-interval="5000" />
     <v-fade-transition mode="out-in">
       <Nuxt id="nuxt-content" />
     </v-fade-transition>
-    <Footer Color="default" />
+    <Footer prop-color="default" />
   </v-app>
 </template>
 

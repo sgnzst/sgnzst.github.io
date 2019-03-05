@@ -1,26 +1,28 @@
 <template>
-  <v-toolbar 
+  <v-toolbar
     id="nav"
     dark
     app
     fixed
-    :flat="!PermHeight ? flat : false" 
-    :height="PermHeight || height" 
-    :color="PermColor || color"
+    :flat="!propPermHeight ? flat : false"
+    :height="propPermHeight || height"
+    :color="propPermColor || color"
   >
-    <v-toolbar-title id="nav-title" :class="`text-smooth ${PermHeight ? 'headline' : titleSize}`">
+    <v-toolbar-title id="nav-title" :class="`text-smooth ${propPermHeight ? 'headline' : titleSize}`">
       <b>Sutanlab</b>
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items class="hidden-xs-only">
-      <v-btn flat v-for="(item, i) in items"
-        aria-hidden="true"
+      <v-btn
+        v-for="(item, i) in items"
         :key="i"
+        flat
+        aria-hidden="true"
         :ripple="false"
         :to="item.to"
         :href="item.href"
       >
-        <b :class="PermColor ? null : itemClass">
+        <b :class="propPermColor ? null : itemClass">
           <v-icon>{{ item.icon }}</v-icon>
           &nbsp;{{ item.title }}
         </b>
@@ -35,10 +37,22 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
   props: {
-    Height: Number,
-    Color: String,
-    PermHeight: Number,
-    PermColor: String
+    propHeight: {
+      type: Number,
+      default: null
+    },
+    propColor: {
+      type: String,
+      default: ''
+    },
+    propPermHeight: {
+      type: Number,
+      default: null
+    },
+    propPermColor: {
+      type: String,
+      default: ''
+    }
   },
   data: () => ({
     flat: true,
@@ -53,11 +67,19 @@ export default {
       sidebar: state => state.sidebar.visible
     })
   },
+  beforeMount() {
+    if (!(this.propPermHeight && this.propPermColor)) {
+      window.addEventListener('scroll', this.onScroll)
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scroll)
+  },
   methods: {
     ...mapMutations({
       setSidebar: 'setSidebar'
     }),
-    onScroll(){
+    onScroll() {
       if (window.scrollY < 120) {
         this.color = 'transparent'
         this.flat = true
@@ -65,21 +87,13 @@ export default {
         this.titleSize = 'display-1'
         this.itemClass = 'text-shadow'
       } else {
-        this.color = this.Color
+        this.color = this.propColor
         this.flat = false
-        this.height = this.Height
+        this.height = this.propHeight
         this.titleSize = 'headline'
         this.itemClass = null
       }
     }
-  },
-  beforeMount () {
-    if (!(this.PermHeight && this.PermColor)){
-      window.addEventListener('scroll', this.onScroll)
-    }
-  },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.scroll)
   }
 }
 </script>

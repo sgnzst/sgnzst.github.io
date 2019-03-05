@@ -98,9 +98,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette|Material+Icons' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/brands.css' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette' }
     ],
     noscript: [
       { innerHTML: 'This website requires JavaScript.', body: true }
@@ -142,6 +140,7 @@ export default {
   */
   css: [
     '~/assets/style/highlight.scss',
+    '~/assets/style/ionicons.scss',
     '~/assets/style/global.scss'
   ],
 
@@ -149,7 +148,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/global', ssr: false }
+    { src: '@/plugins/global', ssr: false },
+    { src: '@/plugins/ionicons', ssr: false }
   ],
 
   /*
@@ -167,7 +167,6 @@ export default {
   ],
 
   vuetify: {
-    materialIcons: false,
     treeShake: true,
     theme: {
       default: '#172B4D',
@@ -204,19 +203,21 @@ export default {
     },
     maxChunkSize: 100000,
     extractCss: true,
+
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
       // Run ESLint on save (disabled)
-      // if (ctx.isDev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // },
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
@@ -224,6 +225,7 @@ export default {
           })
         ]
       }
+
       config.module.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',

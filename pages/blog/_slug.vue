@@ -5,13 +5,14 @@
         <v-container fluid>
           <ContentParser
             :render-fn="renderFn"
-            :static-render-fn="staticRenderFn" />
+            :static-render-fn="staticRenderFn"
+          />
         </v-container>
       </v-flex>
     </v-layout>
     <v-layout row wrap>
       <v-flex xs12>
-        <Disqus :Title="pageTitle" :Url="productionUrl" />
+        <Disqus :prop-title="pageTitle" :prop-url="productionUrl" />
       </v-flex>
     </v-layout>
   </div>
@@ -20,7 +21,6 @@
 <script>
 import ContentParser from '~/components/Blog/ContentParser'
 import Disqus from '~/components/Blog/Disqus'
-import { formatReadingTime } from '~/utils/helpers'
 
 export default {
   layout: 'blog',

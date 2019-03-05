@@ -1,6 +1,13 @@
 <template>
   <v-layout row wrap>
-    <v-tabs style="width: 100%" centered dark icons-and-text show-arrows color="accent">
+    <v-tabs
+      style="width: 100%"
+      color="accent"
+      centered
+      dark
+      icons-and-text
+      show-arrows
+    >
       <v-tabs-slider color="info" />
       <v-tab v-for="(section, i) in sections" :key="i" @click="currentSection = section.title">
         {{ section.title }}
@@ -27,7 +34,7 @@ export default {
     sections: [
       { title: 'About', icon: 'person' },
       { title: 'Portfolio', icon: 'dashboard' },
-      { title: 'Contact', icon: 'phone' },
+      { title: 'Contact', icon: 'phone' }
     ]
   })
 }

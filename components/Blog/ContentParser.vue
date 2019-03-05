@@ -1,4 +1,6 @@
 <script>
+/* eslint-disable no-new-func */
+
 import Highlight from 'highlight.js'
 
 export default {
@@ -21,10 +23,9 @@ export default {
       Highlight.highlightBlock(element)
     }
   },
-  render(createElement) {
-    return this.templateRender ? this.templateRender() : createElement('div', 'Rendering')
+  render() {
+    return this.templateRender ? this.templateRender() : <div>Rendering</div>
   }
-
 }
 </script>
 

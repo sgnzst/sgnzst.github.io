@@ -44,13 +44,13 @@ export default {
     ]
   }),
   computed: {
-    slot(){
+    slot() {
       return this.$vuetify.breakpoint.smAndDown ? null : 'opposite'
     }
   },
   methods: {
-    alignment(index){
-      if(!this.$vuetify.breakpoint.smAndDown) {
+    alignment(index) {
+      if (!this.$vuetify.breakpoint.smAndDown) {
         return (index % 2 === 0) ? 'text-xs-right' : ''
       }
     }

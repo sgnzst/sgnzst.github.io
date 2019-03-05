@@ -21,7 +21,8 @@
     "@nuxtjs/sitemap": "^0.2.0",
     "@nuxtjs/vuetify": "^0.5.5",
     "highlight.js": "^9.14.2",
-    "nuxt": "^2.3.4"
+    "nuxt": "^2.3.4",
+    "vue-ionicons": "^3.0.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

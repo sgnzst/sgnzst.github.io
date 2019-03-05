@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center align-center>
     <v-flex xs12 sm10 md6>
-      <v-card class="blog-card ma-4" v-for="(content, i) in contents" :key="i">
+      <v-card v-for="(content, i) in contents" :key="i" class="blog-card ma-4">
         <v-img
           class="white--text grey lighten-1"
           height="200px"
@@ -19,7 +19,7 @@
             </v-layout>
           </v-container>
           <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-            <v-progress-circular indeterminate color="primary lighten-5"></v-progress-circular>
+            <v-progress-circular indeterminate color="primary lighten-5" />
           </v-layout>
         </v-img>
         <v-card-title>
@@ -27,14 +27,18 @@
             <div class="deep-purple--text">
               {{ formatPostDate(content.date) }}
             </div>
-            <div class="grey--text caption">{{ formatReadingTime(content.minute2read) }}</div><br>
-            <div>{{ content.description }}</div><br>
+            <div class="grey--text caption">
+              {{ formatReadingTime(content.minute2read) }}
+            </div><br>
+            <div>
+              {{ content.description }}
+            </div><br>
             <div>
               <v-chip
+                v-for="(tag, iTag) in content.tags"
+                :key="iTag"
                 color="primary"
                 text-color="white"
-                v-for="(tag, i) in content.tags"
-                :key="i"
                 to=""
               >
                 #{{ tag }}
@@ -43,17 +47,18 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            :to="`/blog/${content.slug}`"
-            :ripple="false"
-            :aria-label="`Read more about ${content.title}`"
-            flat
-            color="accent"
-          >
-            <v-icon>visibility</v-icon>
-            &nbsp;Read More
-          </v-btn>
+          <v-spacer />
+          <nuxt-link style="text-decoration: none" :to="`/blog/${content.slug}`">
+            <v-btn
+              :ripple="false"
+              :aria-label="`Read more about ${content.title}`"
+              flat
+              color="accent"
+            >
+              <v-icon>visibility</v-icon>
+              &nbsp;Read More
+            </v-btn>
+          </nuxt-link>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -68,7 +73,7 @@ export default {
   layout: 'blog',
   data: () => ({
     formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime,
+    formatReadingTime: Helper.formatReadingTime
   }),
   head: () => ({
     title: 'Blog | Sutan Nst.',
@@ -78,12 +83,6 @@ export default {
       { hid: 'description', name: 'description', content: 'Sutan Nst. blog site' }
     ]
   }),
-  methods: {
-    defaultImgSrc(index){
-      const rand = Math.floor(Math.random() * 6)
-      this.contents[index].image = `/assets/img/collections/desks/desk${rand}.jpg`
-    }
-  },
   asyncData() {
     async function getAttributes(content) {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
@@ -91,8 +90,14 @@ export default {
     }
     return (
       Promise.all(Contents.map(content => getAttributes(content)))
-      .then(res => ({ contents: res.reverse() }))
+        .then(res => ({ contents: res.reverse() }))
     )
+  },
+  methods: {
+    defaultImgSrc(index) {
+      const rand = Math.floor(Math.random() * 6)
+      this.contents[index].image = `/assets/img/collections/desks/desk${rand}.jpg`
+    }
   }
 }
 </script>

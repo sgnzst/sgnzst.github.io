@@ -11,5 +11,21 @@ export default {
   formatReadingTime(minutes) {
     const cups = Math.round(minutes / 5)
     return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} min to read`
+  },
+  debounce(func, wait, immediate) {
+    let timeout
+    return function () {
+      const context = this
+      const args = arguments
+      const callNow = immediate && !timeout
+      const later = () => {
+        timeout = null
+        if (!immediate) func.apply(context, args)
+      }
+
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(context, args)
+    }
   }
 }
