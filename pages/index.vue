@@ -14,6 +14,7 @@
         :key="i"
         :aria-label="section.title"
         @click="currentSection = section.title"
+        aria-hidden="true"
       >
         {{ section.title }}
         <v-icon>{{ section.icon }}</v-icon>
