@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 Vue.use({
   install() {
-    window.isInViewport = (el) => {
+    Vue.prototype.$isInViewport = (el) => {
       const scroll = window.scrollY || window.pageYOffset
       const boundsTop = el.getBoundingClientRect().top + scroll
       const viewport = {
@@ -17,6 +17,10 @@ Vue.use({
         (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
         (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
       )
+    }
+    Vue.prototype.$defaultImgSrc = () => {
+      const rand = Math.floor(Math.random() * 6)
+      return `/assets/img/collections/desks/desk${rand}.jpg`
     }
   }
 })

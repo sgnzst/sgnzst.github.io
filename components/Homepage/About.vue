@@ -79,8 +79,8 @@ export default {
       { name: 'CSS', icon: 'logo-css3-icon', color: '#3595CF', init: 0, value: 70 },
       { name: 'JavaScript', icon: 'logo-javascript-icon', color: '#EFD81D', init: 0, value: 76 },
       { name: 'NodeJS', icon: 'logo-nodejs-icon', color: '#74B141', init: 0, value: 60 },
-      { name: 'VueJS', icon: null, color: '#32475B', init: 0, value: 65 },
       { name: 'PHP', icon: null, color: '#4D588E', init: 0, value: 74 },
+      { name: 'VueJS', icon: null, color: '#32475B', init: 0, value: 65 },
       { name: 'MySQL', icon: null, color: '#005E86', init: 0, value: 50 },
       { name: 'MongoDB', icon: null, color: '#12964D', init: 0, value: 40 }
     ]

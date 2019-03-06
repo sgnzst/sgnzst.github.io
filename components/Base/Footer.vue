@@ -45,7 +45,7 @@ export default {
   data: () => ({
     socials: [
       { icon: 'md-mail-icon', link: 'mailto:sutan.gnst@gmail.com' },
-      { icon: 'logo-github-icon', link: 'https://github.com/sutanlab' },
+      { icon: 'logo-octocat-icon', link: 'https://github.com/sutanlab' },
       { icon: 'logo-facebook-icon', link: 'https://facebook.com/sgnzst' },
       { icon: 'logo-instagram-icon', link: 'https://www.instagram.com/sutan_gnst' }
     ]

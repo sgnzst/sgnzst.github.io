@@ -1,7 +1,34 @@
 <template>
-  <div>
+  <v-content>
     <v-layout justify-center align-center>
       <v-flex class="pa-2" xs12 md8>
+        <v-container fluid>
+          <h3 :class="+$vuetify.breakpoint.mdAndUp ? 'display-2' : 'display-1'">
+            {{ meta.title }}
+          </h3>
+          <div>
+            <span class="deep-purple--text">
+              {{ formatPostDate(meta.date) }}
+            </span>
+            —
+            <span class="grey--text caption">
+              {{ formatReadingTime(meta.minute2read) }}
+            </span>
+          </div>
+        </v-container>
+        <v-container fluid>
+          <v-img
+            :title="meta.title"
+            height="300px"
+            :lazy-src="meta.image || $defaultImgSrc()"
+            :src="meta.image || $defaultImgSrc()"
+          />
+          <p class="my-3 text-xs-center">
+            {{ meta.description }}
+            <v-icon>format_quote</v-icon>
+          </p>
+          <v-divider mx-3 />
+        </v-container>
         <v-container fluid>
           <ContentParser
             :render-fn="renderFn"
@@ -15,16 +42,20 @@
         <Disqus :prop-title="pageTitle" :prop-url="productionUrl" />
       </v-flex>
     </v-layout>
-  </div>
+  </v-content>
 </template>
 
 <script>
 import ContentParser from '~/components/Blog/ContentParser'
 import Disqus from '~/components/Blog/Disqus'
+import Helper from '~/utils/helpers'
 
 export default {
-  layout: 'blog',
   components: { ContentParser, Disqus },
+  data: () => ({
+    formatPostDate: Helper.formatPostDate,
+    formatReadingTime: Helper.formatReadingTime
+  }),
   computed: {
     pageTitle() { return `${this.meta.title} | Sutan Nst.` },
     productionUrl() { return `https://sutanlab.js.org/blog/${this.meta.slug}` }

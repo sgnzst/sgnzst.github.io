@@ -1,8 +1,13 @@
 <template>
   <v-app>
-    <Navbar :prop-height="55" prop-color="primary" />
+    <Navbar
+      :prop-height="isHomepage ? 55 : null"
+      :prop-color="isHomepage ? 'primary' : null"
+      :prop-perm-height="isHomepage ? null : 55"
+      :prop-perm-color="isHomepage ? null : 'primary'"
+    />
     <Sidebar :prop-width="250" />
-    <Banner :prop-height="600" :prop-interval="5000" />
+    <Banner v-if="isHomepage" :prop-height="600" :prop-interval="5000" />
     <v-fade-transition mode="out-in">
       <Nuxt id="nuxt-content" />
     </v-fade-transition>
@@ -11,6 +16,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Navbar from '~/components/Base/Navbar'
 import Sidebar from '~/components/Base/Sidebar'
 import Banner from '~/components/Base/Banner'
@@ -22,6 +28,19 @@ export default {
     Sidebar,
     Banner,
     Footer
+  },
+  computed: {
+    ...mapGetters({
+      isHomepage: 'router/isHomepage'
+    })
+  },
+  watch: {
+    $route() {
+      this.$store.commit('router/watchRoutes', this.$route.name)
+    }
+  },
+  beforeCreate() {
+    this.$store.commit('router/watchRoutes', this.$route.name)
   }
 }
 </script>

@@ -36,8 +36,8 @@ export default {
   },
   data: () => ({
     carousels: [
-      { src: '/assets/img/collections/desks/desk2.jpg' },
       { src: '/assets/img/collections/desks/desk1.jpg' },
+      { src: '/assets/img/collections/desks/desk2.jpg' },
       { src: '/assets/img/collections/desks/desk3.jpg' }
     ]
   })
