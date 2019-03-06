@@ -16,11 +16,11 @@
       <v-btn
         v-for="(item, i) in items"
         :key="i"
-        flat
-        aria-hidden="true"
-        :ripple="false"
         :to="item.to"
         :href="item.href"
+        :ripple="false"
+        flat
+        aria-hidden="true"
       >
         <b :class="propPermColor ? null : itemClass">
           <v-icon>{{ item.icon }}</v-icon>

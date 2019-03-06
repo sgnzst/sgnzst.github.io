@@ -49,7 +49,7 @@
           </v-card-title>
           <v-card-actions>
             <v-spacer />
-            <nuxt-link style="text-decoration: none" :to="`/blog/${content.slug}`">
+            <nuxt-link :to="`/blog/${content.slug}`">
               <v-btn
                 :ripple="false"
                 :aria-label="`Read more about ${content.title}`"
