@@ -1,7 +1,7 @@
 {
   "name": "sutanlab",
   "version": "1.0.0",
-  "description": "Sutan Nst. Personal Homepage",
+  "description": "A Man who turns a cup of coffee into beautiful codes. - Sutan Nst",
   "author": "Sutan Nst.",
   "private": true,
   "main": "server.js",

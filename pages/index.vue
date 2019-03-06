@@ -9,7 +9,13 @@
       show-arrows
     >
       <v-tabs-slider color="info" />
-      <v-tab v-for="(section, i) in sections" :key="i" @click="currentSection = section.title">
+      <v-tab
+        v-for="(section, i) in sections"
+        :key="i"
+        @click="currentSection = section.title"
+        aria-label="Tab Menu"
+        aria-hidden="true"
+      >
         {{ section.title }}
         <v-icon>{{ section.icon }}</v-icon>
       </v-tab>
