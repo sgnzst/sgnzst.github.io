@@ -156,8 +156,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
     '@nuxtjs/sitemap',
@@ -178,13 +176,6 @@ export default {
       warning: '#FB6340',
       error: '#F5365C'
     }
-  },
-
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
   },
 
   /*
