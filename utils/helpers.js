@@ -12,6 +12,10 @@ export default {
     const cups = Math.round(minutes / 5)
     return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} min to read`
   },
+  randomImgSrc() {
+    const rand = Math.floor(Math.random() * 6)
+    return `/assets/img/collections/desks/desk${rand}.jpg`
+  },
   debounce(func, wait, immediate) {
     let timeout
     return function () {

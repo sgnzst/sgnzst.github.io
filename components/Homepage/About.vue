@@ -5,7 +5,7 @@
         About
       </h1>
       <v-avatar class="my-4" size="avatarSize">
-        <img src="/assets/img/collections/sutan.jpeg" alt="Sutan Nst.">
+        <img title="Sutan Nst." src="/assets/img/collections/sutan.jpeg" alt="Sutan Nst.">
       </v-avatar>
     </v-flex>
     <v-layout justify-center align-center>

@@ -4,11 +4,12 @@
       <v-flex xs12 sm10 md6>
         <v-card v-for="(content, i) in contents" :key="i" class="blog-card ma-4">
           <v-img
+            :title="content.title"
             class="white--text grey lighten-1"
             height="200px"
             aspect-ratio="0.35"
-            :lazy-src="content.image || $defaultImgSrc()"
-            :src="content.image || $defaultImgSrc()"
+            :lazy-src="content.image || defaultImgSrc()"
+            :src="content.image || defaultImgSrc()"
           >
             <v-container fill-height fluid>
               <v-layout fill-height>
@@ -74,7 +75,8 @@ import Contents from '~/contents'
 export default {
   data: () => ({
     formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime
+    formatReadingTime: Helper.formatReadingTime,
+    defaultImgSrc: Helper.randomImgSrc
   }),
   head: () => ({
     title: 'Blog | Sutan Nst.',

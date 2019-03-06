@@ -18,9 +18,5 @@ Vue.use({
         (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
       )
     }
-    Vue.prototype.$defaultImgSrc = () => {
-      const rand = Math.floor(Math.random() * 6)
-      return `/assets/img/collections/desks/desk${rand}.jpg`
-    }
   }
 })

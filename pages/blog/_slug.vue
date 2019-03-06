@@ -20,8 +20,8 @@
           <v-img
             :title="meta.title"
             height="300px"
-            :lazy-src="meta.image || $defaultImgSrc()"
-            :src="meta.image || $defaultImgSrc()"
+            :lazy-src="meta.image || defaultImgSrc()"
+            :src="meta.image || defaultImgSrc()"
           />
           <p class="my-3 text-xs-center">
             {{ meta.description }}
@@ -54,7 +54,8 @@ export default {
   components: { ContentParser, Disqus },
   data: () => ({
     formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime
+    formatReadingTime: Helper.formatReadingTime,
+    defaultImgSrc: Helper.randomImgSrc
   }),
   computed: {
     pageTitle() { return `${this.meta.title} | Sutan Nst.` },

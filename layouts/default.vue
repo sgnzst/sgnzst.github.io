@@ -1,11 +1,6 @@
 <template>
   <v-app>
-    <Navbar
-      :prop-height="isHomepage ? 55 : null"
-      :prop-color="isHomepage ? 'primary' : null"
-      :prop-perm-height="isHomepage ? null : 55"
-      :prop-perm-color="isHomepage ? null : 'primary'"
-    />
+    <Navbar v-bind="navProps" />
     <Sidebar :prop-width="250" />
     <Banner v-if="isHomepage" :prop-height="600" :prop-interval="5000" />
     <v-fade-transition mode="out-in">
@@ -32,7 +27,11 @@ export default {
   computed: {
     ...mapGetters({
       isHomepage: 'router/isHomepage'
-    })
+    }),
+    navProps() {
+      if (this.isHomepage) return { propHeight: 55, propColor: 'primary' }
+      return { propPermHeight: 55, propPermColor: 'primary' }
+    }
   },
   watch: {
     $route() {

@@ -68,9 +68,7 @@ export default {
     })
   },
   beforeMount() {
-    if (!(this.propPermHeight && this.propPermColor)) {
-      window.addEventListener('scroll', this.onScroll)
-    }
+    window.addEventListener('scroll', this.onScroll)
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.scroll)
