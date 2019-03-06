@@ -13,8 +13,8 @@
         v-for="(section, i) in sections"
         :key="i"
         :aria-label="section.title"
-        @click="currentSection = section.title"
         aria-hidden="true"
+        @click="currentSection = section.title"
       >
         {{ section.title }}
         <v-icon>{{ section.icon }}</v-icon>
