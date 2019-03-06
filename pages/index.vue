@@ -12,9 +12,8 @@
       <v-tab
         v-for="(section, i) in sections"
         :key="i"
+        :aria-label="section.title"
         @click="currentSection = section.title"
-        aria-label="Tab Menu"
-        aria-hidden="true"
       >
         {{ section.title }}
         <v-icon>{{ section.icon }}</v-icon>
