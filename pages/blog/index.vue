@@ -26,9 +26,6 @@
                   </v-flex>
                 </v-layout>
               </v-container>
-              <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                <v-progress-circular indeterminate color="primary lighten-5" />
-              </v-layout>
             </v-img>
             <v-card-title>
               <div>
@@ -82,8 +79,7 @@ import Contents from '~/contents'
 export default {
   data: () => ({
     formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime,
-    defaultImgSrc: Helper.randomImgSrc
+    formatReadingTime: Helper.formatReadingTime
   }),
   head: () => ({
     title: 'Blog | Sutan Nst.',

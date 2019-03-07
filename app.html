@@ -4,16 +4,31 @@
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
-    <div id="__nuxt">
+    <div id="">
       <!-- Nuxt App goes here ! -->
       <div class='preloader-container'>
         <i class='layer'></i>
         <i class='layer'></i>
         <i class='layer'></i>
       </div>
+      <div class="preloader-container-text">
+        <div class="preloader-text">
+          <h3>Please Wait ..</h3>
+        </div>
+      </div>
     </div>
     <noscript data-n-head="true" data-body="true">
-      This website requires JavaScript.
+      <div class='preloader-container'>
+        <i class='layer'></i>
+        <i class='layer'></i>
+        <i class='layer'></i>
+      </div>
+      <div class="preloader-container-text">
+        <div class="preloader-text">
+          <h3>This website requires JavaScript.</h3>
+          <h6>Best regards from Sutan Nst.</h6>
+        </div>
+      </div>
     </noscript>
   </body>
 </html>
