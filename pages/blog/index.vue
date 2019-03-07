@@ -13,7 +13,7 @@
               class="white--text grey lighten-1"
               height="200px"
               :aspect-ratio="1.4"
-              :lazy-src="lazyImage(content)"
+              :lazy-src="content.image"
               :src="lazyImage(content)"
               :alt="content.title"
             >
