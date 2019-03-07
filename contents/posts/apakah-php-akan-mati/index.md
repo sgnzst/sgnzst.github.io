@@ -8,7 +8,7 @@ tags:
   - php
 categories: Programming
 keywords: 'php, masa depan php'
-image:
+image: '/assets/img/collections/desks/desk4.jpg'
 twitter_text:
 minute2read: 4
 ---

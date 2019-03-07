@@ -1,12 +1,12 @@
 <template>
   <v-content>
     <v-layout justify-center align-center>
-      <v-flex class="pa-2" xs12 md8>
+      <v-flex xs12 md8>
         <v-container fluid>
           <h3 :class="+$vuetify.breakpoint.mdAndUp ? 'display-2' : 'display-1'">
             {{ meta.title }}
           </h3>
-          <div>
+          <div style="margin-top: 5px">
             <span class="deep-purple--text">
               {{ formatPostDate(meta.date) }}
             </span>
@@ -16,12 +16,12 @@
             </span>
           </div>
         </v-container>
-        <v-container fluid>
+        <v-container fluid py-1>
           <v-img
             :title="meta.title"
             height="300px"
-            :lazy-src="meta.image || defaultImgSrc()"
-            :src="meta.image || defaultImgSrc()"
+            :lazy-src="meta.image"
+            :src="meta.image"
           />
           <p class="my-3 text-xs-center">
             {{ meta.description }}
@@ -54,8 +54,7 @@ export default {
   components: { ContentParser, Disqus },
   data: () => ({
     formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime,
-    defaultImgSrc: Helper.randomImgSrc
+    formatReadingTime: Helper.formatReadingTime
   }),
   computed: {
     pageTitle() { return `${this.meta.title} | Sutan Nst.` },
@@ -84,9 +83,7 @@ export default {
   async asyncData({ params }) {
     const content = await import(`~/contents/posts/${params.slug}/index.md`)
     return {
-      meta: {
-        ...content.attributes
-      },
+      meta: { ...content.attributes },
       renderFn: content.vue.render,
       staticRenderFn: content.vue.staticRenderFns
     }

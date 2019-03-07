@@ -7,7 +7,7 @@ tags:
   - php
 categories: 'Programming'
 keywords: 'php, pdo, pemrograman web'
-image:
+image: '/assets/img/collections/desks/desk5.jpg'
 twitter_text:
 minute2read: 5
 ---

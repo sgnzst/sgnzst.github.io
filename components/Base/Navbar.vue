@@ -8,6 +8,11 @@
     :height="propPermHeight || height"
     :color="propPermColor || color"
   >
+    <v-btn v-if="isContent" icon to="/blog" class="mx-0">
+      <v-icon>
+        keyboard_backspace
+      </v-icon>
+    </v-btn>
     <v-toolbar-title id="nav-title" :class="`text-smooth ${propPermHeight ? 'headline' : titleSize}`">
       <b>Sutanlab</b>
     </v-toolbar-title>
@@ -64,7 +69,8 @@ export default {
   computed: {
     ...mapState({
       items: state => state.menu,
-      sidebar: state => state.sidebar.visible
+      sidebar: state => state.sidebar.visible,
+      isContent: state => state.router.content.show
     })
   },
   beforeMount() {

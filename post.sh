@@ -36,6 +36,7 @@ CURRENT_YEAR="$(date +'%Y')"
 CURRENT_MONTH="$(date +'%m')"
 CURRENT_DATE="$(date +'%Y-%m-%d')"
 TIME=$(date +"%T")
+RAND_NUM=$(shuf -i 0-5 -n 1)
 # CURRENT_DATE="$(date --date='yesterday' +'%Y-%m-%d')"
 # ----------------------------------------------------------------
 
@@ -133,7 +134,7 @@ initpost_content() {
     echo "tags:"
     echo "categories:"
     echo "keywords:"
-    echo "image:"
+    echo "image: '/assets/img/collections/desks/desk${RAND_NUM}.jpg'"
     echo "twitter_text:"
     echo "minute2read:"
     echo "---"

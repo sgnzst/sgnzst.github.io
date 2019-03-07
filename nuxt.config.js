@@ -147,7 +147,8 @@ export default {
   */
   plugins: [
     { src: '@/plugins/global', ssr: false },
-    { src: '@/plugins/ionicons', ssr: false }
+    { src: '@/plugins/ionicons', ssr: false },
+    { src: '@/plugins/observe-visibility', ssr: false }
   ],
 
   /*
