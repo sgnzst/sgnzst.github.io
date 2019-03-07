@@ -13,8 +13,8 @@
               class="white--text grey lighten-1"
               height="200px"
               :aspect-ratio="1.4"
-              :lazy-src="content.image"
-              :src="content.viewed && content.image ? content.image : ''"
+              :lazy-src="lazyImage(content)"
+              :src="lazyImage(content)"
             >
               <v-container fill-height fluid>
                 <v-layout fill-height>
@@ -103,6 +103,9 @@ export default {
     )
   },
   methods: {
+    lazyImage(content) {
+      return content.viewed && content.image ? content.image : ''
+    },
     viewed(visibility, entry, index) {
       this.contents[index].viewed = visibility
     }
