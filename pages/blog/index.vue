@@ -2,12 +2,12 @@
   <v-content>
     <v-layout justify-center align-center>
       <v-flex xs12 sm10 md6>
-        <v-hover v-for="(content, i) in contents" :key="i">
-          <v-card
-            v-observe-visibility="(isVisible, entry) => viewed(isVisible, entry, i)"
-            slot-scope="{ hover }"
-            :class="`ma-4 elevation-${hover ? 12 : 2}`"
-          >
+        <v-hover
+          v-for="(content, i) in contents"
+          :key="i"
+          v-observe-visibility="(isVisible, entry) => viewed(isVisible, entry, i)"
+        >
+          <v-card slot-scope="{ hover }" :class="`ma-4 elevation-${hover ? 12 : 2}`">
             <v-img
               :title="content.title"
               class="white--text grey lighten-1"
@@ -15,6 +15,7 @@
               :aspect-ratio="1.4"
               :lazy-src="lazyImage(content)"
               :src="lazyImage(content)"
+              :alt="content.title"
             >
               <v-container fill-height fluid>
                 <v-layout fill-height>
@@ -95,7 +96,7 @@ export default {
   asyncData() {
     async function getAttributes(content) {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
-      return { ...contents.attributes, viewed: false }
+      return { ...contents.attributes, visible: false }
     }
     return (
       Promise.all(Contents.map(content => getAttributes(content)))
@@ -104,10 +105,12 @@ export default {
   },
   methods: {
     lazyImage(content) {
-      return content.viewed && content.image ? content.image : ''
+      if (content.visible && content.image) {
+        return content.image
+      }
     },
     viewed(visibility, entry, index) {
-      this.contents[index].viewed = visibility
+      this.contents[index].visible = visibility
     }
   }
 }
