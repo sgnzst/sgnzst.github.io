@@ -37,7 +37,6 @@ CURRENT_MONTH="$(date +'%m')"
 CURRENT_DATE="$(date +'%Y-%m-%d')"
 TIME=$(date +"%T")
 RAND_NUM=$(shuf -i 0-5 -n 1)
-# CURRENT_DATE="$(date --date='yesterday' +'%Y-%m-%d')"
 # ----------------------------------------------------------------
 
 
@@ -145,7 +144,6 @@ initpost_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating template..."
         mkdir -p "${DIST_FOLDER}/${POST_NAME}"
-        # mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
         initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
         e_success "Initial post successfully created!"
     else
@@ -176,7 +174,6 @@ promote_draft() {
         if [ -f "${DRAFTPATH}/${FILE_NAME}" ]; then
           if mkdir -p "${POSTPATH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${FILE_NAME}"; then
               sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${FILE_NAME}
-              # mkdir -p "${BINPATH}/static/${ASSETS_PATH}/img/blog/${POST_NAME}/"
               rm -rf "${DRAFTPATH}/${POST_NAME}"
               e_success "Draft promoted successfully!"
           else
