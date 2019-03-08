@@ -68,6 +68,8 @@ export default {
         { hid: 'keywords', name: 'keywords', content: `${this.pageTitle}, ${this.meta.title}, ${this.meta.keywords}` },
         { hid: 'description', name: 'description', content: this.meta.description },
         { hid: 'article:published_time', property: 'article:published_time', content: new Date(this.meta.date).toISOString() },
+        { hid: 'article:section', property: 'article:section', content: 'Technology' },
+        { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.meta.title },
 
         { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'og:title', property: 'og:title', content: this.pageTitle },
