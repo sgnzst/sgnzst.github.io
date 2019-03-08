@@ -2,19 +2,14 @@
   <v-content>
     <v-layout justify-center align-center>
       <v-flex xs12 sm10 md6>
-        <v-hover
-          v-for="(content, i) in contents"
-          :key="i"
-          v-observe-visibility="(isVisible, entry) => viewed(isVisible, entry, i)"
-        >
+        <v-hover v-for="(content, i) in contents" :key="i">
           <v-card slot-scope="{ hover }" :class="`ma-4 elevation-${hover ? 12 : 2}`">
             <v-img
-              :title="content.title"
               class="white--text grey lighten-1"
               height="200px"
+              :title="content.title"
               :aspect-ratio="1.4"
               :lazy-src="content.image"
-              :src="lazyImage(content)"
               :alt="content.title"
             >
               <v-container fill-height fluid>
@@ -92,22 +87,12 @@ export default {
   asyncData() {
     async function getAttributes(content) {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
-      return { ...contents.attributes, visible: false }
+      return { ...contents.attributes }
     }
     return (
       Promise.all(Contents.map(content => getAttributes(content)))
         .then(res => ({ contents: res.reverse() }))
     )
-  },
-  methods: {
-    lazyImage(content) {
-      if (content.visible && content.image) {
-        return content.image
-      }
-    },
-    viewed(visibility, entry, index) {
-      this.contents[index].visible = visibility
-    }
   }
 }
 </script>

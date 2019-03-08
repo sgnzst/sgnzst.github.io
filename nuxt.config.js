@@ -34,12 +34,10 @@ export default {
 
   router: {
     extendRoutes(routes, resolve) {
-      routes.push(
-        {
-          path: '*',
-          redirect: '/'
-        }
-      )
+      routes.push({
+        path: '*',
+        redirect: '/'
+      })
     },
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
@@ -147,8 +145,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/global', ssr: false },
-    { src: '@/plugins/ionicons', ssr: false },
-    { src: '@/plugins/observe-visibility', ssr: false }
+    { src: '@/plugins/ionicons', ssr: false }
   ],
 
   /*
