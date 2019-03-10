@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import express from 'express'
 import consola from 'consola'
 import { Nuxt, Builder } from 'nuxt'
@@ -9,7 +7,7 @@ const app = express()
 
 config.dev = !(process.env.NODE_ENV === 'production')
 
-async function start(callback) {
+async function start() {
   const nuxt = new Nuxt(config)
   const {
     host = process.env.HOST || '127.0.0.1',
@@ -28,10 +26,6 @@ async function start(callback) {
     message: `Server listening on http://${host}:${port}`,
     badge: true
   })
-
-  if (Object.prototype.toString.call(callback) === '[object Function]') {
-    callback()
-  }
 }
 
 start()

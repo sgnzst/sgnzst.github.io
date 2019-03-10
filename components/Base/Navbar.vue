@@ -77,7 +77,7 @@ export default {
     window.addEventListener('scroll', this.onScroll)
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.scroll)
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
     ...mapMutations({
