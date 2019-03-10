@@ -42,7 +42,7 @@ This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org
 - [Marina Aisa](https://marinaaisa.com/blog/blog-using-vue-nuxt-markdown)
 - [Irfan Maulana](https://github.com/mazipan/blog-2.0)
 - [Vitor Britto](https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh)
-
+- [JS ORG](https://github.com/js-org/js.org)
 * * *
 
 Copyright © 2019 by Sutan Gading Fadhillah Nasution
