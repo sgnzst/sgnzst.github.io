@@ -38,8 +38,8 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 
 This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).
 
-### Special Thanks for these awesome repositories
-- [Marina Aisa](https://github.com/marinaaisa/marinaaisa-website-2018)
+### Special Thanks to :
+- [Marina Aisa](https://marinaaisa.com/blog/blog-using-vue-nuxt-markdown)
 - [Irfan Maulana](https://github.com/mazipan/blog-2.0)
 - [Vitor Britto](https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh)
 
