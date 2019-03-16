@@ -25,7 +25,7 @@ const routesSitemap = () => {
 }
 
 export default {
-  mode: 'spa',
+  mode: 'spa', // spa or universal
 
   server: {
     port: 8000,
