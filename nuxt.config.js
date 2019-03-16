@@ -71,13 +71,14 @@ export default {
       { name: 'twitter:creator', content: '@sutan_gnst' },
       { name: 'twitter:site', content: '@sutan_gnst' },
       { property: 'og:site_name', content: 'Sutanlab' },
-      { property: 'og:image:width', content: '512' },
-      { property: 'og:image:height', content: '512' },
       { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette' }
+    ],
+    noscript: [
+      { innerHTML: 'This website requires JavaScript :)', body: true }
     ]
   },
 
