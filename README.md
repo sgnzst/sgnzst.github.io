@@ -17,7 +17,7 @@ $ npm start # launch server for production
 
 $ npm run generate # generate static project
 
-$ npm run publish # publish static site to Github Pages
+$ npm run deploy # deploy static site to Github Pages
 ```
 
 ### Use make post template
