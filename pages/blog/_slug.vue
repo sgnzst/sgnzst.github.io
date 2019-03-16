@@ -79,7 +79,7 @@ export default {
         { hid: 'twitter:description', name: 'twitter:description', content: this.meta.description },
         { hid: 'twitter:url', name: 'twitter:url', content: this.productionUrl },
         { hid: 'article:published_time', property: 'article:published_time', content: new Date(this.meta.date).toISOString() },
-        { hid: 'article:section', property: 'article:section', content: 'Technology' },
+        { hid: 'article:section', property: 'article:section', content: 'Technology' }
       ]
     }
   },
