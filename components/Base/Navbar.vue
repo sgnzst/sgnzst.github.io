@@ -102,7 +102,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 #nav, #nav-title, #nav > .v-toolbar__content {
   transition: all ease-in-out .4s !important
 }

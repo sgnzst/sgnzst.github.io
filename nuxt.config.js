@@ -100,18 +100,11 @@ export default {
       { name: 'twitter:description', content: pkg.description },
       { name: 'twitter:url', content: productionUrl },
 
-      {
-        name: 'google-site-verification',
-        content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4'
-      }
+      { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette'
-      }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette' }
     ]
   },
 
@@ -172,9 +165,7 @@ export default {
     '@nuxtjs/sitemap',
     [
       '@nuxtjs/google-analytics',
-      {
-        id: 'UA-135036153-1'
-      }
+      { id: 'UA-135036153-1' }
     ]
   ],
 
@@ -207,7 +198,9 @@ export default {
       }
     },
     maxChunkSize: 100000,
-    extractCss: true,
+    extractCss: {
+      allChunks: true
+    },
 
     /*
     ** You can extend webpack config here
