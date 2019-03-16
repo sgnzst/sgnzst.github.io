@@ -88,7 +88,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 p {
   font-size: 18px;
   color: #555;
