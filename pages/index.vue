@@ -40,7 +40,7 @@ export default {
     const appTitle = 'Sutan Nst. - Coder'
     const productionUrl = 'https://sutanlab.js/org'
     return {
-      title: this.pageTitle,
+      title: appTitle,
       meta: [
         { name: 'title', content: appTitle },
         { name: 'description', content: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst' },
