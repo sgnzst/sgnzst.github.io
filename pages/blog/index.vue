@@ -76,14 +76,30 @@ export default {
     formatPostDate: Helper.formatPostDate,
     formatReadingTime: Helper.formatReadingTime
   }),
-  head: () => ({
-    title: 'Blog | Sutan Nst.',
-    meta: [
-      { hid: 'title', name: 'title', content: 'Blog | Sutan Nst.' },
-      { hid: 'keywords', name: 'keywords', content: 'sutanlab blog, sutanlab, sutan nasution, blog, sutan gading fadhillah nasution' },
-      { hid: 'description', name: 'description', content: 'Sutan Nst. blog site' }
-    ]
-  }),
+  head() {
+    const desc = 'A Journal about Sutan Nst, Coder'
+    const appTitle = 'Blog | Sutan Nst.'
+    const productionUrl = 'https://sutanlab.js/org'
+    return {
+      title: appTitle,
+      meta: [
+        { name: 'title', content: appTitle },
+        { name: 'description', content: desc },
+        { name: 'keywords', content: 'blog, sutan nst blog, sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
+        { property: 'og:image', content: '/icon.png' },
+        { property: 'og:image:secure_url', content: '/icon.png' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: appTitle },
+        { property: 'og:description', content: desc },
+        { property: 'og:url', content: productionUrl },
+        { property: 'og:updated_time', content: new Date().toISOString() },
+        { name: 'twitter:image:src', content: '/icon.png' },
+        { name: 'twitter:title', content: appTitle },
+        { name: 'twitter:description', content: desc },
+        { name: 'twitter:url', content: productionUrl }
+      ]
+    }
+  },
   asyncData() {
     async function getAttributes(content) {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)

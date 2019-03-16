@@ -1,10 +1,6 @@
 import path from 'path'
 import nodeExternals from 'webpack-node-externals'
-import pkg from './package.json'
 import Contents from './contents'
-
-const productionUrl = 'https://sutanlab.js/org'
-const appTitle = 'Sutan Nst. - Coder'
 
 const routes = Contents.map(item => {
   item = `/blog/${item.name}`
@@ -63,43 +59,20 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: appTitle,
+    title: 'Sutan Nst. - Coder',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'title', content: appTitle },
-      { name: 'author', content: pkg.author },
-      { name: 'description', content: pkg.description },
-      {
-        name: 'keywords',
-        content:
-          'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya'
-      },
-
       { name: 'theme-color', content: '#304165' },
       { name: 'mobile-web-app-capable', content: 'yes' },
-      { name: 'apple-mobile-web-app-title', content: appTitle },
+      { name: 'apple-mobile-web-app-title', content: 'Sutanlab' },
       { property: 'profile:username', content: 'sutanlab' },
-
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: '/icon.png' },
-      { property: 'og:image:secure_url', content: '/icon.png' },
-      { property: 'og:image:width', content: '512' },
-      { property: 'og:image:height', content: '512' },
-      { property: 'og:title', content: appTitle },
-      { property: 'og:description', content: pkg.description },
-      { property: 'og:site_name', content: appTitle },
-      { property: 'og:url', content: productionUrl },
-      { property: 'og:updated_time', content: new Date().toISOString() },
-
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:creator', content: '@sutan_gnst' },
       { name: 'twitter:site', content: '@sutan_gnst' },
-      { name: 'twitter:image:src', content: '/icon.png' },
-      { name: 'twitter:title', content: appTitle },
-      { name: 'twitter:description', content: pkg.description },
-      { name: 'twitter:url', content: productionUrl },
-
+      { property: 'og:site_name', content: 'Sutanlab' },
+      { property: 'og:image:width', content: '512' },
+      { property: 'og:image:height', content: '512' },
       { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [
@@ -114,7 +87,7 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: productionUrl,
+    hostname: 'https://sutanlab.js/org',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: true,
