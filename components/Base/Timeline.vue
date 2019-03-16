@@ -6,14 +6,11 @@
       :color="time.color"
       :small="$vuetify.breakpoint.smAndDown"
     >
-      <div :class="`${alignment(i)} subheading font-weight-bold ${time.color}--text`" v-text="time.year" />
+      <span :slot="slot" :class="`subheading font-weight-bold ${time.color}--text`" v-text="time.year" />
       <div :class="`py-3 ${alignment(i)}`">
-        <p :class="`body-2 ${time.color}--text`">
-          {{ time.place }}
-        </p>
-        <p class="body-1">
-          {{ time.job }}
-        </p>
+        <p v-show="$vuetify.breakpoint.smAndDown" :class="`subheading font-weight-bold ${time.color}--text`" v-text="time.year" />
+        <p :class="`body-2 ${time.color}--text`" v-text="time.place" />
+        <p class="body-1" v-text="time.job" />
       </div>
     </v-timeline-item>
   </v-timeline>
@@ -43,6 +40,11 @@ export default {
       }
     ]
   }),
+  computed: {
+    slot() {
+      return this.$vuetify.breakpoint.smAndDown ? '' : 'opposite'
+    }
+  },
   methods: {
     alignment(index) {
       if (!this.$vuetify.breakpoint.smAndDown) {

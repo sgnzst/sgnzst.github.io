@@ -162,6 +162,12 @@ export default {
   ** Build configuration
   */
   build: {
+    maxChunkSize: 100000,
+
+    extractCSS: {
+      allChunks: true
+    },
+
     optimization: {
       minimize: true,
       splitChunks: {
@@ -172,10 +178,6 @@ export default {
         minSize: 100000,
         maxSize: 100000
       }
-    },
-    maxChunkSize: 100000,
-    extractCSS: {
-      allChunks: true
     },
 
     /*
