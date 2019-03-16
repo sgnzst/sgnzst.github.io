@@ -25,7 +25,7 @@ const routesSitemap = () => {
 }
 
 export default {
-  mode: 'spa', // spa or universal
+  mode: 'universal', // spa or universal
 
   server: {
     port: 8000,
@@ -142,6 +142,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/style/vuetify.styl',
     '~/assets/style/highlight.scss',
     '~/assets/style/ionicons.scss',
     '~/assets/style/preloader.scss',
@@ -170,6 +171,7 @@ export default {
   ],
 
   vuetify: {
+    css: false,
     treeShake: true,
     theme: {
       default: '#172B4D',
@@ -188,6 +190,7 @@ export default {
   */
   build: {
     optimization: {
+      minimize: true,
       splitChunks: {
         chunks: 'all',
         automaticNameDelimiter: '.',
@@ -198,7 +201,7 @@ export default {
       }
     },
     maxChunkSize: 100000,
-    extractCss: {
+    extractCSS: {
       allChunks: true
     },
 

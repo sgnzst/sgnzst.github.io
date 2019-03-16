@@ -45,7 +45,7 @@ export default {
   }),
   computed: {
     slot() {
-      return this.$vuetify.breakpoint.smAndDown ? null : 'opposite'
+      return this.$vuetify.breakpoint.smAndDown ? '' : 'opposite'
     }
   },
   methods: {
