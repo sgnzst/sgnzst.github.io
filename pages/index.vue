@@ -43,7 +43,7 @@ export default {
       title: appTitle,
       meta: [
         { name: 'title', content: appTitle },
-        { name: 'description', content: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst' },
+        { name: 'description', content: desc },
         { name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
         { property: 'og:image', content: '/icon.png' },
         { property: 'og:image:secure_url', content: '/icon.png' },

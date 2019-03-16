@@ -6,7 +6,7 @@
       :color="time.color"
       :small="$vuetify.breakpoint.smAndDown"
     >
-      <span v-bind="yearSlot" :class="`subheading font-weight-bold ${time.color}--text`" v-text="time.year" />
+      <div :class="`${alignment(i)} subheading font-weight-bold ${time.color}--text`" v-text="time.year" />
       <div :class="`py-3 ${alignment(i)}`">
         <p :class="`body-2 ${time.color}--text`">
           {{ time.place }}
@@ -43,11 +43,6 @@ export default {
       }
     ]
   }),
-  computed: {
-    yearSlot() {
-      return this.$vuetify.breakpoint.smAndDown ? null : { slot: 'opposite' }
-    }
-  },
   methods: {
     alignment(index) {
       if (!this.$vuetify.breakpoint.smAndDown) {
