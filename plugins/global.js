@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 Vue.use({
   install() {
-    Vue.prototype.$isInViewport = (el) => {
+    Vue.prototype.$isInViewport = el => {
       const scroll = window.scrollY || window.pageYOffset
       const boundsTop = el.getBoundingClientRect().top + scroll
       const viewport = {

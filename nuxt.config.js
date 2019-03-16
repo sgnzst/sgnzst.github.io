@@ -6,14 +6,14 @@ import Contents from './contents'
 const productionUrl = 'https://sutanlab.js/org'
 const appTitle = 'Sutan Nst. - Coder'
 
-const routes = Contents.map((item) => {
+const routes = Contents.map(item => {
   item = `/blog/${item.name}`
   return item
 })
 
 const routesSitemap = () => {
   const res = []
-  routes.forEach((el) => {
+  routes.forEach(el => {
     const item = {}
     item.url = el + '/'
     item.changefreq = 'daily'
@@ -33,7 +33,6 @@ export default {
   },
 
   router: {
-    middleware: ['static'],
     extendRoutes(routes, resolve) {
       routes.push({
         path: '*',
@@ -47,7 +46,9 @@ export default {
         let position = {}
         if (to.matched.length < 2) {
           position = { x: 0, y: 0 }
-        } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+        } else if (
+          to.matched.some(r => r.components.default.options.scrollToTop)
+        ) {
           position = { x: 0, y: 0 }
         }
         if (to.hash) {
@@ -69,7 +70,11 @@ export default {
       { name: 'title', content: appTitle },
       { name: 'author', content: pkg.author },
       { name: 'description', content: pkg.description },
-      { name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
+      {
+        name: 'keywords',
+        content:
+          'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya'
+      },
 
       { name: 'theme-color', content: '#304165' },
       { name: 'mobile-web-app-capable', content: 'yes' },
@@ -95,11 +100,18 @@ export default {
       { name: 'twitter:description', content: pkg.description },
       { name: 'twitter:url', content: productionUrl },
 
-      { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
+      {
+        name: 'google-site-verification',
+        content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette' }
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700|Courgette'
+      }
     ]
   },
 
@@ -158,9 +170,12 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
     '@nuxtjs/sitemap',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-135036153-1'
-    }]
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-135036153-1'
+      }
+    ]
   ],
 
   vuetify: {
