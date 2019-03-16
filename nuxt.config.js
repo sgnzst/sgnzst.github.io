@@ -119,7 +119,6 @@ export default {
     '~/assets/style/vuetify.styl',
     '~/assets/style/highlight.scss',
     '~/assets/style/ionicons.scss',
-    '~/assets/style/preloader.scss',
     '~/assets/style/global.scss'
   ],
 
