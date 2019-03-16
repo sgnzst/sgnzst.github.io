@@ -33,6 +33,7 @@ export default {
   },
 
   router: {
+    middleware: ['static'],
     extendRoutes(routes, resolve) {
       routes.push({
         path: '*',
@@ -65,33 +66,34 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'title', name: 'title', content: appTitle },
+      { name: 'title', content: appTitle },
       { name: 'author', content: pkg.author },
-      { hid: 'description', name: 'description', content: pkg.description },
-      { hid: 'keywords', name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
+      { name: 'description', content: pkg.description },
+      { name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
 
       { name: 'theme-color', content: '#304165' },
       { name: 'mobile-web-app-capable', content: 'yes' },
-      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: appTitle },
+      { name: 'apple-mobile-web-app-title', content: appTitle },
+      { property: 'profile:username', content: 'sutanlab' },
 
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:image', property: 'og:image', content: '/icon.png' },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: '/icon.png' },
-      { hid: 'og:image:width', property: 'og:image:width', content: '512' },
-      { hid: 'og:image:height', property: 'og:image:height', content: '512' },
-      { hid: 'og:title', property: 'og:title', content: appTitle },
-      { hid: 'og:description', property: 'og:description', content: pkg.description },
-      { hid: 'og:site_name', property: 'og:site_name', content: appTitle },
-      { hid: 'og:url', property: 'og:url', content: productionUrl },
-      { hid: 'profile:username', property: 'profile:username', content: 'sutanlab' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: '/icon.png' },
+      { property: 'og:image:secure_url', content: '/icon.png' },
+      { property: 'og:image:width', content: '512' },
+      { property: 'og:image:height', content: '512' },
+      { property: 'og:title', content: appTitle },
+      { property: 'og:description', content: pkg.description },
+      { property: 'og:site_name', content: appTitle },
+      { property: 'og:url', content: productionUrl },
+      { property: 'og:updated_time', content: new Date().toISOString() },
 
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:creator', content: '@sutan_gnst' },
       { name: 'twitter:site', content: '@sutan_gnst' },
-      { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icon.png' },
-      { hid: 'twitter:title', name: 'twitter:title', content: appTitle },
-      { hid: 'twitter:description', name: 'twitter:description', content: pkg.description },
-      { hid: 'twitter:url', name: 'twitter:url', content: productionUrl },
+      { name: 'twitter:image:src', content: '/icon.png' },
+      { name: 'twitter:title', content: appTitle },
+      { name: 'twitter:description', content: pkg.description },
+      { name: 'twitter:url', content: productionUrl },
 
       { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],

@@ -34,6 +34,7 @@ POST_TITLE="${@:2:$(($#-1))}"
 POST_NAME="$(echo ${@:2:$(($#-1))} | sed -e 's/ /-/g' | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/")"
 CURRENT_YEAR="$(date +'%Y')"
 CURRENT_MONTH="$(date +'%m')"
+CURRENT_YEARMONTH="$(date +'%Y/%m')"
 CURRENT_DATE="$(date +'%Y-%m-%d')"
 TIME=$(date +"%T")
 RAND_NUM=$(shuf -i 0-5 -n 1)
@@ -47,6 +48,7 @@ RAND_NUM=$(shuf -i 0-5 -n 1)
 BINPATH=$(cd `dirname $0`; pwd)
 POSTPATH="${BINPATH}/contents/posts"
 DRAFTPATH="${BINPATH}/contents/drafts"
+POSTLIST="${BINPATH}/contents/index.js"
 
 if [[ "${1}" == "-c" || "${1}" == "--create" ]]; then
     DIST_FOLDER="$POSTPATH"
@@ -145,6 +147,8 @@ initpost_file() {
         e_header "Creating template..."
         mkdir -p "${DIST_FOLDER}/${POST_NAME}"
         initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
+        truncate -s-3 "${POSTLIST}"
+        echo -e ",\n\t{ name: '${POST_TITLE}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
         e_success "Initial post successfully created!"
     else
         e_warning "File already exist."
@@ -164,7 +168,6 @@ initdraft_file() {
         e_warning "File already exist."
         exit 1
     fi
-
 }
 
 # Promote draft
@@ -175,6 +178,8 @@ promote_draft() {
           if mkdir -p "${POSTPATH}/${POST_NAME}" && mv "${DRAFTPATH}/${FILE_NAME}" "${POSTPATH}/${FILE_NAME}"; then
               sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${FILE_NAME}
               rm -rf "${DRAFTPATH}/${POST_NAME}"
+              truncate -s-3 "${POSTLIST}"
+              echo -e ",\n\t{ name: '${POST_TITLE}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
               e_success "Draft promoted successfully!"
           else
               e_warning "File already exists or draft promotion failed."

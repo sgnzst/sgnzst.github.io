@@ -1,4 +1,6 @@
+/* eslint-disable */
+
 export default [
-  { name: 'berkenalan-dengan-pdo-di-php', dateMonth: '2018/10' },
-  { name: 'it-fest-bersama-it-polsri', dateMonth: '2018/11' }
+  { name: 'berkenalan-dengan-pdo-di-php', date: '2018/10' },
+  { name: 'it-fest-bersama-it-polsri', date: '2018/11' }
 ]
