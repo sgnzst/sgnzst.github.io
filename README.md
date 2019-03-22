@@ -1,5 +1,7 @@
 # Sutanlab Homepage (On Going)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ee84c1098024c34a204f9f9f6a764b1)](https://app.codacy.com/app/sutanlab/sutanlab.github.io?utm_source=github.com&utm_medium=referral&utm_content=sutanlab/sutanlab.github.io&utm_campaign=Badge_Grade_Dashboard)
+
 > My Personal Homepage & Blog site with NuxtJS : https://sutanlab.js.org
 
 ### Required in System
