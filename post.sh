@@ -32,8 +32,6 @@
 # ----------------------------------------------------------------
 POST_TITLE="${@:2:$(($#-1))}"
 POST_NAME="$(echo ${@:2:$(($#-1))} | sed -e 's/ /-/g' | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/")"
-CURRENT_YEAR="$(date +'%Y')"
-CURRENT_MONTH="$(date +'%m')"
 CURRENT_YEARMONTH="$(date +'%Y/%m')"
 CURRENT_DATE="$(date +'%Y-%m-%d')"
 TIME=$(date +"%T")
@@ -65,7 +63,6 @@ if [[ "${1}" == "-p" || "${1}" == "--publish" ]]; then
     FILE_NAME="${POST_NAME}/index.md"
 fi
 
-ASSETS_PATH="/assets"
 # ----------------------------------------------------------------
 
 
