@@ -9,9 +9,10 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=master --cleanup",
+    "deploy": "push-dir --dir=dist --branch=master --cleanup; npm run score",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
+    "score": "/usr/bin/lighthouse-badges -u https://sutanlab.js.org -o test/lh-scores",
     "test": "jest"
   },
   "dependencies": {
