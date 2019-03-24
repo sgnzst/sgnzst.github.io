@@ -1,4 +1,8 @@
 module.exports = {
+  clearMocks: true,
+  testEnvironment: 'node',
+  coverageDirectory: 'coverage',
+  collectCoverage: true,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
