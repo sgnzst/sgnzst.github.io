@@ -22,6 +22,8 @@ $ npm start # launch server for production
 
 $ npm run generate # generate static project
 
+$ npm run test # test with jest environment
+
 $ npm run deploy # deploy static site to Github Pages
 
 $ npm run score # generate lighthouse badges for deployed site
