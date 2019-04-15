@@ -4,9 +4,19 @@
       <h1 class="text-smooth display-2 font-weight-bold">
         About
       </h1>
-      <v-avatar class="my-4" size="avatarSize">
-        <img title="Sutan Nst." src="/assets/img/collections/sutan.jpeg" alt="Sutan Nst.">
-      </v-avatar>
+      <div
+        class="LI-profile-badge my-4"
+        data-version="v1"
+        data-size="large"
+        data-locale="en_US"
+        data-type="vertical"
+        data-theme="light"
+        data-vanity="sutan-gading-fadhillah-nasution-963841160"
+      >
+        <a class="LI-simple-link" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
+          Sutan Gading Fadhillah Nasution
+        </a>
+      </div>
     </v-flex>
     <v-layout justify-center align-center>
       <v-flex xs12 md8>

@@ -56,6 +56,9 @@ export default {
         { name: 'twitter:title', content: appTitle },
         { name: 'twitter:description', content: desc },
         { name: 'twitter:url', content: productionUrl }
+      ],
+      script: [
+        { src: 'https://platform.linkedin.com/badges/js/profile.js', async: true, defer: true }
       ]
     }
   },

@@ -46,8 +46,9 @@ export default {
     socials: [
       { icon: 'md-mail-icon', link: 'mailto:sutan.gnst@gmail.com' },
       { icon: 'logo-octocat-icon', link: 'https://github.com/sutanlab' },
-      { icon: 'logo-facebook-icon', link: 'https://facebook.com/sgnzst' },
-      { icon: 'logo-instagram-icon', link: 'https://www.instagram.com/sutan_gnst' }
+      { icon: 'logo-linkedin-icon', link: 'https://www.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160/' },
+      { icon: 'logo-instagram-icon', link: 'https://www.instagram.com/sutan_gnst' },
+      { icon: 'logo-facebook-icon', link: 'https://facebook.com/sgnzst' }
     ]
   })
 }
