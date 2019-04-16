@@ -13,8 +13,10 @@
         data-theme="light"
         data-vanity="sutan-gading-fadhillah-nasution-963841160"
       >
-        <a class="LI-simple-link" target="_blank" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
-          Sutan Gading Fadhillah Nasution
+        <a target="_blank" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
+          <v-avatar class="my-4" size="200px">
+            <img title="Sutan Nst." src="/assets/img/collections/sutan_formal.jpg" alt="Sutan Nst.">
+          </v-avatar>
         </a>
       </div>
     </v-flex>
