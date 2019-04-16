@@ -13,7 +13,7 @@
         data-theme="light"
         data-vanity="sutan-gading-fadhillah-nasution-963841160"
       >
-        <a class="LI-simple-link" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
+        <a class="LI-simple-link" target="_blank" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
           Sutan Gading Fadhillah Nasution
         </a>
       </div>
@@ -87,12 +87,12 @@ export default {
     skills: [
       { name: 'HTML', icon: 'logo-html5-icon', color: '#E76233', init: 0, value: 85 },
       { name: 'CSS', icon: 'logo-css3-icon', color: '#3595CF', init: 0, value: 70 },
-      { name: 'JavaScript', icon: 'logo-javascript-icon', color: '#EFD81D', init: 0, value: 76 },
-      { name: 'NodeJS', icon: 'logo-nodejs-icon', color: '#74B141', init: 0, value: 60 },
-      { name: 'PHP', icon: null, color: '#4D588E', init: 0, value: 74 },
-      { name: 'VueJS', icon: null, color: '#32475B', init: 0, value: 65 },
-      { name: 'MySQL', icon: null, color: '#005E86', init: 0, value: 50 },
-      { name: 'MongoDB', icon: null, color: '#12964D', init: 0, value: 40 }
+      { name: 'JavaScript', icon: 'logo-javascript-icon', color: '#EFD81D', init: 0, value: 85 },
+      { name: 'NodeJS', icon: 'logo-nodejs-icon', color: '#74B141', init: 0, value: 75 },
+      { name: 'PHP', icon: null, color: '#4D588E', init: 0, value: 80 },
+      { name: 'VueJS', icon: null, color: '#32475B', init: 0, value: 78 },
+      { name: 'MySQL', icon: null, color: '#005E86', init: 0, value: 60 },
+      { name: 'MongoDB', icon: null, color: '#12964D', init: 0, value: 60 }
     ]
   })
 }
