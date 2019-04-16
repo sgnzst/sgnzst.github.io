@@ -14,9 +14,11 @@
         data-vanity="sutan-gading-fadhillah-nasution-963841160"
       >
         <a target="_blank" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
-          <v-avatar class="my-2 elevation-4" size="200px">
-            <img title="Sutan Nst." src="/assets/img/collections/sutan_formal.jpg" alt="Sutan Nst.">
-          </v-avatar>
+          <v-hover>
+            <v-avatar slot-scope="{ hover }" :class="`my-2 elevation-${hover ? 12 : 4}`" size="200px">
+              <img title="Sutan Nst." src="/assets/img/collections/sutan_formal.jpg" alt="Sutan Nst.">
+            </v-avatar>
+          </v-hover>
         </a>
       </div>
     </v-flex>
