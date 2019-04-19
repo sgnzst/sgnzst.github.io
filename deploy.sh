@@ -13,3 +13,5 @@ git commit -m "auto committing changes in `date`"
 echo -e "\033[0;32m> Deploying..\033[0m"
 
 npm run deploy
+
+echo -e "\033[0;32m> Site Deployed!\033[0m"
