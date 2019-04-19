@@ -4,23 +4,7 @@
       <h1 class="text-smooth display-2 font-weight-bold">
         About
       </h1>
-      <div
-        class="LI-profile-badge my-4"
-        data-version="v1"
-        data-size="large"
-        data-locale="en_US"
-        data-type="vertical"
-        data-theme="light"
-        data-vanity="sutan-gading-fadhillah-nasution-963841160"
-      >
-        <a class="LI-simple-link" rel="noopener" target="_blank" href="https://id.linkedin.com/in/sutan-gading-fadhillah-nasution-963841160?trk=profile-badge">
-          <v-hover>
-            <v-avatar slot-scope="{ hover }" :class="`my-2 elevation-${hover ? 12 : 4}`" size="200px">
-              <img title="Sutan Nst." src="/assets/img/collections/sutan_formal.jpg" alt="Sutan Nst.">
-            </v-avatar>
-          </v-hover>
-        </a>
-      </div>
+      <Avatar />
     </v-flex>
     <v-layout justify-center align-center>
       <v-flex xs12 md8>
@@ -46,7 +30,7 @@
       </v-flex>
       <v-layout my-4 justify-center align-center>
         <v-flex xs12 sm8 md8>
-          <Timeline />
+          <Timeline :data="timelines" />
         </v-flex>
       </v-layout>
     </v-container>
@@ -83,11 +67,32 @@
 </template>
 
 <script>
+import Avatar from '~/components/Base/Avatar'
 import Timeline from '~/components/Base/Timeline'
 
 export default {
-  components: { Timeline },
+  components: { Avatar, Timeline },
   data: () => ({
+    timelines: [
+      {
+        year: '2013 - 2016',
+        place: 'VHS Muhammadiyah 1 Palembang',
+        job: 'Computer and Network Engineering Student',
+        color: 'info'
+      },
+      {
+        year: '2016 - 2019 (Present)',
+        place: 'State of Polytechnic Sriwijaya Palembang',
+        job: 'Computer Engineering College Student',
+        color: 'success'
+      },
+      {
+        year: 'Now and Always',
+        place: 'Everywhere',
+        job: 'Self Learning',
+        color: 'primary'
+      }
+    ],
     skills: [
       { name: 'HTML', icon: 'logo-html5-icon', color: '#E76233', init: 0, value: 85 },
       { name: 'CSS', icon: 'logo-css3-icon', color: '#3595CF', init: 0, value: 70 },

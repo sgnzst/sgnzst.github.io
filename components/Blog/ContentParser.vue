@@ -35,6 +35,7 @@ $sec: #FFFFFF;
 $lightGray: #F2F2F2;
 $texts: #333333;
 $colorcode: #3085F4;
+
 img {
   max-width: 100%;
   margin: 1.875rem auto;

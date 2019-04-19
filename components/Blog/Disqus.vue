@@ -35,7 +35,6 @@ export default {
       }
     },
     loadDisqus() {
-      this.disqusLoaded = true
       const disqus_title = this.propTitle
       const disqus_url = this.propUrl
       const dsq = document.createElement('script')
@@ -43,6 +42,7 @@ export default {
       dsq.async = true
       dsq.src = 'https://sutanlab.disqus.com/embed.js'
       this.createDisqus(dsq)
+      this.disqusLoaded = true
     },
     createDisqus(disqus) {
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus)

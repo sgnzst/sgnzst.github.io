@@ -100,16 +100,12 @@ export default {
       ]
     }
   },
-  asyncData() {
-    async function getAttributes(content) {
+  asyncData: () => (
+    Promise.all(Contents.map(async content => {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
       return { ...contents.attributes }
-    }
-    return (
-      Promise.all(Contents.map(content => getAttributes(content)))
-        .then(res => ({ contents: res.reverse() }))
-    )
-  }
+    })).then(res => ({ contents: res.reverse() }))
+  )
 }
 </script>
 

@@ -27,13 +27,11 @@
 </template>
 
 <script>
-import About from '~/components/Homepage/About'
-import Portfolio from '~/components/Homepage/Portfolio'
-import Contact from '~/components/Homepage/Contact'
-
 export default {
   components: {
-    About, Portfolio, Contact
+    About: () => import('~/components/Homepage/About'),
+    Portfolio: () => import('~/components/Homepage/Portfolio'),
+    Contact: () => import('~/components/Homepage/Contact')
   },
   head() {
     const desc = 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst'
@@ -56,9 +54,6 @@ export default {
         { name: 'twitter:title', content: appTitle },
         { name: 'twitter:description', content: desc },
         { name: 'twitter:url', content: productionUrl }
-      ],
-      script: [
-        { src: 'https://platform.linkedin.com/badges/js/profile.js', async: true, defer: true }
       ]
     }
   },

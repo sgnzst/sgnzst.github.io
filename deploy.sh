@@ -8,7 +8,7 @@ npm run generate
 
 git add .
 
-git commit -m "committing site `date`"
+git commit -m "auto committing changes in `date`"
 
 echo -e "\033[0;32m> Deploying..\033[0m"
 

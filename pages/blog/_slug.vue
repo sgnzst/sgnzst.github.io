@@ -3,7 +3,7 @@
     <v-layout justify-center align-center>
       <v-flex xs12 md8>
         <v-container fluid>
-          <h3 :class="+$vuetify.breakpoint.mdAndUp ? 'display-2' : 'display-1'">
+          <h3 :class="$vuetify.breakpoint.mdAndUp ? 'display-2' : 'display-1'">
             {{ meta.title }}
           </h3>
           <div style="margin-top: 5px">
@@ -17,13 +17,17 @@
           </div>
         </v-container>
         <v-container fluid py-1>
-          <v-img
-            :title="meta.title"
-            height="300px"
-            :lazy-src="meta.image"
-            :src="meta.image"
-          />
-          <p class="my-3 text-xs-center">
+          <v-hover>
+            <v-img
+              slot-scope="{ hover }"
+              :class="`elevation-${hover ? 12 : 4}`"
+              height="300px"
+              :title="meta.title"
+              :lazy-src="meta.image"
+              :src="meta.image"
+            />
+          </v-hover>
+          <p class="my-4 text-xs-center">
             {{ meta.description }}
             <v-icon>format_quote</v-icon>
           </p>
@@ -46,12 +50,13 @@
 </template>
 
 <script>
-import ContentParser from '~/components/Blog/ContentParser'
-import Disqus from '~/components/Blog/Disqus'
 import Helper from '~/utils/helpers'
 
 export default {
-  components: { ContentParser, Disqus },
+  components: {
+    ContentParser: () => import('~/components/Blog/ContentParser'),
+    Disqus: () => import('~/components/Blog/Disqus')
+  },
   data: () => ({
     formatPostDate: Helper.formatPostDate,
     formatReadingTime: Helper.formatReadingTime

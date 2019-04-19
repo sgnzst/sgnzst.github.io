@@ -23,8 +23,11 @@
       </v-card-text>
       <v-divider />
       <v-card-text class="white--text">
-        &copy; 2019 <strong>Sutanlab</strong> — <b>&lt;&nbsp;/&gt;</b> with 💙
-        &nbsp;by&nbsp;<strong class="gre">Sutan Nst.</strong>
+        &copy; 2019 <strong>Sutanlab</strong>&nbsp;—&nbsp;
+        <a class="light-blue--text" rel="noopener" target="_blank" href="https://github.com/sutanlab/sutanlab.github.io">
+          <b>Coded</b>
+        </a>
+        with&nbsp;💙&nbsp;by&nbsp;<strong class="gre">Sutan Nst.</strong>
       </v-card-text>
     </v-card>
   </v-footer>
