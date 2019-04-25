@@ -8,7 +8,7 @@
     :height="propPermHeight || height"
     :color="propPermColor || color"
   >
-    <v-btn v-if="isContent" icon to="/blog" class="mx-0">
+    <v-btn v-if="isBlogContent" icon to="/blog" class="mx-0">
       <v-icon>
         keyboard_backspace
       </v-icon>
@@ -70,7 +70,7 @@ export default {
     ...mapState({
       items: state => state.menu,
       sidebar: state => state.sidebar.visible,
-      isContent: state => state.router.content.show
+      isBlogContent: state => state.router.blogContent.show
     })
   },
   beforeMount() {

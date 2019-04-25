@@ -7,7 +7,7 @@ export default {
         'index'
       ]
     },
-    content: {
+    blogContent: {
       show: false,
       routes: [
         'blog-slug'
@@ -17,10 +17,11 @@ export default {
   mutations: {
     watchRoutes(state, routeName) {
       state.homepage.show = (state.homepage.routes.indexOf(routeName) > -1)
-      state.content.show = (state.content.routes.indexOf(routeName) > -1)
+      state.blogContent.show = (state.blogContent.routes.indexOf(routeName) > -1)
     }
   },
   getters: {
-    isHomepage: state => state.homepage.show
+    isHomepage: state => state.homepage.show,
+    isBlogContent: state => state.blogContent.show
   }
 }

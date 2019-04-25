@@ -2,7 +2,7 @@
   <v-app>
     <Navbar v-bind="navProps" />
     <Sidebar :prop-width="250" />
-    <Banner v-if="isHomepage" :prop-height="600" :prop-interval="5000" />
+    <Banner v-if="isHomepage" parallax delimiters :height="600" :interval="5000" />
     <v-fade-transition mode="out-in">
       <Nuxt id="nuxt-content" />
     </v-fade-transition>

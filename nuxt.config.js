@@ -8,16 +8,16 @@ const routes = Contents.map(item => {
 })
 
 const routesSitemap = () => {
-  const res = []
-  routes.forEach(el => {
+  const result = []
+  for (const route in routes) {
     const item = {}
-    item.url = el + '/'
+    item.url = `${route}/`
     item.changefreq = 'daily'
     item.priority = 1
     item.lastmodISO = String(new Date().toISOString())
-    res.push(item)
-  })
-  return res
+    result.push(item)
+  }
+  return result
 }
 
 export default {
@@ -88,7 +88,7 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://sutanlab.js/org',
+    hostname: 'https://sutanlab.js.org',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: true,
@@ -134,6 +134,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
     '@nuxtjs/sitemap',
