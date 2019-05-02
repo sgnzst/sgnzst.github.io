@@ -125,8 +125,8 @@ EOT
 # Initial Content
 initpost_content() {
     echo "---"
-    echo "title: '${POST_TITLE} (HTML TITLE)'"
-    echo "slug: '${POST_TITLE}'"
+    echo "title: '${POST_TITLE}'"
+    echo "slug: '${POST_NAME}'"
     echo "date: ${CURRENT_DATE} ${TIME}"
     echo "description:"
     echo "tags:"
@@ -176,7 +176,7 @@ promote_draft() {
               sed -i -e "s/date: .*/date: ${CURRENT_DATE} ${TIME}/" ${POSTPATH}/${FILE_NAME}
               rm -rf "${DRAFTPATH}/${POST_NAME}"
               truncate -s-3 "${POSTLIST}"
-              echo -e ",\n\t{ name: '${POST_TITLE}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
+              echo -e ",\n\t{ name: '${POST_NAME}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
               e_success "Draft promoted successfully!"
           else
               e_warning "File already exists or draft promotion failed."
