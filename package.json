@@ -13,7 +13,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "score": "/usr/bin/lighthouse-badges -u https://sutanlab.js.org -o test/lh-scores",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "cp .env.example .env"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.3.0",

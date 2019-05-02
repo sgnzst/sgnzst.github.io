@@ -23,6 +23,11 @@ const routesSitemap = () => {
 export default {
   mode: 'universal', // spa or universal
 
+  env: {
+    PRODUCTION_URL: process.env.PRODUCTION_URL,
+    AUTHOR: process.env.AUTHOR
+  },
+
   server: {
     port: 8000,
     host: '0.0.0.0'
@@ -59,18 +64,17 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Sutan Nst. - Coder',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#304165' },
       { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'apple-mobile-web-app-title', content: 'Sutanlab' },
-      { property: 'profile:username', content: 'sutanlab' },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:creator', content: '@sutan_gnst' },
       { name: 'twitter:site', content: '@sutan_gnst' },
       { property: 'og:site_name', content: 'Sutanlab' },
+      { property: 'profile:username', content: 'sutanlab' },
       { name: 'google-site-verification', content: 'jLyr0TMCl7eKN6nXKMcBVQE7pq3XshkQCTutxZMwQW4' }
     ],
     link: [

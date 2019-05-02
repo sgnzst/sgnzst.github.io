@@ -43,14 +43,17 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex xs12>
-        <Disqus :prop-title="pageTitle" :prop-url="productionUrl" />
+        <Disqus
+          :prop-title="disqus.title"
+          :prop-url="disqus.url"
+        />
       </v-flex>
     </v-layout>
   </v-content>
 </template>
 
 <script>
-import Helper from '~/utils/helpers'
+import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helpers'
 
 export default {
   components: {
@@ -58,33 +61,24 @@ export default {
     Disqus: () => import('~/components/Blog/Disqus')
   },
   data: () => ({
-    formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime
+    formatPostDate, formatReadingTime
   }),
   computed: {
-    pageTitle() { return `${this.meta.title} | Sutan Nst.` },
-    productionUrl() { return `https://sutanlab.js.org/blog/${this.meta.slug}` },
-    postImage() { return `https://sutanlab.js.org/${this.meta.image}` }
+    disqus() {
+      return {
+        title: `${this.meta.title} | ${process.env.AUTHOR}`,
+        url: `${process.env.PRODUCTION_URL}/blog/${this.meta.slug}`
+      }
+    }
   },
   head() {
+    this.meta.slug = `/blog/${this.meta.slug}`
     return {
-      title: this.pageTitle,
+      title: `${this.meta.title} | ${process.env.AUTHOR}`,
       meta: [
-        { hid: 'title', name: 'title', content: this.pageTitle },
-        { hid: 'description', name: 'description', content: this.meta.description },
-        { hid: 'keywords', name: 'keywords', content: `${this.pageTitle}, ${this.meta.title}, ${this.meta.keywords}` },
-        { hid: 'og:image', property: 'og:image', content: this.postImage },
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: this.postImage },
-        { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:title', property: 'og:title', content: this.pageTitle },
-        { hid: 'og:description', property: 'og:description', content: this.meta.description },
-        { hid: 'og:url', property: 'og:url', content: this.productionUrl },
-        { hid: 'twitter:title', name: 'twitter:title', content: this.pageTitle },
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.postImage },
-        { hid: 'twitter:description', name: 'twitter:description', content: this.meta.description },
-        { hid: 'twitter:url', name: 'twitter:url', content: this.productionUrl },
+        ...metaGenerator('article', this.meta),
         { hid: 'article:published_time', property: 'article:published_time', content: new Date(this.meta.date).toISOString() },
-        { hid: 'article:section', property: 'article:section', content: 'Technology' }
+        { hid: 'article:section', property: 'article:section', content: this.meta.category }
       ]
     }
   },

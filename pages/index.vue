@@ -27,36 +27,24 @@
 </template>
 
 <script>
+import { metaGenerator } from '~/utils/helpers'
+
 export default {
   components: {
     About: () => import('~/components/Homepage/About'),
     Portfolio: () => import('~/components/Homepage/Portfolio'),
     Contact: () => import('~/components/Homepage/Contact')
   },
-  head() {
-    const desc = 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst'
-    const appTitle = 'Sutan Nst. - Coder'
-    const productionUrl = 'https://sutanlab.js/org'
-    return {
-      title: appTitle,
-      meta: [
-        { name: 'title', content: appTitle },
-        { name: 'description', content: desc },
-        { name: 'keywords', content: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
-        { property: 'og:image', content: '/icon.png' },
-        { property: 'og:image:secure_url', content: '/icon.png' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: appTitle },
-        { property: 'og:description', content: desc },
-        { property: 'og:url', content: productionUrl },
-        { property: 'og:updated_time', content: new Date().toISOString() },
-        { name: 'twitter:image:src', content: '/icon.png' },
-        { name: 'twitter:title', content: appTitle },
-        { name: 'twitter:description', content: desc },
-        { name: 'twitter:url', content: productionUrl }
-      ]
-    }
-  },
+  head: () => ({
+    title: `${process.env.AUTHOR} - Coder`,
+    meta: metaGenerator('portfolio', {
+      title: `${process.env.AUTHOR} - Coder`,
+      description: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst',
+      keywords: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya',
+      image: '/assets/collections/sutan_formal.jpg',
+      slug: '/'
+    })
+  }),
   data: () => ({
     currentSection: 'About',
     sections: [

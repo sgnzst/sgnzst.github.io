@@ -12,11 +12,11 @@ export default {
   props: {
     propTitle: {
       type: String,
-      default: 'Sutanlab - By Sutan Nst.'
+      required: true
     },
     propUrl: {
       type: String,
-      default: 'https://sutanlab.js.org'
+      required: true
     }
   },
   data: () => ({

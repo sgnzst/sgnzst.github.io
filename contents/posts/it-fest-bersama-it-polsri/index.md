@@ -6,7 +6,7 @@ description: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POL
 tags:
   - itpolsri
   - developer
-categories: 'Life'
+category: 'Life'
 keywords: 'event, developer, itfest'
 image: '/assets/img/blog/it-fest-bersama-it-polsri/3.jpeg'
 twitter_text: 'Dokumentasi ku untuk moment yang tak terlupakan bersama Tim IT POLSRI - Sutan Nst'

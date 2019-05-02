@@ -5,7 +5,7 @@ date: 2018-10-26 15:29:02
 description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
 tags: 
   - php
-categories: 'Programming'
+category: 'Programming'
 keywords: 'php, pdo, pemrograman web'
 image: '/assets/img/collections/desks/desk5.jpg'
 twitter_text:

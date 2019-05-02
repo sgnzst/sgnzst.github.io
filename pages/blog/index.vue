@@ -68,38 +68,23 @@
 </template>
 
 <script>
-import Helper from '~/utils/helpers'
+import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helpers'
 import Contents from '~/contents'
 
 export default {
   data: () => ({
-    formatPostDate: Helper.formatPostDate,
-    formatReadingTime: Helper.formatReadingTime
+    formatPostDate, formatReadingTime
   }),
-  head() {
-    const desc = 'A Journal about Sutan Nst, Coder'
-    const appTitle = 'Blog | Sutan Nst.'
-    const productionUrl = 'https://sutanlab.js/org'
-    return {
-      title: appTitle,
-      meta: [
-        { name: 'title', content: appTitle },
-        { name: 'description', content: desc },
-        { name: 'keywords', content: 'blog, sutan nst blog, sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya' },
-        { property: 'og:image', content: '/icon.png' },
-        { property: 'og:image:secure_url', content: '/icon.png' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: appTitle },
-        { property: 'og:description', content: desc },
-        { property: 'og:url', content: productionUrl },
-        { property: 'og:updated_time', content: new Date().toISOString() },
-        { name: 'twitter:image:src', content: '/icon.png' },
-        { name: 'twitter:title', content: appTitle },
-        { name: 'twitter:description', content: desc },
-        { name: 'twitter:url', content: productionUrl }
-      ]
-    }
-  },
+  head: () => ({
+    title: `Blog | ${process.env.AUTHOR}`,
+    meta: metaGenerator('blogs', {
+      title: 'Blog',
+      description: 'A Journal about Sutan Nst, Coder',
+      keywords: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya',
+      image: '/icon.png',
+      slug: '/blog'
+    })
+  }),
   asyncData() {
     return Promise.all(Contents.map(async content => {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
