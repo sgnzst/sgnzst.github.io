@@ -12,21 +12,21 @@
 ### Build setup
 
 ``` bash
-$ npm install # install dependencies
+$ yarn install # install dependencies
 
-$ npm run dev # serve with hot reload at local server
+$ yarn run dev # serve with hot reload at local server
 
-$ npm run build # build for production
+$ yarn run build # build for production
 
-$ npm start # launch server for production
+$ yarn start # launch server for production
 
-$ npm run generate # generate static project
+$ yarn run generate # generate static project
 
-$ npm run test # test with jest environment
+$ yarn run test # test with jest environment
 
-$ npm run deploy # deploy static site to Github Pages
+$ yarn run deploy # deploy static site to Github Pages
 
-$ npm run score # generate lighthouse badges for deployed site
+$ yarn run score # generate lighthouse badges for deployed site
 ```
 
 ### Use make post template

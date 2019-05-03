@@ -1,5 +1,4 @@
 import path from 'path'
-import nodeExternals from 'webpack-node-externals'
 import Contents from './contents'
 
 const routes = Contents.map(item => {
@@ -120,7 +119,6 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/style/vuetify.styl',
     '~/assets/style/highlight.scss',
     '~/assets/style/ionicons.scss',
     '~/assets/style/global.scss'
@@ -149,7 +147,6 @@ export default {
   ],
 
   vuetify: {
-    css: false,
     treeShake: true,
     theme: {
       default: '#172B4D',
@@ -168,11 +165,7 @@ export default {
   */
   build: {
     maxChunkSize: 100000,
-
-    extractCSS: {
-      allChunks: true
-    },
-
+    extractCSS: true,
     optimization: {
       minimize: true,
       splitChunks: {
@@ -197,14 +190,6 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }
-
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
       }
 
       config.module.rules.push({
