@@ -75,7 +75,8 @@ export default {
       meta: [
         ...metaGenerator('article', {
           title: `${this.meta.title} | ${this.env.author}`,
-          descirption: this.meta.description,
+          description: this.meta.description,
+          keywords: this.meta.keywords,
           url: `/blog/${this.meta.slug}`,
           image: this.meta.image
         }),

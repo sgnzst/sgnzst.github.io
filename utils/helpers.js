@@ -16,7 +16,7 @@ export function formatReadingTime(minutes) {
 export const metaGenerator = (type, meta) => [
   { hid: 'title', name: 'title', content: `${meta.title} | ${process.env.AUTHOR}` },
   { hid: 'description', name: 'description', content: `${meta.description}` },
-  { hid: 'keywords', name: 'keywords', content: `${meta.title} | ${process.env.AUTHOR}, ${meta.title}, ${meta.keywords}` },
+  { hid: 'keywords', name: 'keywords', content: `sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya, ${meta.title}, ${meta.keywords}` },
   { hid: 'og:image', property: 'og:image', content: process.env.PRODUCTION_URL + meta.image },
   { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.PRODUCTION_URL + meta.image },
   { hid: 'og:title', property: 'og:title', content: `${meta.title} | ${process.env.AUTHOR}` },

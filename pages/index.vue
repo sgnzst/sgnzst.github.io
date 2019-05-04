@@ -40,9 +40,9 @@ export default {
     meta: metaGenerator('portfolio', {
       title: `${process.env.AUTHOR} - Coder`,
       description: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst',
-      keywords: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya',
+      keywords: 'homepage, portfolio',
       image: '/assets/collections/sutan_formal.jpg',
-      slug: '/'
+      url: '/'
     })
   }),
   data: () => ({
