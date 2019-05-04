@@ -6,8 +6,6 @@ echo -e "\n\033[0;32m> Generating site...\033[0m"
 
 npm run generate
 
-echo -e "\n"
-
 git add .
 
 git commit -m "auto committing changes in `date`"
