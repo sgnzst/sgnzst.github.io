@@ -77,8 +77,8 @@ export default {
   }),
   head: () => ({
     title: `Blog | ${process.env.AUTHOR}`,
-    meta: metaGenerator('blogs', {
-      title: 'Blog',
+    meta: metaGenerator('blog', {
+      title: `Blog | ${process.env.AUTHOR}`,
       description: 'A Journal about Sutan Nst, Coder',
       keywords: 'sutan nst, sutan gading fadhillah nasution, sutan, gading, fadhillah, nasution, sgnzst, sutanlab, sutan lab, coder, mahasiswa, it polsri, itpolsri, polsri, politeknik negeri sriwijaya',
       image: '/icon.png',

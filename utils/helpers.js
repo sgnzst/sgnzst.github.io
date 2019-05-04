@@ -21,13 +21,13 @@ export const metaGenerator = (type, meta) => [
   { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.PRODUCTION_URL + meta.image },
   { hid: 'og:title', property: 'og:title', content: `${meta.title} | ${process.env.AUTHOR}` },
   { hid: 'og:description', property: 'og:description', content: meta.description },
-  { hid: 'og:url', property: 'og:url', content: process.env.PRODUCTION_URL + meta.slug },
+  { hid: 'og:url', property: 'og:url', content: process.env.PRODUCTION_URL + meta.url },
   { hid: 'og:updated_time', property: 'og:updated_time', content: new Date().toISOString() },
   { hid: 'og:type', property: 'og:type', content: type },
   { hid: 'twitter:title', name: 'twitter:title', content: `${meta.title} | ${process.env.AUTHOR}` },
-  { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.PRODUCTION_URL + meta.image },
+  { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.PRODUCTION_URL + meta.url },
   { hid: 'twitter:description', name: 'twitter:description', content: meta.description },
-  { hid: 'twitter:url', name: 'twitter:url', content: process.env.PRODUCTION_URL + meta.slug }
+  { hid: 'twitter:url', name: 'twitter:url', content: process.env.PRODUCTION_URL + meta.url }
 ]
 
 export function debounce(func, wait, immediate) {

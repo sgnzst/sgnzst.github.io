@@ -44,8 +44,9 @@
     <v-layout row wrap>
       <v-flex xs12>
         <Disqus
-          :prop-title="disqus.title"
-          :prop-url="disqus.url"
+          :prop-title="`${meta.title} | ${env.author}`"
+          :prop-url="`${env.url}/blog/${meta.slug}`"
+          :prop-identifier="`${env.url}/${meta.slug}/${new Date(meta.date).getTime()}`"
         />
       </v-flex>
     </v-layout>
@@ -61,22 +62,23 @@ export default {
     Disqus: () => import('~/components/Blog/Disqus')
   },
   data: () => ({
-    formatPostDate, formatReadingTime
-  }),
-  computed: {
-    disqus() {
-      return {
-        title: `${this.meta.title} | ${process.env.AUTHOR}`,
-        url: `${process.env.PRODUCTION_URL}/blog/${this.meta.slug}`
-      }
+    formatPostDate,
+    formatReadingTime,
+    env: {
+      url: process.env.PRODUCTION_URL,
+      author: process.env.AUTHOR
     }
-  },
+  }),
   head() {
-    this.meta.slug = `/blog/${this.meta.slug}`
     return {
-      title: `${this.meta.title} | ${process.env.AUTHOR}`,
+      title: `${this.meta.title} | ${this.env.author}`,
       meta: [
-        ...metaGenerator('article', this.meta),
+        ...metaGenerator('article', {
+          title: `${this.meta.title} | ${this.env.author}`,
+          descirption: this.meta.description,
+          url: `/blog/${this.meta.slug}`,
+          image: this.meta.image
+        }),
         { hid: 'article:published_time', property: 'article:published_time', content: new Date(this.meta.date).toISOString() },
         { hid: 'article:section', property: 'article:section', content: this.meta.category }
       ]
