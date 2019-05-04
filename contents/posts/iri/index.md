@@ -21,6 +21,8 @@ Aku sadar Instagram bukanlah tempatku mencari duit, aku menggunakan Instagram ju
 
 Sejujurnya motivasiku dalam menulis pun, salah satunya adalah karena faktor iri tersebut.
 
+---
+
 *anjir keren lah si A, tau & bisa banyak, terus dibagikan via tulisan lagi!*
 
 *anjir ni orang tata bahasa nya keren banget, aku belajar juga deh*
@@ -28,6 +30,8 @@ Sejujurnya motivasiku dalam menulis pun, salah satunya adalah karena faktor iri 
 *gila ni orang cara telling storynya asik abis, aku belajar juga deh.*
 
 Dari situ muncul keinginanku untuk menulis lebih banyak dan lebih baik. Bukan bermaksud untuk menyaingi mereka, tapi mencoba untuk berada diantara barisan mereka. Dibarisan para penulis. Dibarisan para seseorang yang membagikan apa yang dia tau atau pelajari via tulisan.
+
+---
 
 Nah lalu munculah inisiatifku memasang aplikasi yang bernama Fasthub di HP androidku. Sama-sama ada Feed, ada Explore (ada trending, malah!), dll. Seperti sosial media seperti biasanya, bedanya kita memamerkan `Kontribusi` kita ke komunitas Open Source.
 
