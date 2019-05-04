@@ -128,8 +128,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/global', ssr: false },
-    { src: '@/plugins/ionicons', ssr: false }
+    { src: '@/plugins/index', ssr: false }
   ],
 
   /*
@@ -166,6 +165,7 @@ export default {
   build: {
     maxChunkSize: 100000,
     extractCSS: true,
+
     optimization: {
       minimize: true,
       splitChunks: {

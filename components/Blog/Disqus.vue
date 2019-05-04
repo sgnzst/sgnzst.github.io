@@ -1,15 +1,42 @@
 <template>
-  <v-layout justify-center align-center class="comments default lighten-2 white--text pa-3">
-    <v-flex id="disqus_thread" xs12 md8 class="my-1" />
+  <v-layout row wrap class="comments default lighten-2 white--text pb-3 pt-1">
+    <v-container class="text-xs-center">
+      <h1 class="text--white mb-3">
+        {{ !disqusLoaded ? 'Loading Comments..' : 'Comments' }}
+      </h1>
+      <v-divider />
+      <v-progress-circular
+        v-if="!disqusLoaded"
+        class="mt-5"
+        :size="80"
+        color="white"
+        indeterminate
+      />
+      <v-flex class="mx-auto mt-4 md8 xs12">
+        <no-ssr>
+          <lazy-component>
+            <vue-disqus
+              v-show="disqusLoaded"
+              :shortname="propName"
+              :title="propTitle"
+              :identifier="propIdentifier"
+              :url="propUrl"
+              @ready="disqusLoaded = true"
+            />
+          </lazy-component>
+        </no-ssr>
+      </v-flex>
+    </v-container>
   </v-layout>
 </template>
 
 <script>
-/* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
-
 export default {
   props: {
+    propName: {
+      type: String,
+      default: 'sutanlab'
+    },
     propTitle: {
       type: String,
       required: true
@@ -17,36 +44,14 @@ export default {
     propUrl: {
       type: String,
       required: true
+    },
+    propIdentifier: {
+      type: String,
+      default: ''
     }
   },
   data: () => ({
     disqusLoaded: false
-  }),
-  beforeMount() {
-    window.onscroll = this.onScrollDisqus
-  },
-  beforeDestroy() {
-    this.disqusLoaded = true
-  },
-  methods: {
-    onScrollDisqus() {
-      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 900)) {
-        if (this.disqusLoaded === false) this.loadDisqus()
-      }
-    },
-    loadDisqus() {
-      const disqus_title = this.propTitle
-      const disqus_url = this.propUrl
-      const dsq = document.createElement('script')
-      dsq.type = 'text/javascript'
-      dsq.async = true
-      dsq.src = 'https://sutanlab.disqus.com/embed.js'
-      this.createDisqus(dsq)
-      this.disqusLoaded = true
-    },
-    createDisqus(disqus) {
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus)
-    }
-  }
+  })
 }
 </script>

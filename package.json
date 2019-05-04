@@ -24,7 +24,9 @@
     "@nuxtjs/vuetify": "0.5.5",
     "highlight.js": "9.15.6",
     "nuxt": "2.6.3",
-    "vue-ionicons": "3.0.4"
+    "vue-disqus": "^3.0.5",
+    "vue-ionicons": "3.0.4",
+    "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "0.0.1",
