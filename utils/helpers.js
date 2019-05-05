@@ -11,9 +11,10 @@ export function formatPostDate(date) {
 }
 
 export function formatReadingTime(contents) {
-  const { minutes } = readingTime(contents)
+  let { minutes } = readingTime(contents)
+  minutes = Math.round(minutes)
   const cups = Math.round(minutes / 5)
-  return `${new Array(cups || 1).fill('☕️').join('')} ${Math.round(minutes)} ${minutes > 1 ? 'minutes' : 'minute'} to read`
+  return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} ${minutes > 1 ? 'minutes' : 'minute'} to read`
 }
 
 export const metaGenerator = (type, meta) => [
