@@ -12,7 +12,7 @@ const createWrapper = () => {
 }
 
 describe('components Disqus.vue', () => {
-  test('success mounting components', (done) => {
+  test('success mounting components', done => {
     const wrapper = createWrapper()
     expect(wrapper).toBeTruthy()
     done()

@@ -10,5 +10,4 @@ cache:
 install:
   - yarn install
 script:
-  - yarn run test
   - yarn run generate
