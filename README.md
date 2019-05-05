@@ -6,8 +6,7 @@
 
 ### Required in System
 
-1. [NodeJS](https://nodejs.org/en/download/)
-2. [Globally Lighthouse Badges](https://github.com/emazzotta/lighthouse-badges)
+- [NodeJS](https://nodejs.org/en/download/)
 
 ### Build setup
 
@@ -26,7 +25,7 @@ $ yarn run test # test with jest environment
 
 $ yarn run deploy # deploy static site to Github Pages
 
-$ yarn run score # generate lighthouse badges for deployed site
+$ yarn run score # generate lighthouse badges for deployed site with (if has lighthouse-badges cli)
 ```
 
 This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).
