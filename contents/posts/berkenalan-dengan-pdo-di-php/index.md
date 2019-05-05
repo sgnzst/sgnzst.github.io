@@ -7,8 +7,7 @@ tags: ['php']
 category: 'Programming'
 keywords: 'php, pdo, pemrograman web'
 image: '/assets/img/collections/desks/desk5.jpg'
-twitter_text:
-minute2read: 5
+twitter_text: ''
 ---
 
 ## Apa itu PDO ?

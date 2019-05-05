@@ -1,3 +1,5 @@
+import readingTime from 'reading-time'
+
 export function formatPostDate(date) {
   if (typeof Date.prototype.toLocaleDateString !== 'function') return date
   date = new Date(date)
@@ -8,9 +10,10 @@ export function formatPostDate(date) {
   return `📆 ${date.toLocaleDateString(...args)}`
 }
 
-export function formatReadingTime(minutes) {
+export function formatReadingTime(contents) {
+  const { minutes } = readingTime(contents)
   const cups = Math.round(minutes / 5)
-  return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} ${minutes > 1 ? 'minutes' : 'minute'} to read`
+  return `${new Array(cups || 1).fill('☕️').join('')} ${Math.round(minutes)} ${minutes > 1 ? 'minutes' : 'minute'} to read`
 }
 
 export const metaGenerator = (type, meta) => [

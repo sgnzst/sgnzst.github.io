@@ -7,8 +7,7 @@ tags: ['life', 'sosial']
 category: 'Life'
 keywords: 'iri, manusia, kehidupan, life'
 image: '/assets/img/collections/desks/desk2.jpg'
-twitter_text:
-minute2read: 3
+twitter_text: ''
 ---
 
 Oke jadi gini, siapa sih disini yang tidak main Instagram? Dan siapa disini yang menggunakan Twitter? Aku kira mungkin 99% jawabannya pada menggunakan Instagram, dan mungkin ada beberapa yang masih menggunakan Twitter juga. Ada jokes klasik terkait Twitter VS Instagram yakni: Instagram pamer kekayaan, Twitter pamer kemiskinan. Untuk Instagram tempat pamer kekayaan, aku setuju. Mungkin enggak semua, tapi rata-rata ya. Mungkin jika disebut dengan kekayaan kurang sreg, mari kita persingkat menjadi tempat pamer.

@@ -24,6 +24,7 @@
     "@nuxtjs/vuetify": "0.5.5",
     "highlight.js": "9.15.6",
     "nuxt": "2.6.3",
+    "reading-time": "^1.2.0",
     "vue-disqus": "^3.0.5",
     "vue-ionicons": "3.0.4",
     "vue-lazyload": "^1.2.6"

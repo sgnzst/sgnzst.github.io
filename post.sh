@@ -134,7 +134,6 @@ initpost_content() {
     echo "keywords: ''"
     echo "image: '/assets/img/collections/desks/desk${RAND_NUM}.jpg'"
     echo "twitter_text: ''"
-    echo "minute2read: "
     echo "---"
 }
 

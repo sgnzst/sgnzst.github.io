@@ -40,7 +40,7 @@
                   {{ formatPostDate(content.date) }}
                 </div>
                 <div class="grey--text caption">
-                  {{ formatReadingTime(content.minute2read) }}
+                  {{ formatReadingTime(content.body) }}
                 </div><br>
                 <div>
                   {{ content.description }}
@@ -108,7 +108,7 @@ export default {
   asyncData() {
     return Promise.all(Contents.map(async content => {
       const contents = await import(`~/contents/posts/${content.name}/index.md`)
-      return { ...contents.attributes }
+      return { ...contents.attributes, body: contents.body }
     })).then(res => ({ contents: res.reverse() }))
   }
 }

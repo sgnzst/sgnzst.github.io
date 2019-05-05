@@ -20,7 +20,7 @@
             </span>
             &nbsp;•&nbsp;
             <span>
-              {{ formatReadingTime(meta.minute2read) }}
+              {{ formatReadingTime(content) }}
             </span>
           </div>
         </v-flex>
@@ -85,6 +85,7 @@ export default {
     const content = await import(`~/contents/posts/${params.slug}/index.md`)
     return {
       meta: { ...content.attributes },
+      content: content.body,
       renderFn: content.vue.render,
       staticRenderFn: content.vue.staticRenderFns
     }
