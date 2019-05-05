@@ -1,46 +1,33 @@
 <template>
   <v-content>
+    <Banner
+      parallax
+      :height="380"
+      :carousels="[{ src: meta.image }]"
+    >
+      <v-layout justify-center align-center>
+        <v-flex xs12 class="text-xs-center">
+          <h1 :class="`${$vuetify.breakpoint.xs ? 'headline' : 'display-1'} text-shadow  mb-3`">
+            <b>{{ meta.title }}</b>
+          </h1>
+          <h3 class="px-2 text-shadow font-weight-medium">
+            {{ meta.description }}
+          </h3>
+        </v-flex>
+      </v-layout>
+    </Banner>
     <v-layout justify-center align-center>
       <v-flex xs12 md8>
-        <v-container fluid>
-          <h3 :class="$vuetify.breakpoint.mdAndUp ? 'display-2' : 'display-1'">
-            {{ meta.title }}
-          </h3>
-          <div style="margin-top: 5px">
-            <span class="deep-purple--text">
-              {{ formatPostDate(meta.date) }}
-            </span>
-            —
-            <span class="grey--text caption">
-              {{ formatReadingTime(meta.minute2read) }}
-            </span>
-          </div>
-        </v-container>
-        <v-container fluid py-1>
-          <v-hover>
-            <v-img
-              slot-scope="{ hover }"
-              :class="`elevation-${hover ? 12 : 4}`"
-              height="300px"
-              :title="meta.title"
-              :lazy-src="meta.image"
-              :src="meta.image"
-            />
-          </v-hover>
-          <p class="my-4 text-xs-center">
-            {{ meta.description }}
-            <v-icon>format_quote</v-icon>
-          </p>
-          <v-divider mx-3 />
-        </v-container>
-        <v-container fluid>
-          <ContentParser
-            :render-fn="renderFn"
-            :static-render-fn="staticRenderFn"
-          />
-        </v-container>
+        <v-divider ma-3 />
       </v-flex>
     </v-layout>
+    <v-container fluid class="pa-0">
+      <ContentParser
+        class="py-4"
+        :render-fn="renderFn"
+        :static-render-fn="staticRenderFn"
+      />
+    </v-container>
     <v-layout row wrap>
       <v-flex xs12>
         <Disqus
@@ -58,6 +45,7 @@ import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helper
 
 export default {
   components: {
+    Banner: () => import('~/components/Base/Banner'),
     ContentParser: () => import('~/components/Blog/ContentParser'),
     Disqus: () => import('~/components/Blog/Disqus')
   },

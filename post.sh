@@ -128,13 +128,13 @@ initpost_content() {
     echo "title: '${POST_TITLE}'"
     echo "slug: '${POST_NAME}'"
     echo "date: ${CURRENT_DATE} ${TIME}"
-    echo "description:"
-    echo "tags:"
-    echo "categories:"
-    echo "keywords:"
+    echo "description: ''"
+    echo "tags: []"
+    echo "category: ''"
+    echo "keywords: ''"
     echo "image: '/assets/img/collections/desks/desk${RAND_NUM}.jpg'"
-    echo "twitter_text:"
-    echo "minute2read:"
+    echo "twitter_text: ''"
+    echo "minute2read: "
     echo "---"
 }
 
@@ -145,7 +145,7 @@ initpost_file() {
         mkdir -p "${DIST_FOLDER}/${POST_NAME}"
         initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
         truncate -s-3 "${POSTLIST}"
-        echo -e ",\n\t{ name: '${POST_TITLE}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
+        echo -e ",\n\t{ name: '${POST_NAME}', date: '${CURRENT_YEARMONTH}' }\n]" >> "${POSTLIST}"
         e_success "Initial post successfully created!"
     else
         e_warning "File already exist."

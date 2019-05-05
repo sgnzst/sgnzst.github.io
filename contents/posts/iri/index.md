@@ -2,11 +2,9 @@
 title: 'IRI'
 slug: 'iri'
 date: 2019-05-02 21:21:10
-description: Iri merupakan hal yang manusiawi, menurutku
-tags: 
-  - life
-  - sosmed
-category: Life
+description: 'Iri merupakan hal yang manusiawi, menurutku'
+tags: ['life', 'sosial']
+category: 'Life'
 keywords: 'iri, manusia, kehidupan, life'
 image: '/assets/img/collections/desks/desk2.jpg'
 twitter_text:

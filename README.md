@@ -29,6 +29,8 @@ $ yarn run deploy # deploy static site to Github Pages
 $ yarn run score # generate lighthouse badges for deployed site
 ```
 
+This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).
+
 ### Use make post template
 
 ``` bash
@@ -46,8 +48,6 @@ $ ./post -p {POST_TITLE} # publish/promote a draft to a post
 ```bash
 $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
-
-This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).
 
 ### Special Thanks to :
 

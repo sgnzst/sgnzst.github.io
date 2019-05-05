@@ -30,24 +30,64 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$main: #5E72E4;
-$sec: #FFFFFF;
-$lightGray: #F2F2F2;
-$texts: #333333;
-$colorcode: #3085F4;
+$content-width: 60rem;
+$syntax-color: lightblue;
+$syntax-bg: #282c34;
 
-img {
-  max-width: 100%;
-  margin: 1.875rem auto;
-  display: block;
+pre {
+  background: $syntax-bg;
+  margin: 1em auto;
+  code {
+    color: $syntax-color;
+    background: none;
+    box-shadow: none;
+    font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+    font-size: 1rem;
+    display: block;
+    overflow-x: auto;
+    max-width: $content-width;
+    padding: 1.2em;
+    margin: auto;
+    line-height: 1.3em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 2;
+    hyphens: none;
+  }
 }
-p, h1, h2, h3, h4, ul, ol, .tags, iframe {
-  *zoom: 1;
+
+hr {
+  width: auto;
+  max-width: 47.5rem;
   float: none;
   display: block;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0;
+  margin: 50px auto;
+  &:before {
+    content: '';
+    display: table;
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, iframe, table {
+  width: auto;
+  max-width: $content-width;
+  float: none;
+  display: block;
+  padding: 0 1.25rem;
+  margin: 0 auto 2rem;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: 1.225rem;
   line-height: 2;
   letter-spacing: .01rem;
   &:before {
@@ -58,82 +98,19 @@ p, h1, h2, h3, h4, ul, ol, .tags, iframe {
     clear: both;
   }
 }
-p, li {
-  color: $texts;
-}
-p code, li code {
-  color: $colorcode;
-}
-a {
-  font-weight: 300;
-  font-style: normal;
-  color: $colorcode;
-  text-decoration: none;
-  border-bottom: 2px solid $colorcode;
-}
-iframe {
-  margin-top: 1.875rem;
-  width: 100%;
-}
-h1, h2, h3, h4, h5 {
-  font-weight: 800;
-  margin-bottom: 10px;
-  font-style: normal;
-}
-h1 {
-  font-size: 2rem;
-  line-height: 1.4;
-}
-h2 {
-  font-size: 1.675rem;
-  line-height: 1.4;
-}
-h3 {
-  font-size: 1.425rem;
-  line-height: 1.4;
-}
-ul, ol {
-  padding-left: 2.5rem;
-}
+
 blockquote {
-  *zoom: 1;
   width: auto;
   max-width: 45.625rem;
   float: none;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  border-left: .313rem solid $main;
+  border-left: .313rem solid #5E72E4;
   padding: 0 1.875rem;
   margin: 3.125rem auto;
-  &:before {
-    content: '';
-    display: table;
-  }
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
   p {
     color: rgba(0, 0, 0, 0.6);
     margin: 0;
   }
-}
-hr {
-  *zoom: 1;
-  width: auto;
-  max-width: 47.5rem;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  border: 1px solid $lightGray;
-  margin: 50px auto;
   &:before {
     content: '';
     display: table;
@@ -142,6 +119,74 @@ hr {
     content: '';
     display: table;
     clear: both;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+p, li {
+  color: #555;
+  strong {
+    font-weight: 600;
+  }
+  a {
+    font-weight: 400;
+    border-bottom: 0.1rem dashed #5E72E4;
+  }
+  code {
+    margin: 0 0.15rem;
+    background: $syntax-bg;
+    color: $syntax-color;
+  }
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+h4 {
+  font-size: 1.425rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+ul, ol {
+  padding-left: 2.5rem;
+}
+
+img {
+  max-width: 100%;
+  margin: 1.875rem auto;
+  display: block;
+}
+
+iframe {
+  margin-top: 1.875rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 50rem) {
+  blockquote {
+    width: 70%;
+  }
+  blockquote p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    padding: 0;
   }
 }
 </style>

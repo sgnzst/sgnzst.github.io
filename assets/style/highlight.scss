@@ -2,28 +2,6 @@
   &:before, &:after {
     content: ''
   }
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-  font-size: 1rem;
-  display: block;
-  overflow-x: auto;
-  padding: 1.2em;
-  margin-bottom: 1em;
-  line-height: 1.3em;
-  color: lightblue;
-  background: #282c34;
-  border-radius: 5px;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	-moz-tab-size: 2;
-	-o-tab-size: 2;
-	tab-size: 2;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
 }
 .hljs-keyword, .hljs-operator {
   color: #F92672;

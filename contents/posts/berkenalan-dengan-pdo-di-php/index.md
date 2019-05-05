@@ -3,8 +3,7 @@ title: 'Berkenalan Dengan PDO di PHP'
 slug: 'berkenalan-dengan-pdo-di-php'
 date: 2018-10-26 15:29:02 
 description: 'Mengenal apa itu PDO dan bagaimana cara mengimplementasikannya'
-tags: 
-  - php
+tags: ['php']
 category: 'Programming'
 keywords: 'php, pdo, pemrograman web'
 image: '/assets/img/collections/desks/desk5.jpg'
