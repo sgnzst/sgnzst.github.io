@@ -3,6 +3,7 @@
     <Banner
       parallax
       :height="380"
+      :overlay="0.25"
       :carousels="[{ src: meta.image }]"
     >
       <v-layout justify-center align-center>
