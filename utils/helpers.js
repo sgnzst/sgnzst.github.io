@@ -5,12 +5,12 @@ export function formatPostDate(date) {
     'en-EN',
     { day: 'numeric', month: 'long', year: 'numeric' }
   ].filter(Boolean)
-  return `${date.toLocaleDateString(...args)}`
+  return `📆 ${date.toLocaleDateString(...args)}`
 }
 
 export function formatReadingTime(minutes) {
   const cups = Math.round(minutes / 5)
-  return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} min to read`
+  return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} ${minutes > 1 ? 'minutes' : 'minute'} to read`
 }
 
 export const metaGenerator = (type, meta) => [

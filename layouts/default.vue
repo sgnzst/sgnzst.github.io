@@ -7,7 +7,7 @@
         <h1 class="text-smooth text-shadow display-2 mb-3">
           <b>Sutan Nst.</b>
         </h1>
-        <h2 class="px-2 text-smooth text-shadow text-xs-center font-weight-thin">
+        <h2 class="px-2 text-smooth text-shadow text-xs-center font-weight-medium">
           A Man who turns a cup of coffee into beautiful codes.
         </h2>
       </v-layout>

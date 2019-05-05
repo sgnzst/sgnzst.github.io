@@ -3,25 +3,30 @@
     <Banner
       parallax
       :height="380"
-      :overlay="0.25"
+      :overlay="0.35"
       :carousels="[{ src: meta.image }]"
     >
       <v-layout justify-center align-center>
         <v-flex xs12 class="text-xs-center">
-          <h1 :class="`${$vuetify.breakpoint.xs ? 'headline' : 'display-1'} text-shadow  mb-3`">
-            <b>{{ meta.title }}</b>
+          <h1 :class="`${$vuetify.breakpoint.xs ? 'headline' : 'display-1'} text-smooth text-shadow mb-3`">
+            <b style="border-bottom: 2px solid white">{{ meta.title }}</b>
           </h1>
-          <h3 class="px-2 text-shadow font-weight-medium">
-            {{ meta.description }}
-          </h3>
+          <h2 class="title px-2 text-smooth text-shadow font-weight-medium">
+            {{ meta.description }}”
+          </h2>
+          <div class="px-2 mt-4 font-weight-medium text-shadow">
+            <span>
+              {{ formatPostDate(meta.date) }}
+            </span>
+            &nbsp;•&nbsp;
+            <span>
+              {{ formatReadingTime(meta.minute2read) }}
+            </span>
+          </div>
         </v-flex>
       </v-layout>
     </Banner>
-    <v-layout justify-center align-center>
-      <v-flex xs12 md8>
-        <v-divider ma-3 />
-      </v-flex>
-    </v-layout>
+    <v-divider class="mt-4 mx-5" />
     <v-container fluid class="pa-0">
       <ContentParser
         class="py-4"

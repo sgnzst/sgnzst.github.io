@@ -6,7 +6,7 @@
           <h1 class="text-smooth text-shadow display-2 mb-3">
             <b>Blog</b>
           </h1>
-          <h2 class="px-2 text-smooth text-shadow text-xs-center font-weight-thin">
+          <h2 class="px-2 text-smooth text-shadow font-weight-medium">
             Coding, Life and whatever i want.
           </h2>
         </v-flex>

@@ -1,14 +1,14 @@
 <template>
   <v-layout row wrap class="comments default lighten-2 white--text pb-3 pt-1">
     <v-container class="text-xs-center">
-      <h1 class="text--white mb-3">
+      <h2 class="text--white mb-3">
         {{ !disqusLoaded ? 'Loading Comments..' : 'Comments' }}
-      </h1>
+      </h2>
       <v-divider />
       <v-progress-circular
         v-if="!disqusLoaded"
         class="mt-5"
-        :size="80"
+        :size="75"
         color="white"
         indeterminate
       />

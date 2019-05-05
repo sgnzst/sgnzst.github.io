@@ -41,7 +41,7 @@ export default {
       title: `Personal Homepage`,
       description: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst',
       keywords: 'homepage, portfolio',
-      image: '/assets/collections/sutan.jpeg',
+      image: '/icon.png',
       url: '/'
     })
   }),
