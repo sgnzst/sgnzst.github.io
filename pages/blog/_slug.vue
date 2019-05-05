@@ -64,7 +64,7 @@ export default {
       title: `${this.meta.title} | ${this.env.author}`,
       meta: [
         ...metaGenerator('article', {
-          title: `${this.meta.title} | ${this.env.author}`,
+          title: this.meta.title,
           description: this.meta.description,
           keywords: this.meta.keywords,
           url: `/blog/${this.meta.slug}`,

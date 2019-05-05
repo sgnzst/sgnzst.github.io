@@ -1,5 +1,17 @@
 <template>
-  <v-content>
+  <div>
+    <Banner parallax :height="435" :overlay="0.2" :carousels="carousels">
+      <v-layout justify-center align-center>
+        <v-flex xs12 class="text-xs-center">
+          <h1 class="text-smooth text-shadow display-2 mb-3">
+            <b>Blog</b>
+          </h1>
+          <h2 class="px-2 text-smooth text-shadow text-xs-center font-weight-thin">
+            Coding, Life and whatever i want.
+          </h2>
+        </v-flex>
+      </v-layout>
+    </Banner>
     <v-layout justify-center align-center>
       <v-flex xs12 sm10 md6>
         <v-hover v-for="(content, i) in contents" :key="i">
@@ -64,21 +76,29 @@
         </v-hover>
       </v-flex>
     </v-layout>
-  </v-content>
+  </div>
 </template>
 
 <script>
 import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helpers'
 import Contents from '~/contents'
+import Banner from '~/components/Base/Banner'
 
 export default {
+  components: {
+    Banner
+  },
   data: () => ({
-    formatPostDate, formatReadingTime
+    formatPostDate,
+    formatReadingTime,
+    carousels: [
+      { src: '/assets/img/collections/desks/desk5.jpg' }
+    ]
   }),
   head: () => ({
     title: `Blog | ${process.env.AUTHOR}`,
     meta: metaGenerator('blog', {
-      title: `Blog | ${process.env.AUTHOR}`,
+      title: 'Blog',
       description: 'A Journal about Sutan Nst, Coder',
       keywords: 'blogs, posts, articles',
       image: '/icon.png',

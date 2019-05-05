@@ -38,10 +38,10 @@ export default {
   head: () => ({
     title: `${process.env.AUTHOR} - Coder`,
     meta: metaGenerator('portfolio', {
-      title: `${process.env.AUTHOR} - Coder`,
+      title: `Personal Homepage`,
       description: 'A Man who turns a cup of coffee into beautiful codes. - Sutan Nst',
       keywords: 'homepage, portfolio',
-      image: '/assets/collections/sutan_formal.jpg',
+      image: '/assets/collections/sutan.jpeg',
       url: '/'
     })
   }),

@@ -6,7 +6,7 @@
     :height="height"
     :vertical="vertical"
   >
-    <div id="banner">
+    <div id="banner" :style="`background-color: rgba(0, 0, 0, ${overlay})`">
       <slot />
     </div>
     <v-carousel-item v-for="(carousel, i) in carousels" :key="i">
@@ -34,6 +34,10 @@ export default {
       type: Number,
       default: 600
     },
+    overlay: {
+      type: Number,
+      default: 0.15
+    },
     carousels: {
       type: Array,
       default: () => [
@@ -54,6 +58,5 @@ export default {
   width: 100%;
   z-index: 1;
   color: #fff;
-  background-color: rgba(0, 0, 0, .15);
 }
 </style>
