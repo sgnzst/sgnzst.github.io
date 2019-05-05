@@ -180,7 +180,7 @@ iframe {
 }
 
 @media only screen and (max-width: 50rem) {
-  blockquote {
+  blockquote, hr {
     width: 70%;
   }
   blockquote p {

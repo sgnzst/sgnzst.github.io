@@ -41,12 +41,14 @@
 </template>
 
 <script>
+import Banner from '~/components/Base/Banner'
+import ContentParser from '~/components/Blog/ContentParser'
 import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helpers'
 
 export default {
   components: {
-    Banner: () => import('~/components/Base/Banner'),
-    ContentParser: () => import('~/components/Blog/ContentParser'),
+    Banner,
+    ContentParser,
     Disqus: () => import('~/components/Blog/Disqus')
   },
   data: () => ({
