@@ -37,8 +37,9 @@
     <v-layout row wrap>
       <v-flex xs12>
         <Disqus
-          :prop-title="`${meta.title} | ${env.author}`"
-          :prop-url="`${env.url}/blog/${meta.slug}`"
+          :title="`${meta.title} | ${env.author}`"
+          :url="`${env.url}/blog/${meta.slug}`"
+          :identifier="`${meta.slug}-${new Date(meta.date).getTime()}`"
         />
       </v-flex>
     </v-layout>
@@ -48,14 +49,11 @@
 <script>
 import Banner from '~/components/Base/Banner'
 import ContentParser from '~/components/Blog/ContentParser'
+import Disqus from '~/components/Blog/Disqus'
 import { formatPostDate, formatReadingTime, metaGenerator } from '~/utils/helpers'
 
 export default {
-  components: {
-    Banner,
-    ContentParser,
-    Disqus: () => import('~/components/Blog/Disqus')
-  },
+  components: { Banner, ContentParser, Disqus },
   data: () => ({
     formatPostDate,
     formatReadingTime,

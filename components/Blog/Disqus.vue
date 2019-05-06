@@ -17,9 +17,10 @@
           <lazy-component>
             <vue-disqus
               v-show="disqusLoaded"
-              :shortname="propName"
-              :title="propTitle"
-              :url="propUrl"
+              :shortname="shortname"
+              :title="title"
+              :url="url"
+              :identifier="`${shortname}-${identifier}`"
               @ready="disqusLoaded = true"
             />
           </lazy-component>
@@ -32,18 +33,19 @@
 <script>
 export default {
   props: {
-    propName: {
+    shortname: {
       type: String,
       default: 'sutanlab'
     },
-    propTitle: {
+    title: {
       type: String,
       required: true
     },
-    propUrl: {
+    url: {
       type: String,
       required: true
-    }
+    },
+    identifier: String
   },
   data: () => ({
     disqusLoaded: false

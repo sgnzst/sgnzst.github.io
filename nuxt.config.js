@@ -38,10 +38,6 @@ export default {
         {
           path: '*',
           redirect: `/404`
-        },
-        {
-          path: '/blog/index.html'
-          redirect: '/404'
         }
       )
     },
