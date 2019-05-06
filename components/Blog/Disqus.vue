@@ -19,7 +19,6 @@
               v-show="disqusLoaded"
               :shortname="propName"
               :title="propTitle"
-              :identifier="`${propName}-${propIdentifier}`"
               :url="propUrl"
               @ready="disqusLoaded = true"
             />
@@ -44,10 +43,6 @@ export default {
     propUrl: {
       type: String,
       required: true
-    },
-    propIdentifier: {
-      type: String,
-      default: ''
     }
   },
   data: () => ({
