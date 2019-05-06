@@ -1,8 +1,8 @@
 export default {
   state: () => ({
     menu: [
-      { title: 'Homepage', icon: 'home', to: '/' },
-      { title: 'Blogs', icon: 'chrome_reader_mode', to: '/blog' }
+      { title: 'Home', icon: 'home', to: '/' },
+      { title: 'Blog', icon: 'chrome_reader_mode', to: '/blog' }
     ],
     scroll: {
       options: {

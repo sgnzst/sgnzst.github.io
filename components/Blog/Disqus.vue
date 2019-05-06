@@ -19,7 +19,7 @@
               v-show="disqusLoaded"
               :shortname="propName"
               :title="propTitle"
-              :identifier="propIdentifier"
+              :identifier="`${propName}-${propIdentifier}`"
               :url="propUrl"
               @ready="disqusLoaded = true"
             />

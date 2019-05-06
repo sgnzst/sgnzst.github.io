@@ -39,7 +39,7 @@
         <Disqus
           :prop-title="`${meta.title} | ${env.author}`"
           :prop-url="`${env.url}/blog/${meta.slug}`"
-          :prop-identifier="`${env.url}/${meta.slug}/${new Date(meta.date).getTime()}`"
+          :prop-identifier="`${meta.slug}-${new Date(meta.date).getTime()}`"
         />
       </v-flex>
     </v-layout>
