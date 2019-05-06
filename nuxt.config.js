@@ -33,6 +33,12 @@ export default {
   },
 
   router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '*',
+        redirect: '/'
+      })
+    },
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
