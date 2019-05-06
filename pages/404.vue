@@ -1,8 +1,5 @@
 <template>
-  <Banner
-    parallax
-    :carousels="[{ src: '/assets/img/collections/desks/desk0.jpg' }]"
-  >
+  <Banner :carousels="[{ src: '/assets/img/collections/desks/desk0.jpg' }]">
     <v-layout align-center column justify-center style="transform: translate(0%, -5%)">
       <h1 class="text-shadow display-2 mb-3">
         <b>4🙁4</b>
@@ -18,6 +15,9 @@
 import Banner from '~/components/Base/Banner'
 
 export default {
-  components: { Banner }
+  components: { Banner },
+  head: () => ({
+    title: `404 - Page Not Found | ${process.env.AUTHOR}`,
+  })
 }
 </script>
