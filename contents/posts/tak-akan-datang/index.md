@@ -3,9 +3,9 @@ title: 'Tak akan datang'
 slug: 'tak-akan-datang'
 date: 2019-05-07 01:06:43
 description: 'My bullshit motivation.'
-tags: [life, time]
+tags: ['life', 'time']
 category: 'Motivation'
-keywords: 'life, kehidupan, waktu, motifasi, motivation'
+keywords: 'life, kehidupan, waktu, motivasi, motivation'
 image: '/assets/img/collections/desks/desk1.jpg'
 twitter_text: ''
 ---
@@ -38,3 +38,4 @@ Jangan tunggu mati untuk mulai berbuat kebaikan
 
 Jangan tunggu Waktu yang ga akan datang~
 
+---
