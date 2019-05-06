@@ -1,4 +1,4 @@
-# Sutanlab Homepage (On Developing..)
+## 👨‍💻 Sutan Nst. Personal Homepage (🚧 On Developing..)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ee84c1098024c34a204f9f9f6a764b1)](https://app.codacy.com/app/sutanlab/sutanlab.github.io?utm_source=github.com&utm_medium=referral&utm_content=sutanlab/sutanlab.github.io&utm_campaign=Badge_Grade_Dashboard) [![Build Status](https://travis-ci.org/sutanlab/sutanlab.github.io.svg?branch=development)](https://travis-ci.org/sutanlab/sutanlab.github.io) [![David](https://img.shields.io/david/sutanlab/sutanlab.github.io.svg)](https://github.com/sutanlab/sutanlab.github.io) [![Website](https://img.shields.io/website/https/sutanlab.js.org.svg)](https://sutanlab.js.org) [![Performance](test/lh-scores/lighthouse_performance.svg)](https://sutanlab.js.org) [![Accessibility](test/lh-scores/lighthouse_accessibility.svg)](https://sutanlab.js.org) [![Best Practice](test/lh-scores/lighthouse_best-practices.svg)](https://sutanlab.js.org) [![SEO](test/lh-scores/lighthouse_seo.svg)](https://sutanlab.js.org) [![PWA](test/lh-scores/lighthouse_pwa.svg)](https://sutanlab.js.org)
 
@@ -6,8 +6,7 @@
 
 ### Required in System
 
-1. [NodeJS](https://nodejs.org/en/download/)
-2. [Globally Lighthouse Badges](https://github.com/emazzotta/lighthouse-badges)
+- [NodeJS](https://nodejs.org/en/download/)
 
 ### Build setup
 
@@ -26,7 +25,7 @@ $ yarn run test # test with jest environment
 
 $ yarn run deploy # deploy static site to Github Pages
 
-$ yarn run score # generate lighthouse badges for deployed site
+$ yarn run score # generate lighthouse badges for deployed site with (if has lighthouse-badges cli)
 ```
 
 This site use Nuxt.js Framework. [Read Nuxt.js Documentation](https://nuxtjs.org).
