@@ -37,7 +37,7 @@ export default {
       routes.push(
         {
           path: '*',
-          redirect: '/404'
+          redirect: `${process.env.PRODUCTION_URL}/404`
         }
       )
     },
