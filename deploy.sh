@@ -2,7 +2,7 @@
 
 echo -e "\n\033[0;32m> Generating site...\033[0m"
 
-npm run generate
+yarn run build
 
 echo -e "\n\033[0;32m> Deploying..\033[0m"
 
@@ -10,6 +10,6 @@ git add .
 
 git commit -m "auto committing changes in `date`"
 
-npm run deploy
+yarn run deploy
 
 echo -e "\n\033[0;32m> Site Deployed!\033[0m\n"

@@ -13,13 +13,9 @@
 ``` bash
 $ yarn install # install dependencies
 
-$ yarn run dev # serve with hot reload at local server
+$ yarn start # serve with hot reload at local server
 
 $ yarn run build # build for production
-
-$ yarn start # launch server for production
-
-$ yarn run generate # generate static project
 
 $ yarn run test # test with jest environment
 
