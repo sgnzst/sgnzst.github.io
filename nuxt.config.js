@@ -7,16 +7,16 @@ const routes = Contents.map(item => {
 })
 
 const routesSitemap = () => {
-  const result = []
+  const sitemap = []
   for (const route of routes) {
-    const item = {}
-    item.url = `${route}/`
-    item.changefreq = 'daily'
-    item.priority = 1
-    item.lastmodISO = String(new Date().toISOString())
-    result.push(item)
+    sitemap.push({
+      url: `${route}/`,
+      changefreq: 'daily',
+      priority: 1,
+      lastmodISO: String(new Date().toISOString())
+    })
   }
-  return result
+  return sitemap
 }
 
 export default {
