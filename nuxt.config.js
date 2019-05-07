@@ -8,7 +8,7 @@ const routes = Contents.map(item => {
 
 const routesSitemap = () => {
   const result = []
-  for (const route in routes) {
+  for (const route of routes) {
     const item = {}
     item.url = `${route}/`
     item.changefreq = 'daily'
