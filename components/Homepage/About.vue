@@ -24,10 +24,10 @@
             color="primary"
             target="_blank"
             rel="noopener"
-            href="https://drive.google.com/open?id=1opfgpwab7lvoUl1ZPeRjRTcfBIspRseP"
+            href="https://drive.google.com/open?id=1Ql6W7UF9TEzMUJaMe7raSQ1SF-NAQUgt"
           >
             <v-icon>assignment</v-icon>
-            &nbsp;My Resume
+            &nbsp;My CV
           </v-btn>
         </p>
       </v-flex>

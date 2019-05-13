@@ -45,7 +45,10 @@ export default {
       type: String,
       required: true
     },
-    identifier: String
+    identifier: {
+      type: String,
+      default: `sutanlab-blog-${new Date().getTime()}`
+    }
   },
   data: () => ({
     disqusLoaded: false
