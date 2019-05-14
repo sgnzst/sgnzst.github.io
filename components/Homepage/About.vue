@@ -24,7 +24,7 @@
             color="primary"
             target="_blank"
             rel="noopener"
-            href="https://drive.google.com/open?id=1Ql6W7UF9TEzMUJaMe7raSQ1SF-NAQUgt"
+            href="https://drive.google.com/file/d/1T_ZVQVGjEby3D5q17nvHF4SVVkV_rirO/view"
           >
             <v-icon>assignment</v-icon>
             &nbsp;My CV
