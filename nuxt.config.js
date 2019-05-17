@@ -6,7 +6,7 @@ const routes = Contents.map(item => {
   return item
 })
 
-const routesSitemap = () => {
+const routesSitemap = routes => {
   const sitemap = []
   for (const route of routes) {
     sitemap.push({
@@ -97,7 +97,7 @@ export default {
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: true,
-    routes: routesSitemap()
+    routes: routesSitemap(routes)
   },
 
   /*
