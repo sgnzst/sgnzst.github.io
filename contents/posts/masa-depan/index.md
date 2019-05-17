@@ -50,7 +50,7 @@ Mungkin aku tidak bisa cerita lebih banyak di blog ini, akan sangat banyak jika 
 
 Jadi, kembali ke judul blog ini.. Ya, kenapa aku belajar lebih dalam di dunia teknologi? semuanya hanya karena "Masa Depan". Keinginanku adalah tak lebih dari membahagiakan orang tuaku serta bisa hidup bahagia dan nyaman, apalagi hidup bersama 'doi' yang aku cinta. Plakk, hahaha. Dan satu lagi..
 
-> "If you do what you love, you'll never work a day in your life." - Marc Antony
+> *"If you do what you love, you'll never work a day in your life."* - Marc Antony
 
 Jadi kesimpulannya, lakukan apa yang kita cinta, dan kita tidak akan pernah merasa bekerja sehari pun dalam hidup. Makanya aku mencintai koding.. Walaupun jika nanti aku akan bekerja, aku tidak akan pernah merasa bekerja. Karena aku melakukan apa yang aku cinta.
 
