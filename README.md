@@ -47,7 +47,6 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 ### Special Thanks to :
 
 - [Marina Aisa](https://marinaaisa.com/blog/blog-using-vue-nuxt-markdown)
-- [Irfan Maulana](https://github.com/mazipan/blog-2.0)
 - [Vitor Britto](https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh)
 - [JS ORG](https://github.com/js-org/js.org)
 
