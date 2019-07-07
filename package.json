@@ -28,7 +28,7 @@
     "vue-lazyload": "1.2.6"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "0.0.1",
+    "@nuxtjs/eslint-config": "1.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.6",
